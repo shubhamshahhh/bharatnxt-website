@@ -2672,30 +2672,26 @@ class Component extends DCLogic {
           // sticky + transform + border-radius + overflow:hidden on one element),
           // letting the card's overflowing decorative glow peek out at a corner.
           const inner = c.querySelector('[data-app-inner]') || c;
-          // the card's own border/background live on [data-app-clip] (a plain
-          // ancestor of [data-app-inner], untouched by the reveal-on-scroll system
-          // that owns [data-app-card]'s opacity) — fading ITS opacity, not just
-          // dimming the content, is what actually makes a covered card disappear
-          // instead of sitting there fully bordered/opaque while merely tinted.
-          const clip = c.querySelector('[data-app-clip]');
           if (!next) {
             inner.style.transform = 'scale(1)';
             if (dim) dim.style.background = 'rgba(17,26,61,0)';
-            if (clip) clip.style.opacity = '1';
             return;
           }
           const r = c.getBoundingClientRect();
           const nr = next.getBoundingClientRect();
           const covered = Math.max(0, Math.min(1, (r.bottom - nr.top) / Math.max(1, r.height * 0.9)));
           inner.style.transform = 'scale(' + (1 - covered * 0.045) + ')';
-          if (dim) dim.style.background = 'rgba(17,26,61,' + (covered * 0.06) + ')';
-          // fading gradually across the WHOLE covered range (old: 1 - covered*0.9)
-          // meant both cards sat semi-transparent over most of the scroll,
-          // so their text visibly overlapped/ghosted — worse than the original
-          // fully-opaque peek. Only one card should ever be legible at a time:
-          // snap fully invisible within the first ~10% of coverage instead.
-          const vanish = Math.min(1, covered / 0.1);
-          if (clip) clip.style.opacity = String(Math.max(0, 1 - vanish));
+          // The card's own shape (border/background on [data-app-clip]) stays at
+          // full opacity throughout — that's what makes this read as one card
+          // genuinely stacked behind another, not something randomly vanishing.
+          // What actually needs to disappear is the TEXT, so it can never sit
+          // there half-legible under the next card. The dim overlay used to cap
+          // at 6% black — nowhere near enough to obscure a heading — so text
+          // stayed fully readable the entire time it was "covered". Ramping it
+          // to near-opaque black (capped just under 1 to keep a hint of the
+          // gradient behind) does the actual obscuring, over the same long,
+          // deliberate scroll-linked transition the original design intended.
+          if (dim) dim.style.background = 'rgba(5,8,20,' + (covered * 0.94) + ')';
         });
       };
       const onStack = () => { if (!sTick) { sTick = true; requestAnimationFrame(paintStack); } };
