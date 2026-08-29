@@ -1,0 +1,10 @@
+/* tool.html page-only rules. Shared rules live in css/global.css. */
+html{line-height:1.5;-webkit-text-size-adjust:100%}
+body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F7F8FA;color:#314259;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+:focus-visible{outline:3px solid #0029FF;outline-offset:2px;border-radius:6px}
+input[type=range]{-webkit-appearance:none;appearance:none;height:26px;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:#EEEEEE}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-8.5px;border-radius:50%;background:#0029FF;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,41,255,.3);cursor:pointer}
+input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:#EEEEEE}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#0029FF;border:3px solid #fff;cursor:pointer}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}

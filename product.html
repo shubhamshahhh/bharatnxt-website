@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BharatNXT Products</title>
+<meta name="description" content="BharatNXT product details: card payments, invoice payments, marketplace, collections, working capital and business ledger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<script src="js/image-slot.js"></script>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/product.css">
+</helmet>
+
+<div ref="{{ root }}" style="width:100%;background:linear-gradient(180deg,#FFFFFF 0%,#F7F8FA 30%)">
+
+<!-- ══ HEADER ══ -->
+<svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs><filter id="bn-liquid" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="7" result="noise"></feTurbulence><feGaussianBlur in="noise" stdDeviation="1.2" result="soft"></feGaussianBlur><feDisplacementMap in="SourceGraphic" in2="soft" scale="18" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter></defs></svg>
+<div style="position:sticky;top:0;z-index:200;padding:12px 16px">
+  <div data-glass-pill="" style="position:relative;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid #E0E0E0;border-radius:26px;padding:10px 14px;min-height:60px;background:rgba(255,238,0,.42);backdrop-filter:blur(18px) saturate(200%);-webkit-backdrop-filter:blur(18px) saturate(200%);box-shadow:0 8px 34px rgba(17,26,61,.16),inset 0 1px 1px rgba(255,255,255,.6),inset 0 -1px 2px rgba(140,120,0,.3)">
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;backdrop-filter:url(#bn-liquid);-webkit-backdrop-filter:url(#bn-liquid);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:22px;box-sizing:border-box"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(155deg,rgba(255,246,90,.34) 0%,rgba(255,232,0,.16) 52%,rgba(255,255,255,.1) 100%)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,.12) 26%,rgba(255,255,255,0) 46%,rgba(255,255,255,.14) 82%,rgba(255,255,255,.5) 100%);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:1.5px;box-sizing:border-box"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:radial-gradient(240px circle at var(--mouse-x,50%) var(--mouse-y,38%),rgba(255,255,255,.5) 0%,rgba(255,255,255,.14) 38%,rgba(255,255,255,0) 62%);transition:opacity .3s ease;opacity:0" data-glass-gloss=""></div>
+    <a href="index.html#top" style="display:inline-flex;align-items:center;height:28px;flex-shrink:0"><img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:22px;width:auto;display:block"></a>
+    <div data-desktop-nav="" style="display:flex;align-items:center;gap:4px;flex:1;justify-content:flex-end"></div>
+    <button type="button" data-burger="" aria-label="Menu" aria-expanded="false" style="display:none;flex-direction:column;justify-content:space-between;align-items:center;width:26px;height:18px;padding:0;border:0;background:transparent;cursor:pointer;flex-shrink:0;margin-left:auto"><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span></button>
+    <div data-mobile-nav="" style="position:absolute;top:calc(100% + 12px);left:0;right:0;z-index:70;display:none;background:#fff;border:1px solid #E0E0E0;border-radius:22px;box-shadow:0 30px 60px rgba(164,172,178,.28);padding:6px 20px 20px;max-height:calc(100vh - 120px);overflow-y:auto"></div>
+  </div>
+</div>
+
+<!-- ══ PRODUCT HERO ══ -->
+<section data-screen-label="Product hero" style="padding:clamp(20px,3vw,40px) 20px 0">
+  <div style="max-width:1200px;margin:0 auto">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin-bottom:clamp(16px,2.2vw,26px);font-size:12.5px;color:#9092A3">
+      <a href="index.html#top" style="color:#686D77;font-weight:500;white-space:nowrap" style-hover="color:#0029FF">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html#products" style="color:#686D77;font-weight:500;white-space:nowrap" style-hover="color:#0029FF">Products</a>
+      <span aria-hidden="true">›</span>
+      <span style="white-space:nowrap">{{ name }}</span>
+    </nav>
+    <div data-hero-grid="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:clamp(24px,4vw,64px);align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF;background:rgba(0,41,255,.08);border:1px solid rgba(0,41,255,.2);margin-bottom:16px;white-space:nowrap">{{ name }}</div>
+        <h1 style="font-size:clamp(27px,3.8vw,40px);font-weight:800;letter-spacing:-1.3px;line-height:1.12;color:#314259;margin-bottom:14px;text-wrap:pretty">{{ headline }}</h1>
+        <p style="font-size:clamp(15px,1.7vw,17px);line-height:1.65;color:#686D77;max-width:520px;margin-bottom:22px;text-wrap:pretty">{{ description }}</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="index.html#install" style="display:inline-flex;align-items:center;justify-content:center;background:#0029FF;color:#fff;font-size:14.5px;font-weight:700;padding:14px 24px;border-radius:100px;min-height:48px;white-space:nowrap" style-hover="background:#0018AA;color:#fff">Install Now</a>
+          <a href="#how" style="display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid #E0E0E0;color:#314259;font-size:14.5px;font-weight:600;padding:14px 24px;border-radius:100px;min-height:48px;white-space:nowrap" style-hover="border-color:#0029FF;color:#0029FF">How it works</a>
+        </div>
+      </div>
+      <div data-hero-art="" style="position:relative;width:100%;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%);border:1px solid #EEEEEE;box-shadow:0 10px 30px rgba(164,172,178,.16)"><image-slot id="{{ artSlotId }}" shape="rect" fit="contain" placeholder=" "></image-slot></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFITS ══ -->
+<section data-screen-label="Benefits" style="padding:clamp(30px,4.4vw,60px) 20px 0">
+  <div style="max-width:1200px;margin:0 auto">
+    <h2 style="font-size:clamp(19px,2.2vw,24px);font-weight:800;letter-spacing:-.7px;color:#314259;margin-bottom:clamp(14px,2vw,22px)">Why businesses use it</h2>
+    <div data-benefit-grid="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 8px 24px rgba(164,172,178,.12);padding:clamp(18px,2vw,24px)">
+          <div style="width:34px;height:34px;border-radius:10px;background:rgba(0,41,255,.08);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#0029FF;margin-bottom:14px">{{ b.n }}</div>
+          <div style="font-size:15.5px;font-weight:700;letter-spacing:-.3px;color:#314259;margin-bottom:7px;text-wrap:pretty">{{ b.title }}</div>
+          <div style="font-size:14px;line-height:1.62;color:#686D77;text-wrap:pretty">{{ b.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section id="how" data-screen-label="How it works" style="padding:clamp(30px,4.4vw,60px) 20px 0">
+  <div style="max-width:1200px;margin:0 auto;background:#fff;border:1px solid #EEEEEE;border-radius:22px;box-shadow:0 10px 30px rgba(164,172,178,.12);padding:clamp(20px,2.8vw,36px)">
+    <h2 style="font-size:clamp(19px,2.2vw,24px);font-weight:800;letter-spacing:-.7px;color:#314259;margin-bottom:clamp(16px,2.2vw,24px)">How it works</h2>
+    <div data-steps-grid="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px)">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+        <div style="border-left:2px solid #0029FF;padding:2px 0 2px 16px">
+          <div style="font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3;margin-bottom:7px">Step {{ st.n }}</div>
+          <div style="font-size:15px;font-weight:700;color:#314259;margin-bottom:6px;text-wrap:pretty">{{ st.title }}</div>
+          <div style="font-size:14px;line-height:1.62;color:#686D77;text-wrap:pretty">{{ st.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OTHER PRODUCTS ══ -->
+<section data-screen-label="Other products" style="padding:clamp(30px,4.4vw,60px) 20px 0">
+  <div style="max-width:1200px;margin:0 auto">
+    <h2 style="font-size:clamp(19px,2.2vw,24px);font-weight:800;letter-spacing:-.7px;color:#314259;margin-bottom:clamp(14px,2vw,22px)">More from BharatNXT</h2>
+    <div data-other-grid="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,16px)">
+      <sc-for list="{{ others }}" as="o" hint-placeholder-count="5">
+        <a href="{{ o.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid #EEEEEE;border-radius:14px;padding:15px 17px;min-height:56px;transition:border-color .2s ease" style-hover="border-color:#0029FF">
+          <span>
+            <span style="display:block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:3px">{{ o.name }}</span>
+            <span style="display:block;font-size:14px;font-weight:600;color:#314259;text-wrap:pretty">{{ o.headline }}</span>
+          </span>
+          <span style="flex-shrink:0;font-size:14px;color:#0029FF">→</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section data-screen-label="Install CTA" style="padding:clamp(30px,4.4vw,60px) 20px clamp(30px,4vw,52px)">
+  <div style="max-width:1200px;margin:0 auto;background:linear-gradient(160deg,#F5F5F5,#FAFBFF);border:1px solid #EEEEEE;border-radius:20px;padding:clamp(20px,2.6vw,30px)">
+    <div style="font-size:18px;font-weight:800;letter-spacing:-.5px;color:#314259;margin-bottom:8px;text-wrap:pretty">One app, one-click setup, zero integration.</div>
+    <p style="font-size:15px;line-height:1.62;color:#686D77;margin-bottom:18px;max-width:480px;text-wrap:pretty">No IT team, no change of bank. Install the app and start with {{ name }} today.</p>
+    <a href="index.html#install" style="display:inline-flex;align-items:center;justify-content:center;background:#0029FF;color:#fff;font-size:14.5px;font-weight:700;padding:14px 24px;border-radius:100px;min-height:48px;white-space:nowrap" style-hover="background:#0018AA;color:#fff">Install Now</a>
+  </div>
+</section>
+
+<footer style="background:#FAFBFF;border-top:1px solid #EEEEEE;padding:30px 20px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start">
+    <div style="min-width:230px;max-width:290px">
+      <img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:22px;width:auto;display:block;margin-bottom:12px">
+      <p style="font-size:13.5px;line-height:1.6;color:#686D77">India's B2B payment network. Pay your suppliers, collect from your buyers.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:150px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Products</h5><a href="product.html?p=card-payments" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Card Payments</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Business Ledger</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:160px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Funding Fit Check</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:150px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Contact Us</a><a href="index.html#faq" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">FAQs</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:150px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Media &amp; PR</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:140px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Legal</h5><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Terms</a><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Privacy</a></div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:24px auto 0;padding-top:16px;border-top:1px solid #EEEEEE;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:12.5px;line-height:1.6;color:#9092A3">
+    <div style="max-width:640px">Credit products are provided by RBI-registered partner NBFCs, named in the app before you accept a limit.</div>
+    <div>© 2026 BharatNXT</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const HOME = 'index.html';
+const PROD = slug => 'product.html?p=' + slug;
+
+const PRODUCTS = [
+  { slug: 'card-payments', name: 'Card Payments', art: 'prod-card',
+    headline: 'Pay any supplier, card machine or not',
+    description: 'Pay on the card you already hold, even suppliers who have never accepted a card. They receive a normal bank transfer into their existing account. Full invoice amount, usually within 24 hours.',
+    benefits: [
+      { title: 'Up to 50 credit days', text: 'Your supplier is paid today. You settle your bank at the end of your card cycle.' },
+      { title: 'No supplier onboarding', text: 'He needs no machine, no app and no new bank account. He just sees a bank credit.' },
+      { title: 'Card rewards continue', text: 'Every payment keeps earning what your card already earns.' } ],
+    steps: [
+      { title: 'Add your supplier', text: 'Name, bank account and GSTIN, entered once.' },
+      { title: 'Pay on your card', text: 'Enter the invoice amount and confirm. The fee is shown before you pay.' },
+      { title: 'He gets a bank transfer', text: 'Full amount into his existing account, usually within 24 hours.' } ] },
+  { slug: 'invoice-payments', name: 'Invoice Payments', art: 'prod-invoice',
+    headline: 'Every invoice you owe, in one place',
+    description: 'Connect your Gmail, your GST account and NPCI Bharat Connect. Invoices arrive in the app on their own. Review, approve, pay. Nothing typed in by hand, nothing missed on a due date.',
+    benefits: [
+      { title: 'Nothing typed by hand', text: 'Invoices flow in from Gmail, GST and Bharat Connect automatically.' },
+      { title: 'Nothing missed', text: 'Due dates tracked in one queue, with reminders before the date.' },
+      { title: 'Approve from your phone', text: 'Review and release payments wherever you are.' } ],
+    steps: [
+      { title: 'Connect your sources', text: 'Gmail, GST account and NPCI Bharat Connect, one-time.' },
+      { title: 'Invoices arrive on their own', text: 'Each invoice lands in your queue with amount and due date read for you.' },
+      { title: 'Review, approve, pay', text: 'Pay on card or bank, on the date you choose.' } ] },
+  { slug: 'marketplace', name: 'Marketplace', art: 'prod-market',
+    headline: 'Let buyers find you',
+    description: 'Businesses across 400+ cities search by category and city. Be the supplier they find, and get paid inside the app without sending a single reminder.',
+    benefits: [
+      { title: 'New buyers, no listing fee', text: 'Your profile is searchable by category and city from day one.' },
+      { title: 'Verified counterparties', text: 'GST-verified businesses on both sides of every order.' },
+      { title: 'Payment built in', text: 'Orders settle inside the app, so the sale and the payment stay together.' } ],
+    steps: [
+      { title: 'Create your profile', text: 'Category, city and what you supply. GST details verify you.' },
+      { title: 'Buyers search and find you', text: 'Businesses across 400+ cities browse by category and city.' },
+      { title: 'Get paid in the app', text: 'The order and its payment stay in one place. No reminders.' } ] },
+  { slug: 'collections', name: 'Collections', art: 'prod-collect',
+    headline: 'Get paid in 24 hours without giving credit',
+    description: 'Send an invoice or a payment link, whatever you have. Automated follow-ups. You are settled in 24 hours while your buyer still takes his full credit period, and none of the risk sits with you.',
+    benefits: [
+      { title: 'Settled in 24 hours', text: 'Your money arrives while your buyer keeps his full credit period.' },
+      { title: 'Zero collection risk', text: 'Once settled, the risk does not sit with you.' },
+      { title: 'No chasing', text: 'Automated follow-ups do the reminding, so nobody on your team has to.' } ],
+    steps: [
+      { title: 'Send an invoice or a link', text: 'Whatever you have. The buyer sees a normal payment request.' },
+      { title: 'Buyer pays on his terms', text: 'He takes his usual credit period on his card.' },
+      { title: 'You are settled in 24 hours', text: 'Full amount, minus the fee shown upfront.' } ] },
+  { slug: 'working-capital', name: 'Working Capital', art: 'prod-wc',
+    headline: 'Extra limit for your peak season',
+    description: 'New limits beyond your card, the week you need it. Pre-approved lines, no collateral, and we handle all the paperwork.',
+    benefits: [
+      { title: 'Beyond your card limit', text: 'A pre-approved line that sits on top of what your card allows.' },
+      { title: 'No collateral', text: 'Sanctioned on your business flows, not your property.' },
+      { title: 'Paperwork handled', text: 'We prepare it, the partner NBFC sanctions it, you draw when needed.' } ],
+    steps: [
+      { title: 'Check your pre-approved limit', text: 'Visible in the app. The lender of record is named before you accept.' },
+      { title: 'Accept the line', text: 'Digital paperwork, handled for you. No collateral.' },
+      { title: 'Draw when you need it', text: 'Use it for the peak weeks, repay as collections land.' } ] },
+  { slug: 'business-ledger', name: 'Business Ledger', art: 'prod-ledger',
+    headline: 'One ledger for money in and money out',
+    description: 'Payables and receivables in one view. Ageing by buyer, settlements matched to invoices, and an export your accountant will actually accept.',
+    benefits: [
+      { title: 'Both sides in one view', text: 'What you owe and what you are owed, on the same screen.' },
+      { title: 'Ageing by buyer', text: 'See who is slipping before it becomes a problem.' },
+      { title: 'Accountant-ready export', text: 'Settlements matched to invoices, exported in a format that reconciles.' } ],
+    steps: [
+      { title: 'Payments write themselves in', text: 'Every payment and collection lands in the ledger automatically.' },
+      { title: 'Watch the ageing', text: 'Outstanding amounts grouped by buyer and by how old they are.' },
+      { title: 'Export for your accountant', text: 'One file, settlements matched to invoices.' } ] },
+];
+
+const NAV_GROUPS = [
+  { id: 'products', label: 'Products', cols: [{ head: 'Products', items: PRODUCTS.map(p => [p.name, PROD(p.slug)]) }] },
+  { id: 'resources', label: 'Resources', cols: [
+    { head: 'Tools & Calculators', items: [
+      ['Working Capital Calculator', 'tool.html?t=working-capital'],
+      ['Cash Flow Calculator', 'tool.html?t=cash-flow'],
+      ['EMI Calculator', 'tool.html?t=emi'],
+      ['Funding Fit Check', 'tool.html?t=funding-fit'] ] },
+    { head: 'More', items: [['Blogs', 'resources.html'], ['AchievHer', 'https://achievher.bharatnxt.in/', 'assets/images/achievher-logo-mark.png']] },
+    { head: 'User Stories', items: [['Testimonials', HOME + '#stories'], ['Social Reviews', HOME + '#stories']] },
+    { head: 'Help Centre', items: [['Contact Us', HOME + '#company'], ['FAQs', HOME + '#faq']] } ] },
+  { id: 'about', label: 'Company', cols: [{ head: 'Company', items: [
+    ['Vision', HOME + '#company'], ['Brand, Values & Culture', HOME + '#company'], ['Our Story', HOME + '#company'],
+    ['Risk & Compliance', HOME + '#trust'], ['Careers', HOME + '#company'], ['Media & PR', HOME + '#company'] ] }] },
+];
+
+class Component extends DCLogic {
+  get product() {
+    let slug = '';
+    try { slug = new URLSearchParams(location.search).get('p') || ''; } catch (e) {}
+    return PRODUCTS.find(p => p.slug === slug) || PRODUCTS[0];
+  }
+
+  componentDidMount() {
+    this.cleanups = [];
+    const root = this.root;
+    if (!root) return;
+    document.title = this.product.name + ' | BharatNXT';
+
+    // build the shared nav (same structure the other pages carry inline)
+    const desk = root.querySelector('[data-desktop-nav]');
+    const sheet = root.querySelector('[data-mobile-nav]');
+    if (desk && sheet) {
+      NAV_GROUPS.forEach(g => {
+        const dd = document.createElement('div');
+        dd.setAttribute('data-nav-dd', g.id);
+        dd.style.cssText = 'position:relative;display:flex;align-items:center';
+        const cols = g.cols.map(c => '<div style="display:flex;flex-direction:column;gap:1px;min-width:190px"><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">' + c.head + '</div>'
+          + c.items.map(it => '<a href="' + it[1] + '" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" onmouseover="this.style.background=\'#F7F8FA\'" onmouseout="this.style.background=\'transparent\'">' + (it[2] ? '<img src="' + it[2] + '" alt="' + it[0] + '" style="height:22px;width:auto;display:block">' : it[0]) + '</a>').join('') + '</div>').join('');
+        dd.innerHTML = '<button type="button" data-dd-btn aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">' + g.label + '<svg data-dd-caret width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>'
+          + '<div data-dd-panel role="menu" style="position:absolute;top:calc(100% + 12px);' + (g.cols.length > 1 ? 'right:0;max-width:calc(100vw - 32px);box-sizing:border-box' : g.id === 'about' ? 'right:0' : 'left:50%;transform:translateX(-50%)') + ';z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px"><div style="display:grid;grid-template-columns:' + (g.cols.length > 1 ? 'repeat(2,max-content)' : 'repeat(1,max-content)') + ';gap:16px 22px">' + cols + '</div></div>';
+        desk.appendChild(dd);
+      });
+      NAV_GROUPS.forEach(g => {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'border-bottom:1px solid #EEEEEE';
+        wrap.innerHTML = '<button type="button" data-m-acc="' + g.id + '" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">' + g.label + '<svg data-m-caret width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>'
+          + '<div data-m-panel="' + g.id + '" style="display:none;padding:0 0 12px">'
+          + (g.cols.length > 1
+            ? g.cols.map((c, ci) => '<div><button type="button" data-m-acc="' + g.id + '-' + ci + '" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:700;color:#111A3D;cursor:pointer">' + c.head + '<svg data-m-caret width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div data-m-panel="' + g.id + '-' + ci + '" style="display:none;padding:0 0 6px">'
+              + c.items.map(it => '<a href="' + it[1] + '" data-m-link style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259">' + (it[2] ? '<img src="' + it[2] + '" alt="' + it[0] + '" style="height:22px;width:auto;display:block">' : it[0]) + '</a>').join('') + '</div></div>').join('')
+            : g.cols.map(c => c.items.map(it => '<a href="' + it[1] + '" data-m-link style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259">' + it[0] + '</a>').join('')).join('')) + '</div>';
+        sheet.appendChild(wrap);
+      });
+    }
+
+    // dropdown + accordion + burger wiring (same behaviour as the other pages)
+    const ddClosers = []; // opening one group instantly closes its siblings,
+    // so the grace timer can't leave two panels overlapping mid-hover
+    root.querySelectorAll('[data-nav-dd]').forEach(dd => {
+      const btn = dd.querySelector('[data-dd-btn]'), pnl = dd.querySelector('[data-dd-panel]'), car = dd.querySelector('[data-dd-caret]');
+      if (!btn || !pnl) return;
+      let open = false;
+      const setDD = v => { open = v; pnl.style.display = v ? 'block' : 'none'; btn.setAttribute('aria-expanded', String(v)); if (car) car.style.transform = v ? 'rotate(180deg)' : 'none'; btn.style.background = v ? '#F2F7FF' : 'transparent'; btn.style.color = v ? '#0029FF' : '#3E4874'; };
+      // the panel floats 12px below the button; a grace timer bridges that gap
+      // so crossing it doesn't close the menu before it can be clicked
+      let closeT = null;
+      ddClosers.push(() => { clearTimeout(closeT); setDD(false); });
+      const me = ddClosers.length - 1;
+      const enter = () => { ddClosers.forEach((c, i) => { if (i !== me) c(); }); clearTimeout(closeT); setDD(true); };
+      const leave = () => { clearTimeout(closeT); closeT = setTimeout(() => setDD(false), 300); };
+      dd.addEventListener('mouseenter', enter); dd.addEventListener('mouseleave', leave);
+      pnl.addEventListener('mouseenter', enter); pnl.addEventListener('mouseleave', leave);
+      const onBtn = e => { e.preventDefault(); e.stopPropagation(); setDD(!open); };
+      btn.addEventListener('click', onBtn);
+      const onDoc = () => { if (open) setDD(false); };
+      const onEsc = e => { if (e.key === 'Escape' && open) { setDD(false); btn.focus(); } };
+      document.addEventListener('click', onDoc); document.addEventListener('keydown', onEsc);
+      this.cleanups.push(() => { clearTimeout(closeT); dd.removeEventListener('mouseenter', enter); dd.removeEventListener('mouseleave', leave); btn.removeEventListener('click', onBtn); document.removeEventListener('click', onDoc); document.removeEventListener('keydown', onEsc); });
+    });
+    root.querySelectorAll('[data-m-acc]').forEach(btn => {
+      const pnl = root.querySelector('[data-m-panel="' + btn.getAttribute('data-m-acc') + '"]');
+      const car = btn.querySelector('[data-m-caret]');
+      if (!pnl) return;
+      const onTap = () => {
+        const open = pnl.style.display !== 'none';
+        pnl.style.display = open ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!open));
+        if (car) car.style.transform = open ? 'none' : 'rotate(180deg)';
+      };
+      btn.addEventListener('click', onTap);
+      this.cleanups.push(() => btn.removeEventListener('click', onTap));
+    });
+    // liquid-glass pill: gloss highlight follows the cursor (iOS-style)
+    const pill = root.querySelector('[data-glass-pill]');
+    if (pill) {
+      const gloss = pill.querySelector('[data-glass-gloss]');
+      const onMove = e => {
+        const r = pill.getBoundingClientRect();
+        pill.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+        pill.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+        if (gloss) gloss.style.opacity = '1';
+      };
+      const onLeave = () => {
+        if (gloss) gloss.style.opacity = '0';
+        pill.style.setProperty('--mouse-x', '50%');
+        pill.style.setProperty('--mouse-y', '38%');
+      };
+      pill.addEventListener('mousemove', onMove);
+      pill.addEventListener('mouseleave', onLeave);
+      this.cleanups.push(() => { pill.removeEventListener('mousemove', onMove); pill.removeEventListener('mouseleave', onLeave); });
+    }
+    const burger = root.querySelector('[data-burger]');
+    const sheet2 = root.querySelector('[data-mobile-nav]');
+    const desktopNav = root.querySelector('[data-desktop-nav]');
+    if (burger && sheet2 && desktopNav) {
+      const bars = Array.from(burger.querySelectorAll('[data-bar]'));
+      let sheetOpen = false;
+      const paint = () => {
+        if (bars.length < 3) return;
+        bars[0].style.transform = sheetOpen ? 'translateY(7.75px) rotate(45deg)' : 'none';
+        bars[1].style.opacity = sheetOpen ? '0' : '1';
+        bars[2].style.transform = sheetOpen ? 'translateY(-7.75px) rotate(-45deg)' : 'none';
+      };
+      const setSheet = on => { sheetOpen = on; sheet2.style.display = on ? 'block' : 'none'; burger.setAttribute('aria-expanded', String(on)); paint(); };
+      const mq = window.matchMedia('(max-width: 880px)');
+      const mode = () => {
+        const mobile = mq.matches;
+        desktopNav.style.display = mobile ? 'none' : 'flex';
+        burger.style.display = mobile ? 'flex' : 'none';
+        if (!mobile) setSheet(false);
+      };
+      mode();
+      if (mq.addEventListener) { mq.addEventListener('change', mode); this.cleanups.push(() => mq.removeEventListener('change', mode)); }
+      const onB = e => { e.preventDefault(); e.stopPropagation(); setSheet(!sheetOpen); };
+      burger.addEventListener('click', onB);
+      this.cleanups.push(() => burger.removeEventListener('click', onB));
+      sheet2.querySelectorAll('[data-m-link]').forEach(a => a.addEventListener('click', () => setSheet(false)));
+      const onOutside = e => { if (sheetOpen && !sheet2.contains(e.target) && e.target !== burger && !burger.contains(e.target)) setSheet(false); };
+      document.addEventListener('click', onOutside);
+      this.cleanups.push(() => document.removeEventListener('click', onOutside));
+    }
+
+    // responsive
+    const set = (sel, styles) => root.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
+    const mqM = window.matchMedia('(max-width: 700px)');
+    const mqT = window.matchMedia('(max-width: 1020px)');
+    const apply = () => {
+      const m = mqM.matches, t = mqT.matches;
+      set('[data-hero-grid]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,480px)' });
+      set('[data-benefit-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))' });
+      set('[data-steps-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))' });
+      set('[data-other-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : t ? 'repeat(2,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))' });
+    };
+    apply();
+    [mqM, mqT].forEach(mq => { if (mq.addEventListener) { mq.addEventListener('change', apply); this.cleanups.push(() => mq.removeEventListener('change', apply)); } });
+  }
+
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => fn()); }
+
+  renderVals() {
+    const p = this.product;
+    return {
+      root: el => { this.root = el; },
+      name: p.name, headline: p.headline, description: p.description,
+      artSlotId: p.art,
+      benefits: p.benefits.map((b, i) => ({ ...b, n: String(i + 1).padStart(2, '0') })),
+      steps: p.steps.map((s, i) => ({ ...s, n: i + 1 })),
+      others: PRODUCTS.filter(x => x.slug !== p.slug).map(x => ({ name: x.name, headline: x.headline, href: PROD(x.slug) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

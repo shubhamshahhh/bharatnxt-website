@@ -1,0 +1,5 @@
+/* author.html page-only rules. Shared rules live in css/global.css. */
+html{line-height:1.5;-webkit-text-size-adjust:100%}
+body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F7F8FA;color:#314259;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+:focus-visible{outline:3px solid #0029FF;outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}

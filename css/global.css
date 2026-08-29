@@ -1,0 +1,7 @@
+/* Shared base rules used by every dc-runtime page (index, product, author,
+   article, tool, resources). Page-specific rules live in css/<page>.css. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+a{color:#0029FF;text-decoration:none}
+a:hover{color:#0018AA}
+@media (prefers-reduced-transparency: reduce){[data-glass-pill]{background:#FFFF00 !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important}[data-glass-pill] > [aria-hidden="true"]{display:none !important}}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BharatNXT network map</title>
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/india-map.css">
+</head>
+<body>
+<div id="wrap">
+  <div id="grid"></div>
+  <div id="layout">
+    <div id="stagewrap">
+      <div id="hud"><i></i><span>Live network</span></div>
+      <svg id="stage" role="img" aria-label="Map of India showing BharatNXT network cities"></svg>
+    </div>
+    <div id="side">
+      <div class="detail" data-card="0">
+        <h3 class="dcity">Mumbai</h3>
+        <div class="dstate">Maharashtra</div>
+        <div class="drow"><span>Businesses</span><b class="dbiz">11,400</b></div>
+        <div class="drow hl"><span>Settled last quarter</span><b class="dval">₹198 Cr</b></div>
+        <div class="drow"><span>Top category</span><b class="dcat">Textiles</b></div>
+        <div class="dbar"><i></i></div>
+      </div>
+      <div class="detail" data-card="1">
+        <h3 class="dcity">Mumbai</h3>
+        <div class="dstate">Maharashtra</div>
+        <div class="drow"><span>Businesses</span><b class="dbiz">11,400</b></div>
+        <div class="drow hl"><span>Settled last quarter</span><b class="dval">₹198 Cr</b></div>
+        <div class="drow"><span>Top category</span><b class="dcat">Textiles</b></div>
+        <div class="dbar"><i></i></div>
+      </div>
+      <div class="detail" data-card="2">
+        <h3 class="dcity">Mumbai</h3>
+        <div class="dstate">Maharashtra</div>
+        <div class="drow"><span>Businesses</span><b class="dbiz">11,400</b></div>
+        <div class="drow hl"><span>Settled last quarter</span><b class="dval">₹198 Cr</b></div>
+        <div class="drow"><span>Top category</span><b class="dcat">Textiles</b></div>
+        <div class="dbar"><i></i></div>
+      </div>
+    </div>
+  </div>
+  <div id="footnote">Geometry: Natural Earth (public domain). Boundaries as depicted on official maps of India; illustrative only.</div>
+</div>
+
+<script src="js/india-map.js"></script>
+</body>
+</html>

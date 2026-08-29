@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BharatNXT Blog</title>
+<meta name="description" content="Business finance, payments, cash flow and credit explained simply for Indian businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<script src="js/image-slot.js"></script>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/article.css">
+</helmet>
+
+<div ref="{{ root }}" style="width:100%;background:#F7F8FA">
+
+<!-- ══ HEADER ══ -->
+<svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs><filter id="bn-liquid" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="7" result="noise"></feTurbulence><feGaussianBlur in="noise" stdDeviation="1.2" result="soft"></feGaussianBlur><feDisplacementMap in="SourceGraphic" in2="soft" scale="18" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter></defs></svg>
+<div style="position:sticky;top:0;z-index:200;padding:12px 16px">
+  <div data-glass-pill="" style="position:relative;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid #E0E0E0;border-radius:26px;padding:10px 14px;min-height:60px;background:rgba(255,238,0,.42);backdrop-filter:blur(18px) saturate(200%);-webkit-backdrop-filter:blur(18px) saturate(200%);box-shadow:0 8px 34px rgba(17,26,61,.16),inset 0 1px 1px rgba(255,255,255,.6),inset 0 -1px 2px rgba(140,120,0,.3)">
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;backdrop-filter:url(#bn-liquid);-webkit-backdrop-filter:url(#bn-liquid);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:22px;box-sizing:border-box"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(155deg,rgba(255,246,90,.34) 0%,rgba(255,232,0,.16) 52%,rgba(255,255,255,.1) 100%)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,.12) 26%,rgba(255,255,255,0) 46%,rgba(255,255,255,.14) 82%,rgba(255,255,255,.5) 100%);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:1.5px;box-sizing:border-box"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:radial-gradient(240px circle at var(--mouse-x,50%) var(--mouse-y,38%),rgba(255,255,255,.5) 0%,rgba(255,255,255,.14) 38%,rgba(255,255,255,0) 62%);transition:opacity .3s ease;opacity:0" data-glass-gloss=""></div>
+    <a href="index.html#top" style="display:inline-flex;align-items:center;height:28px;flex-shrink:0"><img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:22px;width:auto;display:block"></a>
+      <div data-desktop-nav="" style="display:flex;align-items:center;gap:4px;flex:1;justify-content:flex-end">
+      <div data-nav-dd="products" style="position:relative;display:flex;align-items:center">
+        <button type="button" data-dd-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">Products<svg data-dd-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-dd-panel="" role="menu" style="position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px">
+          <div style="display:grid;grid-template-columns:repeat(1,max-content);gap:4px 22px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Products</div>
+            <a href="product.html?p=card-payments" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Card Payments</a>
+            <a href="product.html?p=invoice-payments" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Invoice Payments</a>
+            <a href="product.html?p=marketplace" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Marketplace</a>
+            <a href="product.html?p=collections" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Collections</a>
+            <a href="product.html?p=working-capital" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Working Capital</a>
+            <a href="product.html?p=business-ledger" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Business Ledger</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div data-nav-dd="resources" style="position:relative;display:flex;align-items:center">
+        <button type="button" data-dd-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">Resources<svg data-dd-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-dd-panel="" role="menu" style="position:absolute;top:calc(100% + 12px);right:0;max-width:calc(100vw - 32px);box-sizing:border-box;z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px">
+          <div style="display:grid;grid-template-columns:repeat(2,max-content);gap:16px 22px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Tools &amp; Calculators</div>
+            <a href="tool.html?t=working-capital" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Working Capital Calculator</a>
+            <a href="tool.html?t=cash-flow" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Cash Flow Calculator</a>
+            <a href="tool.html?t=emi" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">EMI Calculator</a>
+            <a href="tool.html?t=funding-fit" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Funding Fit Check</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">More</div>
+            <a href="resources.html" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Blogs</a>
+            <a href="https://achievher.bharatnxt.in/" target="_blank" rel="noopener" data-dd-link="" style="display:flex;align-items:center;padding:9px 10px;border-radius:10px" style-hover="background:#F7F8FA"><img src="assets/images/achievher-logo-mark.png" alt="AchievHer, a BharatNXT series" style="height:22px;width:auto;display:block"></a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:180px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">User Stories</div>
+            <a href="index.html#stories" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Testimonials</a>
+            <a href="index.html#stories" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Social Reviews</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:170px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Help Centre</div>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Contact Us</a>
+            <a href="index.html#faq" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">FAQs</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div data-nav-dd="about" style="position:relative;display:flex;align-items:center">
+        <button type="button" data-dd-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">Company<svg data-dd-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-dd-panel="" role="menu" style="position:absolute;top:calc(100% + 12px);right:0;z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px">
+          <div style="display:grid;grid-template-columns:repeat(1,max-content);gap:4px 22px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Company</div>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Vision</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Brand, Values &amp; Culture</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Our Story</a>
+            <a href="index.html#trust" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Risk &amp; Compliance</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Careers</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Media &amp; PR</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button type="button" data-burger="" aria-label="Menu" aria-expanded="false" style="display:none;flex-direction:column;justify-content:space-between;align-items:center;width:26px;height:18px;padding:0;border:0;background:transparent;cursor:pointer;flex-shrink:0;margin-left:auto"><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span></button>
+      <div data-mobile-nav="" style="position:absolute;top:calc(100% + 12px);left:0;right:0;z-index:70;display:none;background:#fff;border:1px solid #E0E0E0;border-radius:22px;box-shadow:0 30px 60px rgba(164,172,178,.28);padding:6px 20px 20px;max-height:calc(100vh - 120px);overflow-y:auto;-webkit-overflow-scrolling:touch">
+      <div data-m-group="" style="border-bottom:1px solid #EEEEEE">
+        <button type="button" data-m-acc="products" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">Products<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-m-panel="products" style="display:none;padding:0 0 12px">
+          <a href="product.html?p=card-payments" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Card Payments</a>
+          <a href="product.html?p=invoice-payments" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Invoice Payments</a>
+          <a href="product.html?p=marketplace" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Marketplace</a>
+          <a href="product.html?p=collections" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Collections</a>
+          <a href="product.html?p=working-capital" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Working Capital</a>
+          <a href="product.html?p=business-ledger" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Business Ledger</a>
+        </div>
+      </div>
+      <div data-m-group="" style="border-bottom:1px solid #EEEEEE">
+        <button type="button" data-m-acc="resources" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">Resources<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-m-panel="resources" style="display:none;padding:0 0 12px">
+          <div>
+            <button type="button" data-m-acc="res-tools" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:700;color:#111A3D;cursor:pointer">Tools &amp; Calculators<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-tools" style="display:none;padding:0 0 6px">
+              <a href="tool.html?t=working-capital" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Working Capital Calculator</a>
+              <a href="tool.html?t=cash-flow" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Cash Flow Calculator</a>
+              <a href="tool.html?t=emi" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">EMI Calculator</a>
+              <a href="tool.html?t=funding-fit" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Funding Fit Check</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" data-m-acc="res-more" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:700;color:#111A3D;cursor:pointer">More<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-more" style="display:none;padding:0 0 6px">
+              <a href="resources.html" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Blogs</a>
+              <a href="https://achievher.bharatnxt.in/" target="_blank" rel="noopener" data-m-link="" style="display:flex;align-items:center;padding:10px 4px 10px 28px"><img src="assets/images/achievher-logo-mark.png" alt="AchievHer, a BharatNXT series" style="height:22px;width:auto;display:block"></a>
+            </div>
+          </div>
+          <div>
+            <button type="button" data-m-acc="res-stories" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:700;color:#111A3D;cursor:pointer">User Stories<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-stories" style="display:none;padding:0 0 6px">
+              <a href="index.html#stories" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Testimonials</a>
+              <a href="index.html#stories" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Social Reviews</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" data-m-acc="res-help" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:700;color:#111A3D;cursor:pointer">Help Centre<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-help" style="display:none;padding:0 0 6px">
+              <a href="index.html#company" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Contact Us</a>
+              <a href="index.html#faq" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-m-group="" style="border-bottom:1px solid #EEEEEE">
+        <button type="button" data-m-acc="about" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">Company<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-m-panel="about" style="display:none;padding:0 0 12px">
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Vision</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Brand, Values &amp; Culture</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Our Story</a>
+          <a href="index.html#trust" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Risk &amp; Compliance</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Careers</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Media &amp; PR</a>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<!-- ══ BODY ══ -->
+<div style="padding:clamp(20px,3vw,34px) 20px 0">
+  <div data-cols="" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:180px minmax(0,720px) 280px;gap:clamp(24px,3.4vw,56px);justify-content:center;align-items:start">
+
+    <aside data-toc-col="" style="position:sticky;top:100px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;margin-bottom:14px">In this article</div>
+      <nav data-toc="" aria-label="Article index" style="display:flex;flex-direction:column;gap:1px"></nav>
+    </aside>
+
+    <main style="min-width:0;background:#fff;border:1px solid #EEEEEE;border-radius:24px;box-shadow:0 10px 30px rgba(30,50,90,.04);padding:clamp(20px,2.4vw,32px)">
+      <header data-screen-label="Article head" style="margin-bottom:clamp(20px,2.6vw,28px)">
+        <nav aria-label="Breadcrumb" style="display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin-bottom:clamp(18px,2.6vw,30px);font-size:12.5px;color:#9092A3">
+          <a href="resources.html" style="color:#686D77;font-weight:500;white-space:nowrap" style-hover="color:#0029FF">Resources</a>
+          <span aria-hidden="true">›</span>
+          <a href="{{ categoryHref }}" style="color:#686D77;font-weight:500;white-space:nowrap" style-hover="color:#0029FF">{{ category }}</a>
+          <span data-crumb-current="" aria-hidden="true">›</span>
+          <span data-crumb-title="" style="max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ title }}</span>
+        </nav>
+        <div data-head="" style="max-width:none">
+          <div style="font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0029FF;margin-bottom:16px">{{ category }}</div>
+          <h1 style="font-size:clamp(24px,3vw,33px);font-weight:800;letter-spacing:-1.1px;line-height:1.18;color:#314259;margin-bottom:14px;text-wrap:pretty">{{ title }}</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#686D77;margin-bottom:20px;text-wrap:pretty">{{ description }}</p>
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;padding-bottom:clamp(18px,2.4vw,26px);border-bottom:1px solid #EEEEEE">
+            <a href="author.html" style="display:flex;align-items:center;gap:9px">
+              <span style="width:32px;height:32px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#F0F4FF;color:#0029FF;font-size:11.5px;font-weight:700;letter-spacing:-.2px">BN</span>
+              <span style="font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap">BharatNXT Editorial Team</span>
+            </a>
+            <span style="font-size:13px;color:#9092A3;white-space:nowrap">Updated {{ updated }} · {{ readTime }}</span>
+            <div style="position:relative;margin-left:auto">
+              <button type="button" data-share-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13.5px;font-weight:500;color:#686D77;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #E0E0E0;box-shadow:0 6px 18px rgba(20,40,80,.04);border-radius:12px;min-height:42px;padding:10px 15px;cursor:pointer;transition:border-color .2s,color .2s" style-hover="border-color:#0029FF;color:#0029FF">
+                <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="4.6" r="2.4"></circle><circle cx="5" cy="10" r="2.4"></circle><circle cx="15" cy="15.4" r="2.4"></circle><path d="M12.9 5.8 7.1 8.8M7.1 11.2l5.8 3"></path></svg>
+                <span data-share-label="">Share</span>
+              </button>
+              <div data-share-menu="" role="menu" style="position:absolute;top:calc(100% + 8px);right:0;z-index:60;display:none;min-width:180px;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #E0E0E0;border-radius:16px;box-shadow:0 14px 36px rgba(30,50,90,.1);padding:6px">
+                <a data-share="whatsapp" href="#" role="menuitem" style="display:flex;align-items:center;min-height:42px;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:500;color:#314259" style-hover="background:#F7F8FA;color:#0029FF">WhatsApp</a>
+                <button type="button" data-share="copy" role="menuitem" style="display:flex;align-items:center;width:100%;min-height:42px;padding:10px 12px;border:0;background:transparent;border-radius:10px;font-family:inherit;font-size:14px;font-weight:500;color:#314259;cursor:pointer;text-align:left" style-hover="background:#F7F8FA;color:#0029FF">Copy link</button>
+                <a data-share="linkedin" href="#" role="menuitem" style="display:flex;align-items:center;min-height:42px;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:500;color:#314259" style-hover="background:#F7F8FA;color:#0029FF">LinkedIn</a>
+                <a data-share="x" href="#" role="menuitem" style="display:flex;align-items:center;min-height:42px;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:500;color:#314259" style-hover="background:#F7F8FA;color:#0029FF">X</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div data-hero-img="" style="position:relative;width:100%;aspect-ratio:21/9;max-height:300px;border-radius:16px;overflow:hidden;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%);border:1px solid #EEEEEE;margin-bottom:clamp(22px,2.8vw,32px)"><image-slot id="art-hero" shape="rect" placeholder=" "></image-slot></div>
+
+      <details data-toc-mobile-wrap="" style="display:none;margin-bottom:24px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid #E0E0E0;box-shadow:0 8px 24px rgba(20,40,80,.05);border-radius:16px;overflow:hidden">
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:12px 15px;cursor:pointer;font-size:13.5px;font-weight:600;color:#314259">In this article<span data-toc-caret="" style="font-size:17px;line-height:1;color:#0029FF;transition:transform .22s ease">+</span></summary>
+        <nav data-toc-mobile="" aria-label="Article index" style="display:flex;flex-direction:column;border-top:1px solid #EEEEEE"></nav>
+      </details>
+
+      <article data-body="" style="font-size:16.5px;line-height:1.75;color:#314259">
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="9">
+          <div style="{{ b.wrapStyle }}">
+            <sc-if value="{{ b.isLede }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size:17.5px;line-height:1.65;color:#314259;font-weight:500;text-wrap:pretty">{{ b.text }}</p>
+            </sc-if>
+            <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}">
+              <p style="text-wrap:pretty">{{ b.text }}</p>
+            </sc-if>
+            <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ false }}">
+              <h2 id="{{ b.id }}" style="font-size:clamp(19px,2.1vw,23px);font-weight:800;letter-spacing:-.6px;line-height:1.28;color:#314259;text-wrap:pretty">{{ b.text }}</h2>
+            </sc-if>
+            <sc-if value="{{ b.isH3 }}" hint-placeholder-val="{{ false }}">
+              <h3 id="{{ b.id }}" style="font-size:clamp(16.5px,1.7vw,18px);font-weight:700;letter-spacing:-.3px;line-height:1.35;color:#314259;text-wrap:pretty">{{ b.text }}</h3>
+            </sc-if>
+            <sc-if value="{{ b.isUl }}" hint-placeholder-val="{{ false }}">
+              <ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ b.items }}" as="i" hint-placeholder-count="3">
+                  <li style="text-wrap:pretty">{{ i }}</li>
+                </sc-for>
+              </ul>
+            </sc-if>
+            <sc-if value="{{ b.isOl }}" hint-placeholder-val="{{ false }}">
+              <ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{ b.steps }}" as="s" hint-placeholder-count="3">
+                  <li style="text-wrap:pretty"><strong style="color:#314259">{{ s.lead }}</strong> {{ s.rest }}</li>
+                </sc-for>
+              </ol>
+            </sc-if>
+            <sc-if value="{{ b.isTakeaway }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#FFFDF2;border:1px solid rgba(120,100,20,.09);border-radius:16px;padding:18px 20px">
+                <div style="font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A7A2E;margin-bottom:7px">Key takeaway</div>
+                <div style="font-size:15px;line-height:1.7;color:#314259;text-wrap:pretty">{{ b.text }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isTip }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#FAFBFF;border:1px solid rgba(60,40,140,.07);border-radius:16px;padding:18px 20px">
+                <div style="font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#5B4FB8;margin-bottom:7px">BharatNXT tip</div>
+                <div style="font-size:15px;line-height:1.7;color:#314259;text-wrap:pretty">{{ b.text }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isExample }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#FAFAFA;border:1px solid #EEEEEE;border-radius:16px;padding:18px 20px">
+                <div style="font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;margin-bottom:7px">Example</div>
+                <div style="font-size:14.5px;line-height:1.72;color:#686D77;text-wrap:pretty">{{ b.text }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isCompare }}" hint-placeholder-val="{{ false }}">
+              <div data-compare="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+                <div style="background:#FAFAFA;border:1px solid #EEEEEE;border-radius:16px;padding:18px">
+                  <div style="font-size:14px;font-weight:700;letter-spacing:-.2px;color:#314259;margin-bottom:10px">{{ b.leftTitle }}</div>
+                  <div style="display:flex;flex-direction:column;gap:7px">
+                    <sc-for list="{{ b.leftPoints }}" as="i" hint-placeholder-count="3">
+                      <div style="font-size:13.5px;line-height:1.65;color:#686D77">{{ i }}</div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="background:#F7F8FA;border:1px solid #EEEEEE;border-radius:16px;padding:18px">
+                  <div style="font-size:14px;font-weight:700;letter-spacing:-.2px;color:#314259;margin-bottom:10px">{{ b.rightTitle }}</div>
+                  <div style="display:flex;flex-direction:column;gap:7px">
+                    <sc-for list="{{ b.rightPoints }}" as="i" hint-placeholder-count="3">
+                      <div style="font-size:13.5px;line-height:1.65;color:#686D77">{{ i }}</div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isFlow }}" hint-placeholder-val="{{ false }}">
+              <div>
+                <div data-flow="" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+                  <sc-for list="{{ b.stepsFlow }}" as="s" hint-placeholder-count="4">
+                    <div style="{{ s.style }}">
+                      <div style="font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:#9092A3;margin-bottom:7px">{{ s.when }}</div>
+                      <div style="font-size:13.5px;font-weight:600;line-height:1.38;color:#314259">{{ s.label }}</div>
+                      <div style="font-size:15px;font-weight:700;letter-spacing:-.3px;color:#314259;margin-top:5px">{{ s.amount }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="font-size:14px;line-height:1.6;color:#9092A3;margin-top:12px">{{ b.note }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isAd }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ b.href }}" data-ad-inline="" style="display:block;position:relative;width:100%;aspect-ratio:720/180;border-radius:14px;overflow:hidden;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%);border:1px solid #EEEEEE"><span aria-hidden="true" style="position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:6px;background:rgba(255,255,255,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #E0E0E0;font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3">Advertisement</span><image-slot id="{{ b.slotId }}" shape="rect" placeholder=" "></image-slot></a>
+            </sc-if>
+            <sc-if value="{{ b.isTool }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ b.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:#FAFAFA;border:1px solid #EEEEEE;border-radius:16px;padding:16px 18px;min-height:64px" style-hover="border-color:rgba(0,41,255,.3)">
+                <span>
+                  <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3;margin-bottom:4px">Tool</span>
+                  <span style="display:block;font-size:15px;font-weight:600;color:#314259">{{ b.name }}</span>
+                </span>
+                <span style="flex-shrink:0;font-size:13.5px;font-weight:600;color:#0029FF;white-space:nowrap">Open →</span>
+              </a>
+            </sc-if>
+          </div>
+        </sc-for>
+      </article>
+
+      <!-- mobile discovery lands here, before the author block -->
+      <div data-mobile-discovery="" style="display:none;flex-direction:column;gap:16px;margin-top:clamp(26px,3.4vw,38px)"></div>
+
+      <section id="author" style="margin-top:clamp(30px,4vw,46px);padding-top:clamp(24px,3vw,32px);border-top:1px solid #EEEEEE">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;margin-bottom:18px">About the author</div>
+        <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+          <a href="author.html" style="width:64px;height:64px;flex-shrink:0;border-radius:50%;overflow:hidden;position:relative;display:block;background:linear-gradient(150deg,#F5F5F5,#FAFBFF)"><image-slot id="art-author-lg" shape="circle" placeholder=" "></image-slot></a>
+          <div style="flex:1 1 300px;min-width:0">
+            <a href="author.html" style="display:block;font-size:16px;font-weight:700;letter-spacing:-.3px;color:#314259;margin-bottom:4px" style-hover="color:#0029FF">BharatNXT Editorial Team</a>
+            <div style="font-size:13px;font-weight:500;color:#9092A3;margin-bottom:10px">Business finance, payments and credit, explained simply</div>
+            <p style="font-size:14.5px;line-height:1.7;color:#686D77;margin-bottom:12px;max-width:560px;text-wrap:pretty">We write for the business owner who does his own banking: plain language, real numbers, and the jargon explained wherever it cannot be avoided.</p>
+            <a href="author.html" style="font-size:14px;font-weight:600">Read more →</a>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:clamp(24px,3.2vw,36px);border-top:1px solid #EEEEEE;padding:clamp(22px,2.6vw,28px) 0 0">
+        <div style="font-size:19px;font-weight:700;letter-spacing:-.5px;color:#314259;margin-bottom:8px;text-wrap:pretty">Still have questions?</div>
+        <p style="font-size:15px;line-height:1.62;color:#686D77;margin-bottom:20px;max-width:460px;text-wrap:pretty">Explore more guides, or see which BharatNXT product fits the gap you are dealing with.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="resources.html" style="display:inline-flex;align-items:center;justify-content:center;background:#0029FF;color:#fff;font-size:14.5px;font-weight:600;padding:14px 22px;border-radius:12px;min-height:48px" style-hover="background:#0018AA;color:#fff">Explore resources</a>
+          <a href="index.html#install" style="display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid #E0E0E0;color:#314259;font-size:14.5px;font-weight:600;padding:14px 22px;border-radius:12px;min-height:48px" style-hover="border-color:#0029FF;color:#0029FF">Get the app</a>
+        </div>
+      </section>
+    </main>
+
+    <aside data-side-col="" style="display:flex;flex-direction:column;gap:20px;position:sticky;top:100px">
+      <a data-side-module="ad" href="index.html#products" style="display:block;position:relative;width:100%;aspect-ratio:4/4.4;border-radius:18px;overflow:hidden;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%);border:1px solid #EEEEEE"><span aria-hidden="true" style="position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:6px;background:rgba(255,255,255,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #E0E0E0;font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3">Advertisement</span><image-slot id="art-ad-side" shape="rect" placeholder=" "></image-slot></a>
+
+      <div data-side-module="related">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;margin-bottom:12px">Related articles</div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
+            <a href="{{ r.href }}" style="display:block;font-size:14px;font-weight:500;line-height:1.5;color:#314259;padding:11px 0;border-bottom:1px solid #EEEEEE" style-hover="color:#0029FF">{{ r.title }}</a>
+          </sc-for>
+        </div>
+      </div>
+
+      <a data-side-module="tool" href="{{ toolHref }}" style="display:block;background:#fff;border:1px solid #E0E0E0;border-radius:20px;box-shadow:0 8px 24px rgba(30,50,90,.035);padding:16px">
+        <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3;margin-bottom:12px">Useful tool</span>
+        <span style="display:block;background:linear-gradient(160deg,#FAFAFA,#F7F8FA);border:1px solid #EEEEEE;border-radius:14px;padding:14px;margin-bottom:14px">
+          <span style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;font-size:12.5px;color:#686D77">You collect in <b style="color:#314259;font-weight:600">30 days</b></span>
+          <span style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;font-size:12.5px;color:#686D77">You pay in <b style="color:#314259;font-weight:600">7 days</b></span>
+          <span style="display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:10px;border-top:1px solid #EEEEEE;font-size:12.5px;font-weight:600;color:#314259">Your gap <b style="color:#0029FF;font-weight:700;font-size:14px">23 days</b></span>
+        </span>
+        <span style="display:block;font-size:14.5px;font-weight:600;color:#314259;margin-bottom:8px">{{ toolName }}</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:#0029FF">Open tool <span>→</span></span>
+      </a>
+    </aside>
+  </div>
+</div>
+
+<footer style="background:#FAFBFF;border-top:1px solid #EEEEEE;margin-top:clamp(34px,4.4vw,58px);padding:32px 20px 26px">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start">
+    <div style="min-width:230px;max-width:290px">
+      <img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:24px;width:auto;display:block;margin-bottom:12px">
+      <p style="font-size:13.5px;line-height:1.6;color:#686D77">India's B2B payment network. Pay your suppliers, collect from your buyers.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:150px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Products</h5><a href="product.html?p=card-payments" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Card Payments</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Business Ledger</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:160px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Funding Fit Check</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:150px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Contact Us</a><a href="index.html#faq" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">FAQs</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:150px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Media &amp; PR</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;min-width:140px"><h5 style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9092A3;margin-bottom:2px">Legal</h5><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Terms</a><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Privacy</a><a href="index.html#trust" style="font-size:13.5px;font-weight:500;color:#686D77" style-hover="color:#0029FF">Grievance</a></div>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:24px auto 0;padding-top:16px;border-top:1px solid #EEEEEE;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:12.5px;line-height:1.6;color:#9092A3">
+    <div style="max-width:640px">Educational content only. Nothing here is financial advice or an offer of credit.</div>
+    <div>© 2026 BharatNXT</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+// ── content model ────────────────────────────────────────────────────────────
+// Every article is data. Routes are ?a=<slug>. The index is derived from the
+// h2 blocks below, never hand-maintained.
+const P = t => ({ type: 'p', text: t });
+const LEDE = t => ({ type: 'lede', text: t });
+const H2 = t => ({ type: 'h2', text: t });
+const UL = items => ({ type: 'ul', items });
+const OL = steps => ({ type: 'ol', steps });
+const TAKE = t => ({ type: 'takeaway', text: t });
+const TIP = t => ({ type: 'tip', text: t });
+const EX = t => ({ type: 'example', text: t });
+const AD = () => ({ type: 'ad' });
+const TOOL = (name, ) => ({ type: 'tool', name });
+const COMPARE = (leftTitle, leftPoints, rightTitle, rightPoints) => ({ type: 'compare', leftTitle, leftPoints, rightTitle, rightPoints });
+const FLOW = (steps, note) => ({ type: 'flow', steps, note });
+
+const ARTICLES = [
+  {
+    slug: 'why-profitable-businesses-run-out-of-cash',
+    category: 'Cash flow', catSlug: 'cash-flow',
+    title: 'Why profitable businesses still run out of cash',
+    description: 'Profit is not the same as cash in the bank. Here is how to understand the difference, and how to plan around it.',
+    readTime: '5 min read', updated: '25 Aug 2026', tool: 'Cash Flow Calculator',
+    blocks: [
+      LEDE('You can be making sales and still struggle to pay suppliers.'),
+      P('Profit is what your books say you earned. Cash is what is actually in your bank account today. Those two numbers move on different days.'),
+      FLOW([
+        { when: 'Day 0', label: 'Customer order', amount: '₹2,00,000' },
+        { when: 'Day 0', label: 'You pay your supplier', amount: '₹1,60,000' },
+        { when: 'Day 30', label: 'Customer pays you', amount: '₹2,00,000' },
+        { when: 'Days 0–30', label: 'Cash-flow gap', amount: '₹1,60,000', mark: true }
+      ], 'The order is profitable. ₹40,000 of margin. The problem is the thirty days in between.'),
+      H2('What is a cash-flow gap?'),
+      P('It is the time between money leaving your account and money arriving in it. You pay your supplier when you buy. Your customer pays you weeks after you deliver.'),
+      P('In between, your business funds the whole order out of its own pocket. The bigger your order book, the bigger that amount becomes.'),
+      TAKE('Growth increases the gap. Every extra order means more money going out before any comes in.'),
+      H2('Why it happens even when you are profitable'),
+      P('Your books record a sale the day you raise the invoice. Your bank records it the day the money lands. Suppliers, staff and rent do not wait for the second date.'),
+      UL([
+        'You buy stock before you sell it, so cash leaves first.',
+        'Your customer takes 30, 45 or 60 days to pay.',
+        'Your supplier wants payment on delivery, or in seven days.',
+        'Festive season doubles your stock purchase in one month.'
+      ]),
+      AD(),
+      H2('The four most common reasons'),
+      OL([
+        { lead: 'Stock sitting too long.', rest: 'Cash you already spent is on a shelf instead of in your account.' },
+        { lead: 'Customers paying later than agreed.', rest: 'Thirty days on the invoice, fifty in practice, and nobody chased it.' },
+        { lead: 'Paying suppliers too early.', rest: 'Settling on delivery when your own money arrives a month later.' },
+        { lead: 'Season buying in one lump.', rest: 'Two months of purchases in one week, with sales spread over four.' }
+      ]),
+      H2('What can you do about it?'),
+      P('You cannot always make customers pay faster. You can change when money leaves your account, and you can see the gap coming.'),
+      OL([
+        { lead: 'Write down your real terms.', rest: 'What you actually collect in, and actually pay in. Not what the invoice says.' },
+        { lead: 'Match the two.', rest: 'If customers pay you in 30 days, aim to pay suppliers in 30 too.' },
+        { lead: 'Chase early, politely.', rest: 'A reminder three days before the due date beats one a week after.' },
+        { lead: 'Keep one month of expenses aside.', rest: 'This is what stops a late payment becoming an emergency.' }
+      ]),
+      TIP('If customers usually pay you 30 days after a sale, plan your supplier payments around that gap. Do not pay out before you know money is coming in.'),
+      H2('When does credit make sense?'),
+      P('Credit solves a timing problem. It does not solve a pricing problem. If the order is profitable and money simply arrives later than it leaves, bridging the gap with credit is reasonable.'),
+      P('If the order is not profitable, credit only postpones the loss. Work out your margin first.'),
+      EX('A hardware distributor in Indore buys ₹1,60,000 of stock and sells it for ₹2,00,000. His supplier wants payment in 7 days; his customer pays in 30. The ₹40,000 margin is real. The cash is just stuck for three weeks.'),
+      TOOL('Cash Flow Calculator')
+    ]
+  },
+  {
+    slug: 'loan-vs-credit-line',
+    category: 'Credit', catSlug: 'credit',
+    title: 'Loan or credit line: what is the difference?',
+    description: 'One is a single large amount with a fixed repayment. The other you use only when you need it.',
+    readTime: '4 min read', updated: '22 Aug 2026', tool: 'EMI Calculator',
+    blocks: [
+      LEDE('Both give you money. They behave completely differently once you have it.'),
+      COMPARE('Loan', ['One amount, paid out at once', 'Fixed monthly repayment', 'Interest on the full amount', 'Suited to a one-time purchase'],
+              'Credit line', ['A limit you can dip into', 'Use what you need, when you need it', 'Cost based on what you use', 'Suited to a recurring gap']),
+      H2('When a loan fits better'),
+      P('A loan suits a single, known expense: a machine, a vehicle, a shop renovation. You know the amount on day one and you repay it in equal instalments.'),
+      H2('When a credit line fits better'),
+      P('A credit line suits a gap that keeps coming back: you pay suppliers every week, customers pay you every month. You draw when you need it and repay when collections land.'),
+      TAKE('A one-time purchase usually calls for a loan. A repeating timing gap usually calls for a line.'),
+      AD(),
+      H2('What to check before you sign either'),
+      UL([
+        'The total cost, including processing fees, not just the interest rate.',
+        'What happens if you repay early.',
+        'Whether the limit can be reduced without notice.',
+        'Who the lender of record is, and whether they are RBI-registered.'
+      ]),
+      EX('A distributor buying a delivery van takes a loan. The same distributor paying eight suppliers every month uses a line, and repays as his own collections come in.'),
+      TIP('If you cannot say in one sentence what the money is for, you are not ready to borrow it yet.'),
+      TOOL('EMI Calculator')
+    ]
+  },
+  {
+    slug: 'pay-supplier-without-card-machine',
+    category: 'Payments', catSlug: 'payments',
+    title: 'How to pay a supplier who has no card machine',
+    description: 'Your supplier receives a normal bank transfer into his existing account. You pay on the card you already hold.',
+    readTime: '3 min read', updated: '20 Aug 2026', tool: 'Cash Flow Calculator',
+    blocks: [
+      LEDE('Most suppliers in India have never accepted a card. That does not mean you cannot pay by card.'),
+      H2('How it works'),
+      OL([
+        { lead: 'Add your supplier.', rest: 'Name, bank account and GSTIN, entered once.' },
+        { lead: 'Enter the invoice amount.', rest: 'The full amount, not a part payment.' },
+        { lead: 'Pay on your card.', rest: 'Your existing business or personal card.' },
+        { lead: 'He receives a bank transfer.', rest: 'Into his normal account, usually within 24 hours.' }
+      ]),
+      P('Your supplier does nothing new. He does not need a machine, an app, or a different bank.'),
+      TAKE('The card is on your side of the transaction only. Your supplier just sees a bank credit.'),
+      H2('What it costs'),
+      P('A transaction fee applies, shown before you confirm. Against it, you get your card’s credit period of up to 50 days before you settle your bank.'),
+      AD(),
+      H2('When this is worth doing'),
+      UL([
+        'Your customer pays you later than your supplier expects payment.',
+        'You want to hold cash for the rest of the month’s expenses.',
+        'Your supplier offers a discount for immediate payment.'
+      ]),
+      EX('A retailer in Nashik pays ₹80,000 to his packaging supplier on his card. The supplier is credited the next morning. The retailer settles his bank 47 days later, after his own customers have paid.'),
+      TOOL('Cash Flow Calculator')
+    ]
+  },
+  {
+    slug: 'what-is-working-capital',
+    category: 'Working capital', catSlug: 'working-capital',
+    title: 'What is working capital, in plain English',
+    description: 'The money your business needs to keep operating between buying goods and getting paid for them.',
+    readTime: '6 min read', updated: '18 Aug 2026', tool: 'Working Capital Calculator',
+    blocks: [
+      LEDE('Working capital is the money your business needs to keep running day to day.'),
+      P('Not the money you use to buy a shop or a machine. The money that sits inside the buy–sell–collect cycle.'),
+      FLOW([
+        { when: 'Step 1', label: 'Buy stock', amount: 'Cash out' },
+        { when: 'Step 2', label: 'Sell it', amount: 'Invoice raised' },
+        { when: 'Step 3', label: 'Get paid', amount: 'Cash in' },
+        { when: 'Repeat', label: 'Buy again', amount: 'Cash out', mark: true }
+      ], 'Working capital is what keeps this loop turning while you wait to be paid.'),
+      H2('How to work out roughly what you need'),
+      P('Take your monthly costs: stock, salaries, rent, transport. Multiply by the number of months your money stays tied up in the cycle.'),
+      EX('₹3,50,000 a month of costs, and customers who pay 45 days after delivery, means roughly ₹5,25,000 tied up at any time.'),
+      TAKE('More sales need more working capital. That is why growing businesses feel short of cash even in a good year.'),
+      AD(),
+      H2('Where businesses usually get it wrong'),
+      UL([
+        'Counting profit as available cash.',
+        'Ignoring stock that has not moved in six months.',
+        'Forgetting advance payments made to suppliers.',
+        'Treating a festive month like an average month.'
+      ]),
+      H2('How to free some up'),
+      OL([
+        { lead: 'Shorten collection.', rest: 'Invoice the same day you deliver, and follow up before the due date.' },
+        { lead: 'Clear dead stock.', rest: 'Even at a discount. It is cash sitting still.' },
+        { lead: 'Stretch payables sensibly.', rest: 'Pay on the agreed day, not before it.' }
+      ]),
+      TIP('Before taking a limit for working capital, check whether the money is short or simply stuck.'),
+      TOOL('Working Capital Calculator')
+    ]
+  },
+  {
+    slug: 'plan-supplier-payments',
+    category: 'Cash flow', catSlug: 'cash-flow',
+    title: 'How to plan supplier payments around your collections',
+    description: 'Line up what you pay with what you collect, so nothing bounces at month end.',
+    readTime: '4 min read', updated: '16 Aug 2026', tool: 'Cash Flow Calculator',
+    blocks: [
+      LEDE('Most month-end panic is not a shortage of money. It is a mismatch of dates.'),
+      H2('Start with two lists'),
+      UL([
+        'What you expect to collect, and on which date.',
+        'What you owe, and on which date.'
+      ]),
+      P('Put both on the same calendar. The days where the second list is bigger than the first are the days to plan for.'),
+      TAKE('You do not need more money on those days. You need the outflow to move, or the inflow to arrive sooner.'),
+      H2('Three moves that usually work'),
+      OL([
+        { lead: 'Group your payments.', rest: 'Pay suppliers twice a month on fixed dates, after your collection dates.' },
+        { lead: 'Ask before you are late.', rest: 'Suppliers accept a planned date far better than a missed one.' },
+        { lead: 'Use your card’s credit period.', rest: 'Pay the supplier now, settle your bank after your customer pays you.' }
+      ]),
+      AD(),
+      EX('A trader in Surat collects on the 5th and 20th. He moved supplier payments to the 8th and 23rd. Nothing else changed, and the overdraft usage dropped to zero.'),
+      TIP('Fixed payment dates make you a more predictable buyer, and that is who suppliers give better terms to.'),
+      TOOL('Cash Flow Calculator')
+    ]
+  },
+  {
+    slug: 'customers-pay-late',
+    category: 'Cash flow', catSlug: 'cash-flow',
+    title: 'How to manage customers who pay late',
+    description: 'Shorten the gap without spoiling the relationship.',
+    readTime: '5 min read', updated: '14 Aug 2026', tool: 'Cash Flow Calculator',
+    blocks: [
+      LEDE('Late payment is rarely refusal. Usually your invoice is simply not at the front of somebody’s pile.'),
+      H2('Fix the paperwork first'),
+      UL([
+        'Invoice on the day of delivery, not at month end.',
+        'Put the due date in words, not just terms.',
+        'Send it to the person who pays, not only the person who ordered.'
+      ]),
+      TAKE('Half of late payments are a paperwork problem, not a money problem.'),
+      H2('Then fix the follow-up'),
+      OL([
+        { lead: 'Three days before due.', rest: 'A short, friendly confirmation that it is scheduled.' },
+        { lead: 'On the due date.', rest: 'One message, with the invoice attached again.' },
+        { lead: 'Day seven.', rest: 'A call, not a message, and agree a date on it.' }
+      ]),
+      AD(),
+      H2('When to change the terms'),
+      P('If a buyer is repeatedly 30 days late, the real terms are not 30 days. They are 60. Price for it, ask for part payment upfront, or reduce his limit.'),
+      EX('A supplier in Coimbatore moved his largest but slowest buyer to 50% advance. Sales dropped 8%. His overdraft interest dropped by more than that.'),
+      TIP('Automated reminders work because they are not personal. Nobody feels chased, and the invoice still moves up the pile.'),
+      TOOL('Cash Flow Calculator')
+    ]
+  },
+  {
+    slug: 'business-credit-score',
+    category: 'Credit', catSlug: 'credit',
+    title: 'How business credit scores work',
+    description: 'What lenders look at, what they ignore, and what you can fix this month.',
+    readTime: '6 min read', updated: '12 Aug 2026', tool: 'Funding Fit Check',
+    blocks: [
+      LEDE('A business credit score is a lender’s shorthand for one question: do you repay on time?'),
+      H2('What actually moves the score'),
+      UL([
+        'Repayment history on existing loans and cards.',
+        'How much of your available limit you use every month.',
+        'How long you have had credit at all.',
+        'Number of fresh applications in a short period.'
+      ]),
+      TAKE('Using 90% of your limit every month hurts you, even when you always repay on time.'),
+      H2('What lenders look at beyond the score'),
+      P('Bank statements, GST filings and how steady your monthly credits are. A clean statement with regular collections can matter more than a few score points.'),
+      AD(),
+      H2('What you can fix this month'),
+      OL([
+        { lead: 'Bring usage below 40%.', rest: 'Either repay earlier in the cycle, or ask for a higher limit.' },
+        { lead: 'Stop applying everywhere.', rest: 'Each application leaves a mark. Pick one and go properly.' },
+        { lead: 'File on time.', rest: 'GST and ITR filings are checked more often than owners expect.' }
+      ]),
+      EX('A wholesaler with a 720 score was declined; the same lender approved him three months later after his card usage fell from 95% to 35%. Nothing else in the business changed.'),
+      TIP('Check your own report before a lender does. Errors are common, and correcting one is free.'),
+      TOOL('Funding Fit Check')
+    ]
+  },
+  {
+    slug: 'borrow-to-buy-stock',
+    category: 'Credit', catSlug: 'credit',
+    title: 'Should you borrow to buy stock?',
+    description: 'Three questions to ask before you take the money.',
+    readTime: '4 min read', updated: '10 Aug 2026', tool: 'Working Capital Calculator',
+    blocks: [
+      LEDE('Borrowing to buy stock can be the smartest thing you do this season, or the most expensive.'),
+      H2('Question one: will it sell, and by when?'),
+      P('Stock you can sell in three weeks is a different decision from stock that may sit for six months. Be honest about last season’s numbers rather than this season’s hope.'),
+      H2('Question two: does the margin cover the cost of the money?'),
+      P('If the goods earn 12% and the money costs 18% annualised over four months, the deal still works. Do the arithmetic on the actual holding period, not the year.'),
+      COMPARE('Worth borrowing for', ['Fast-moving stock', 'A real discount for volume', 'A confirmed order in hand'],
+              'Not worth borrowing for', ['Slow lines you already hold', 'A discount you cannot verify', 'Stock bought on optimism']),
+      TAKE('Borrow against demand you can see, not demand you hope for.'),
+      AD(),
+      H2('Question three: what happens if sales are late?'),
+      P('Assume collections come 30 days later than promised. If the repayment still works, the decision is sound. If it does not, borrow less.'),
+      EX('A dealer borrowed ₹6,00,000 for festive stock at an effective ₹18,000 cost over two months, and earned ₹72,000 of margin. The same dealer’s summer attempt sat unsold until March.'),
+      TIP('Take the limit before the season, use it during the season, repay right after. An unused limit costs nothing.'),
+      TOOL('Working Capital Calculator')
+    ]
+  }
+];
+
+const slugify = t => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const ART = slug => 'article.html?a=' + slug;
+const TOOL_SLUG = { 'Working Capital Calculator':'working-capital', 'Cash Flow Calculator':'cash-flow', 'EMI Calculator':'emi', 'Funding Fit Check':'funding-fit' };
+const TOOL_HREF = name => 'tool.html?t=' + (TOOL_SLUG[name] || 'working-capital');
+
+class Component extends DCLogic {
+  get article() {
+    let slug = '';
+    try { slug = new URLSearchParams(location.search).get('a') || ''; } catch (e) {}
+    return ARTICLES.find(a => a.slug === slug) || ARTICLES[0];
+  }
+
+  componentDidMount() {
+    this.cleanups = [];
+    const root = this.root;
+    if (!root) return;
+    const on = (el, ev, fn) => { el.addEventListener(ev, fn); this.cleanups.push(() => el.removeEventListener(ev, fn)); };
+    const a = this.article;
+
+    document.title = a.title + ' | BharatNXT Resources';
+
+    // ---- index built from the h2 blocks actually rendered in the body
+    const build = () => {
+      const body = root.querySelector('[data-body]');
+      const heads = body ? Array.from(body.querySelectorAll('h2[id], h3[id]')) : [];
+      const desk = root.querySelector('[data-toc]');
+      const mob = root.querySelector('[data-toc-mobile]');
+      if (!heads.length || !desk) return false;
+      desk.innerHTML = ''; if (mob) mob.innerHTML = '';
+      const links = [];
+      heads.forEach(h => {
+        const mk = compact => {
+          const el = document.createElement('a');
+          el.href = '#' + h.id;
+          el.textContent = h.textContent.trim();
+          el.dataset.tocFor = h.id;
+          Object.assign(el.style, {
+            display: 'block',
+            padding: compact ? '11px 15px' : '6px 0 6px 12px',
+            fontSize: compact ? '13.5px' : '13px',
+            fontWeight: '500', lineHeight: '1.45', color: '#9092A3',
+            borderLeft: compact ? '0' : '2px solid #E0E0E0',
+            borderBottom: compact ? '1px solid rgba(20,40,80,.05)' : '0',
+            transition: 'color .2s ease, border-color .2s ease'
+          });
+          return el;
+        };
+        const d = mk(false); desk.appendChild(d); links.push(d);
+        if (mob) { const m = mk(true); mob.appendChild(m); links.push(m); }
+      });
+
+      const setActive = id => links.forEach(el => {
+        const active = el.dataset.tocFor === id;
+        el.style.color = active ? '#0029FF' : '#9092A3';
+        el.style.fontWeight = active ? '600' : '500';
+        if (el.style.borderLeftWidth === '2px') el.style.borderLeftColor = active ? '#0029FF' : '#E0E0E0';
+      });
+      setActive(heads[0].id);
+
+      const onScroll = () => {
+        let current = heads[0].id;
+        heads.forEach(h => { if (h.getBoundingClientRect().top <= 150) current = h.id; });
+        setActive(current);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      this.cleanups.push(() => window.removeEventListener('scroll', onScroll));
+
+      const wrap = root.querySelector('[data-toc-mobile-wrap]');
+      const caret = root.querySelector('[data-toc-caret]');
+      if (wrap) {
+        on(wrap, 'toggle', () => { if (caret) caret.style.transform = wrap.open ? 'rotate(45deg)' : 'none'; });
+        if (mob) mob.querySelectorAll('a').forEach(el => on(el, 'click', () => { wrap.open = false; }));
+      }
+      return true;
+    };
+    if (!build()) {
+      const t = setTimeout(build, 250);
+      this.cleanups.push(() => clearTimeout(t));
+    }
+
+    // ---- share
+    const shareBtn = root.querySelector('[data-share-btn]');
+    const shareMenu = root.querySelector('[data-share-menu]');
+    if (shareBtn && shareMenu) {
+      const url = location.href;
+      const set = (k, href) => { const el = shareMenu.querySelector('[data-share="' + k + '"]'); if (el) { el.href = href; el.target = '_blank'; el.rel = 'noopener'; } };
+      set('whatsapp', 'https://wa.me/?text=' + encodeURIComponent(a.title + ' ' + url));
+      set('linkedin', 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url));
+      set('x', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(a.title) + '&url=' + encodeURIComponent(url));
+      let open = false;
+      const setOpen = v => { open = v; shareMenu.style.display = v ? 'block' : 'none'; shareBtn.setAttribute('aria-expanded', String(v)); };
+      on(shareBtn, 'click', e => { e.stopPropagation(); setOpen(!open); });
+      on(document, 'click', () => { if (open) setOpen(false); });
+      on(document, 'keydown', e => { if (e.key === 'Escape' && open) { setOpen(false); shareBtn.focus(); } });
+      const copy = shareMenu.querySelector('[data-share="copy"]');
+      const label = root.querySelector('[data-share-label]');
+      if (copy) on(copy, 'click', () => {
+        const done = () => { if (label) { label.textContent = 'Link copied'; setTimeout(() => { label.textContent = 'Share'; }, 1800); } setOpen(false); };
+        if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, done); else done();
+      });
+    }
+
+    // ---- responsive
+    const set = (sel, styles) => root.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
+    const sideCol = root.querySelector('[data-side-col]');
+    const host = root.querySelector('[data-mobile-discovery]');
+    const modules = sideCol ? Array.from(sideCol.children) : [];
+    const ORDER = ['ad', 'related', 'tool'];
+    let stacked = null;
+    const mqM = window.matchMedia('(max-width: 700px)');
+    const mqT = window.matchMedia('(max-width: 1080px)');
+    const apply = () => {
+      const m = mqM.matches, t = mqT.matches;
+      set('[data-cols]', { gridTemplateColumns: t ? 'minmax(0,720px)' : '180px minmax(0,720px) 280px' });
+      set('[data-toc-col]', { display: t ? 'none' : 'block' });
+      set('[data-toc-mobile-wrap]', { display: t ? 'block' : 'none' });
+      set('[data-flow]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : t ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))' });
+      set('[data-compare]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))' });
+      set('[data-crumb-current]', { display: m ? 'none' : 'inline' });
+      set('[data-crumb-title]', { display: m ? 'none' : 'inline' });
+      set('[data-ad-inline]', { aspectRatio: m ? '16 / 10' : '720 / 180' });
+      if (t !== stacked && sideCol && host) {
+        stacked = t;
+        if (t) {
+          ORDER.forEach(k => { const el = modules.find(n => n.getAttribute('data-side-module') === k); if (el) host.appendChild(el); });
+          host.style.display = 'flex'; sideCol.style.display = 'none';
+          set('[data-side-module="ad"]', { aspectRatio: m ? '4 / 3' : '16 / 6' });
+        } else {
+          modules.forEach(el => sideCol.appendChild(el));
+          host.style.display = 'none'; sideCol.style.display = 'flex';
+          set('[data-side-module="ad"]', { aspectRatio: '4 / 4.4' });
+        }
+      }
+    };
+    apply();
+    [mqM, mqT].forEach(mq => { if (mq.addEventListener) { mq.addEventListener('change', apply); this.cleanups.push(() => mq.removeEventListener('change', apply)); } });
+
+    // ---- mobile nav
+    // dropdown groups (Products / Resources / About Us), one wiring for all
+    const ddClosers = []; // opening one group instantly closes its siblings,
+    // so the grace timer can't leave two panels overlapping mid-hover
+    root.querySelectorAll('[data-nav-dd]').forEach(dd => {
+      const btn = dd.querySelector('[data-dd-btn]'), pnl = dd.querySelector('[data-dd-panel]'), car = dd.querySelector('[data-dd-caret]');
+      if (!btn || !pnl) return;
+      let open = false;
+      const setDD = v => { open = v; pnl.style.display = v ? 'block' : 'none'; btn.setAttribute('aria-expanded', String(v)); if (car) car.style.transform = v ? 'rotate(180deg)' : 'none'; btn.style.background = v ? '#F2F7FF' : 'transparent'; btn.style.color = v ? '#0029FF' : '#3E4874'; };
+      // the panel floats 12px below the button; a grace timer bridges that gap
+      // so crossing it doesn't close the menu before it can be clicked
+      let closeT = null;
+      ddClosers.push(() => { clearTimeout(closeT); setDD(false); });
+      const me = ddClosers.length - 1;
+      const enter = () => { ddClosers.forEach((c, i) => { if (i !== me) c(); }); clearTimeout(closeT); setDD(true); };
+      const leave = () => { clearTimeout(closeT); closeT = setTimeout(() => setDD(false), 300); };
+      dd.addEventListener('mouseenter', enter); dd.addEventListener('mouseleave', leave);
+      pnl.addEventListener('mouseenter', enter); pnl.addEventListener('mouseleave', leave);
+      const onBtn = e => { e.preventDefault(); e.stopPropagation(); setDD(!open); };
+      btn.addEventListener('click', onBtn);
+      const onDoc = () => { if (open) setDD(false); };
+      const onEsc = e => { if (e.key === 'Escape' && open) { setDD(false); btn.focus(); } };
+      document.addEventListener('click', onDoc); document.addEventListener('keydown', onEsc);
+      this.cleanups.push(() => { clearTimeout(closeT); dd.removeEventListener('mouseenter', enter); dd.removeEventListener('mouseleave', leave); btn.removeEventListener('click', onBtn); document.removeEventListener('click', onDoc); document.removeEventListener('keydown', onEsc); });
+    });
+    // mobile accordion sections
+    root.querySelectorAll('[data-m-acc]').forEach(btn => {
+      const pnl = root.querySelector('[data-m-panel="' + btn.getAttribute('data-m-acc') + '"]');
+      const car = btn.querySelector('[data-m-caret]');
+      if (!pnl) return;
+      const onTap = () => {
+        const open = pnl.style.display !== 'none';
+        pnl.style.display = open ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!open));
+        if (car) car.style.transform = open ? 'none' : 'rotate(180deg)';
+      };
+      btn.addEventListener('click', onTap);
+      this.cleanups.push(() => btn.removeEventListener('click', onTap));
+    });
+    // liquid-glass pill: gloss highlight follows the cursor (iOS-style)
+    const pill = root.querySelector('[data-glass-pill]');
+    if (pill) {
+      const gloss = pill.querySelector('[data-glass-gloss]');
+      const onMove = e => {
+        const r = pill.getBoundingClientRect();
+        pill.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+        pill.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+        if (gloss) gloss.style.opacity = '1';
+      };
+      const onLeave = () => {
+        if (gloss) gloss.style.opacity = '0';
+        pill.style.setProperty('--mouse-x', '50%');
+        pill.style.setProperty('--mouse-y', '38%');
+      };
+      pill.addEventListener('mousemove', onMove);
+      pill.addEventListener('mouseleave', onLeave);
+      this.cleanups.push(() => { pill.removeEventListener('mousemove', onMove); pill.removeEventListener('mouseleave', onLeave); });
+    }
+    // ---- mobile hamburger (identical to the homepage header)
+    const burger = root.querySelector('[data-burger]');
+    const sheet = root.querySelector('[data-mobile-nav]');
+    const desktopNav = root.querySelector('[data-desktop-nav]');
+    if (burger && sheet && desktopNav) {
+      const bars = Array.from(burger.querySelectorAll('[data-bar]'));
+      let sheetOpen = false;
+      const paintBurger = () => {
+        if (!bars.length) return;
+        bars[0].style.transform = sheetOpen ? 'translateY(7.75px) rotate(45deg)' : 'none';
+        bars[1].style.opacity = sheetOpen ? '0' : '1';
+        bars[2].style.transform = sheetOpen ? 'translateY(-7.75px) rotate(-45deg)' : 'none';
+      };
+      const setSheet = on => {
+        sheetOpen = on;
+        sheet.style.display = on ? 'block' : 'none';
+        burger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        paintBurger();
+      };
+      const mq = window.matchMedia('(max-width: 880px)');
+      const applyMode = () => {
+        const mobile = mq.matches;
+        desktopNav.style.display = mobile ? 'none' : 'flex';
+        burger.style.display = mobile ? 'flex' : 'none';
+        if (!mobile) setSheet(false);
+      };
+      applyMode();
+      if (mq.addEventListener) { mq.addEventListener('change', applyMode); this.cleanups.push(() => mq.removeEventListener('change', applyMode)); }
+      const onBurger = e => { e.preventDefault(); e.stopPropagation(); setSheet(!sheetOpen); };
+      burger.addEventListener('click', onBurger);
+      this.cleanups.push(() => burger.removeEventListener('click', onBurger));
+      sheet.querySelectorAll('[data-m-link]').forEach(a => a.addEventListener('click', () => setSheet(false)));
+      const onOutside = e => { if (sheetOpen && !sheet.contains(e.target) && e.target !== burger && !burger.contains(e.target)) setSheet(false); };
+      document.addEventListener('click', onOutside);
+      this.cleanups.push(() => document.removeEventListener('click', onOutside));
+    }
+  }
+
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => fn()); }
+
+  renderVals() {
+    const a = this.article;
+    let adN = 0;
+
+    const blocks = a.blocks.map((b, i) => {
+      const t = b.type;
+      const gapTop = t === 'h2' ? 'clamp(34px,3.6vw,46px)' : t === 'h3' ? 'clamp(24px,2.6vw,32px)'
+        : (t === 'takeaway' || t === 'tip' || t === 'ad' || t === 'flow' || t === 'compare' || t === 'example' || t === 'tool') ? 'clamp(18px,2.2vw,26px)'
+        : '0px';
+      const gapBottom = t === 'h2' ? '14px' : t === 'h3' ? '10px'
+        : (t === 'takeaway' || t === 'tip' || t === 'ad' || t === 'flow' || t === 'compare' || t === 'example' || t === 'tool') ? 'clamp(22px,2.6vw,30px)'
+        : '20px';
+      const out = {
+        wrapStyle: 'margin:' + gapTop + ' 0 ' + gapBottom,
+        isLede: t === 'lede', isP: t === 'p', isH2: t === 'h2', isH3: t === 'h3',
+        isUl: t === 'ul', isOl: t === 'ol', isTakeaway: t === 'takeaway', isTip: t === 'tip',
+        isExample: t === 'example', isCompare: t === 'compare', isFlow: t === 'flow',
+        isAd: t === 'ad', isTool: t === 'tool',
+        text: b.text || '', items: b.items || [], steps: b.steps || [],
+        leftTitle: b.leftTitle || '', rightTitle: b.rightTitle || '',
+        leftPoints: b.leftPoints || [], rightPoints: b.rightPoints || [],
+        note: b.note || '', name: b.name || '', href: '#'
+      };
+      if (t === 'h2' || t === 'h3') out.id = slugify(b.text);
+      if (t === 'flow') {
+        out.stepsFlow = (b.steps || []).map(s => ({
+          when: s.when, label: s.label, amount: s.amount,
+          style: 'padding:14px 15px;border-radius:14px;background:' + (s.mark ? '#FFFDF2' : '#FAFAFA') + ';border:1px solid ' + (s.mark ? 'rgba(120,100,20,.1)' : '#EEEEEE')
+        }));
+      }
+      if (t === 'ad') { adN += 1; out.slotId = 'ad-' + a.slug + '-' + adN; out.href = 'index.html#products'; }
+      if (t === 'tool') out.href = TOOL_HREF(b.name || '');
+      return out;
+    });
+
+    const pool = ARTICLES.filter(x => x.slug !== a.slug);
+    const related = pool.filter(x => x.category === a.category).concat(pool.filter(x => x.category !== a.category)).slice(0, 4)
+      .map(x => ({ title: x.title, href: ART(x.slug) }));
+
+    return {
+      root: el => { this.root = el; },
+      title: a.title, description: a.description, category: a.category,
+      readTime: a.readTime, updated: a.updated,
+      categoryHref: 'resources.html?cat=' + encodeURIComponent(a.category) + '#latest',
+      toolName: a.tool, toolHref: TOOL_HREF(a.tool),
+      blocks, related
+    };
+  }
+}
+</script>
+</body>
+</html>
