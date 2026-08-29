@@ -8,6 +8,9 @@ summary{list-style:none}
 [data-rail]::-webkit-scrollbar{display:none}
 [data-tg-track]::-webkit-scrollbar{display:none}
 [data-card]{touch-action:pan-y}
+/* testimonial tiles show a video, never a real dropped photo — the image-slot's
+   empty-state dashed ring would otherwise stay visible on all 4 edges forever */
+[data-tg-media] image-slot::part(ring){display:none}
 @keyframes bnBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 @keyframes bnStep{0%,100%{opacity:.28}12%,26%{opacity:1}}
 @keyframes bnPing{0%{transform:scale(.6);opacity:.85}100%{transform:scale(2.4);opacity:0}}
