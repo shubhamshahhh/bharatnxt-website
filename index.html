@@ -2689,7 +2689,13 @@ class Component extends DCLogic {
           const covered = Math.max(0, Math.min(1, (r.bottom - nr.top) / Math.max(1, r.height * 0.9)));
           inner.style.transform = 'scale(' + (1 - covered * 0.045) + ')';
           if (dim) dim.style.background = 'rgba(17,26,61,' + (covered * 0.06) + ')';
-          if (clip) clip.style.opacity = String(1 - covered * 0.9);
+          // fading gradually across the WHOLE covered range (old: 1 - covered*0.9)
+          // meant both cards sat semi-transparent over most of the scroll,
+          // so their text visibly overlapped/ghosted — worse than the original
+          // fully-opaque peek. Only one card should ever be legible at a time:
+          // snap fully invisible within the first ~10% of coverage instead.
+          const vanish = Math.min(1, covered / 0.1);
+          if (clip) clip.style.opacity = String(Math.max(0, 1 - vanish));
         });
       };
       const onStack = () => { if (!sTick) { sTick = true; requestAnimationFrame(paintStack); } };
