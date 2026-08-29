@@ -277,7 +277,10 @@ class Component extends DCLogic {
           + '<div data-m-panel="' + g.id + '" style="display:none;padding:0 0 ' + (isLast ? 20 : 12) + 'px">'
           + (g.cols.length > 1
             ? g.cols.map((c, ci) => '<div><button type="button" data-m-acc="' + g.id + '-' + ci + '" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:500;color:#314259;cursor:pointer">' + c.head + '<svg data-m-caret width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div data-m-panel="' + g.id + '-' + ci + '" style="display:none;padding:0 0 6px">'
-              + c.items.map(it => '<a href="' + it[1] + '" data-m-link style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259">' + (it[2] ? '<img src="' + it[2] + '" alt="' + it[0] + '" style="height:22px;width:auto;display:block">' : it[0]) + '</a>').join('') + '</div></div>').join('')
+              + c.items.map(it => it[2]
+                ? '<a href="' + it[1] + '" target="_blank" rel="noopener" data-m-link style="display:flex;align-items:center;min-height:38px;margin:2px 4px 2px 28px;padding:6px 10px;border-radius:10px;border:1px solid #EEEEEE;background:#FAFAFB"><img src="' + it[2] + '" alt="' + it[0] + '" style="height:20px;width:auto;max-width:100%;display:block"></a>'
+                : '<a href="' + it[1] + '" data-m-link style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259">' + it[0] + '</a>'
+              ).join('') + '</div></div>').join('')
             : g.cols.map(c => c.items.map(it => '<a href="' + it[1] + '" data-m-link style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259">' + it[0] + '</a>').join('')).join('')) + '</div>';
         sheet.appendChild(wrap);
       });
