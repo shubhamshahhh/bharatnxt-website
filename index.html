@@ -1640,12 +1640,12 @@
         
       </div>
     </div><div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px;backdrop-filter:blur(14px)">
-      <div data-desk-only="" style="display:flex;align-items:center;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18)">
-        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
-        <span style="min-width:0">
+      <div data-desk-only="" data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18)">
+        <span style="flex:1;min-width:0">
           <span style="display:block;font-size:14.5px;font-weight:900;letter-spacing:-.4px;color:#fff;margin-bottom:2px">Scan to install</span>
           <span style="display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.7)">Point your phone camera at the code.</span>
         </span>
+        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
       </div>
       <div style="font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px">Or get the link on your phone</div>
       <form data-sms-form="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px">
@@ -2865,6 +2865,16 @@ class Component extends DCLogic {
           setAll('[data-tg-pill]', { fontSize: '10.5px', padding: '2px 8px', marginTop: '6px', letterSpacing: '0' });
           const bar = root.querySelector('[data-sticky-bar]');
           if (bar) bar.style.display = tight ? 'flex' : 'none';
+          // the generic [data-desk-only] loop above sets display to '' (not
+          // 'flex') when shown, which strips the display declaration
+          // entirely rather than restoring it — falls back to the browser's
+          // default block for a <div>, silently breaking any desk-only
+          // element that actually needs flex to lay out multiple children
+          // side by side (only visible here because this is the one such
+          // element with more than one child span; plain-text ones look
+          // identical as block or flex, so this went unnoticed elsewhere).
+          const qrRow = root.querySelector('[data-qr-row]');
+          if (qrRow) qrRow.style.display = wide ? 'flex' : 'none';
           Array.from(root.querySelectorAll('[data-app-card]')).forEach(c => {
             apply(c, { marginBottom: '14px', borderRadius: '24px' });
           });
