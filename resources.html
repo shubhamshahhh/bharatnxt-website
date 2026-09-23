@@ -191,21 +191,70 @@
 <!-- ══ FEATURED ══ -->
 <section data-screen-label="Featured" style="padding:0 20px">
   <div data-rv="1" style="opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;max-width:1200px;margin:0 auto">
-    <a data-featured="" href="{{ featuredHref }}" style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1fr);gap:0;align-items:stretch;background:#fff;border:1px solid #E0E0E0;border-radius:24px;box-shadow:0 10px 30px rgba(30,50,90,.05);overflow:hidden;transition:box-shadow .3s ease" style-hover="box-shadow:0 16px 42px rgba(30,50,90,.09)">
-      <span data-feat-img="" style="position:relative;display:block;width:100%;min-height:300px;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%)"><image-slot id="res-featured" shape="rect" placeholder=" "></image-slot></span>
-      <span style="display:flex;flex-direction:column;justify-content:center;padding:clamp(22px,3vw,44px)">
-        <span style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <span style="font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF">Cash flow</span>
-          <span style="font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3">Featured</span>
-        </span>
-        <span style="display:block;font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.25;color:#314259;margin-bottom:12px;text-wrap:pretty">Your business has money coming in. So why does cash still feel tight?</span>
-        <span style="display:block;font-size:14.5px;line-height:1.65;color:#686D77;margin-bottom:20px;text-wrap:pretty">Understand the difference between profit and cash flow, and what to do about it.</span>
-        <span style="display:flex;align-items:center;gap:16px">
-          <span style="font-size:13px;color:#9092A3">5 min read</span>
-          <span style="display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:#0029FF">Read article <span>→</span></span>
-        </span>
-      </span>
-    </a>
+    <div data-feat-carousel="">
+      <div data-feat-viewport="" style="position:relative">
+        <div data-feat-track="" style="position:relative;z-index:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;touch-action:pan-y;border-radius:24px;cursor:grab">
+          <sc-for list="{{ featured }}" as="f" hint-placeholder-count="5">
+            <a data-featured="" href="{{ f.href }}" style="flex:0 0 100%;width:100%;scroll-snap-align:start;will-change:transform,opacity;display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1fr);gap:0;align-items:stretch;background:#fff;border:1px solid #E0E0E0;border-radius:24px;box-shadow:0 18px 40px rgba(20,32,60,.08);overflow:hidden" style-hover="box-shadow:0 22px 46px rgba(20,32,60,.11)">
+              <span data-feat-img="" style="position:relative;display:block;width:100%;min-height:300px;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%)"><image-slot id="{{ f.imgId }}" shape="rect" placeholder=" "></image-slot></span>
+              <span style="display:flex;flex-direction:column;justify-content:center;padding:clamp(22px,3vw,44px)">
+                <span style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                  <span style="font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF">{{ f.category }}</span>
+                  <span style="font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3">Featured</span>
+                </span>
+                <span style="display:block;font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.25;color:#314259;margin-bottom:12px;text-wrap:pretty">{{ f.title }}</span>
+                <span style="display:block;font-size:14.5px;line-height:1.65;color:#686D77;margin-bottom:20px;text-wrap:pretty">{{ f.blurb }}</span>
+                <span style="display:flex;align-items:center;gap:16px">
+                  <span style="font-size:13px;color:#9092A3">{{ f.readTime }}</span>
+                  <span style="display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:#0029FF">Read article <span>→</span></span>
+                </span>
+              </span>
+            </a>
+          </sc-for>
+        </div>
+        <button type="button" data-feat-prev="" data-glass-pill="" aria-label="Previous featured post" style="position:absolute;z-index:2;top:50%;left:14px;transform:translateY(-50%);width:42px;height:42px;padding:0;border-radius:50%;overflow:hidden;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.14);backdrop-filter:blur(16px) saturate(200%);-webkit-backdrop-filter:blur(16px) saturate(200%);box-shadow:0 10px 24px rgba(20,32,60,.18),inset 0 1px 1px rgba(255,255,255,.55),inset 0 -1px 2px rgba(17,26,61,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease,transform .2s ease" style-hover="background:rgba(255,255,255,.3);transform:translateY(-50%) scale(1.06)">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;pointer-events:none;backdrop-filter:url(#bn-liquid);-webkit-backdrop-filter:url(#bn-liquid)"></span>
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.08) 42%,rgba(255,255,255,0) 60%,rgba(255,255,255,.3) 100%)"></span>
+          <span aria-hidden="true" data-glass-gloss="" style="position:absolute;inset:0;border-radius:50%;pointer-events:none;background:radial-gradient(24px circle at var(--mouse-x,50%) var(--mouse-y,38%),rgba(255,255,255,.55) 0%,rgba(255,255,255,.12) 55%,rgba(255,255,255,0) 78%);transition:opacity .3s ease;opacity:0"></span>
+          <svg style="position:relative;z-index:1" width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#314259" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 6.5 10l6 5.5"></path></svg>
+        </button>
+        <button type="button" data-feat-next="" data-glass-pill="" aria-label="Next featured post" style="position:absolute;z-index:2;top:50%;right:14px;transform:translateY(-50%);width:42px;height:42px;padding:0;border-radius:50%;overflow:hidden;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.14);backdrop-filter:blur(16px) saturate(200%);-webkit-backdrop-filter:blur(16px) saturate(200%);box-shadow:0 10px 24px rgba(20,32,60,.18),inset 0 1px 1px rgba(255,255,255,.55),inset 0 -1px 2px rgba(17,26,61,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease,transform .2s ease" style-hover="background:rgba(255,255,255,.3);transform:translateY(-50%) scale(1.06)">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;pointer-events:none;backdrop-filter:url(#bn-liquid);-webkit-backdrop-filter:url(#bn-liquid)"></span>
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.08) 42%,rgba(255,255,255,0) 60%,rgba(255,255,255,.3) 100%)"></span>
+          <span aria-hidden="true" data-glass-gloss="" style="position:absolute;inset:0;border-radius:50%;pointer-events:none;background:radial-gradient(24px circle at var(--mouse-x,50%) var(--mouse-y,38%),rgba(255,255,255,.55) 0%,rgba(255,255,255,.12) 55%,rgba(255,255,255,0) 78%);transition:opacity .3s ease;opacity:0"></span>
+          <svg style="position:relative;z-index:1" width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#314259" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 6 5.5-6 5.5"></path></svg>
+        </button>
+      </div>
+      <div data-feat-dots="" style="display:flex;justify-content:center;gap:7px;margin-top:16px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRENDING ══ -->
+<section data-screen-label="Trending" style="padding:clamp(34px,5vw,72px) 20px 0">
+  <div data-rv="1" style="opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;max-width:1200px;margin:0 auto">
+    <h2 style="font-size:clamp(18px,2.1vw,22px);font-weight:800;letter-spacing:-.6px;color:#314259;margin-bottom:clamp(14px,2vw,20px);text-wrap:pretty">Trending posts</h2>
+    <div data-trending-grid="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)">
+      <sc-for list="{{ trending }}" as="t" hint-placeholder-count="3">
+        <a href="{{ t.href }}" style="display:flex;flex-direction:column;background:#fff;border:1px solid #E0E0E0;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(30,50,90,.05);transition:box-shadow .3s ease,transform .3s ease" style-hover="box-shadow:0 16px 40px rgba(30,50,90,.09);transform:translateY(-2px)">
+          <span style="position:relative;display:block;width:100%;aspect-ratio:16/10;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%)"><image-slot id="{{ t.imgId }}" shape="rect" placeholder=" "></image-slot></span>
+          <span style="display:flex;flex-direction:column;flex:1;padding:clamp(16px,2vw,20px)">
+            <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF;margin-bottom:10px">{{ t.category }}</span>
+            <span style="display:block;font-size:16px;font-weight:700;letter-spacing:-.3px;line-height:1.34;color:#314259;margin-bottom:16px;text-wrap:pretty">{{ t.title }}</span>
+            <span style="display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin-top:auto;font-size:12.5px;color:#9092A3">
+              <span>by {{ t.author }}</span><span aria-hidden="true">·</span><span>{{ t.date }}</span><span aria-hidden="true">·</span><span>{{ t.readTime }}</span>
+            </span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MID PROMOTION ══ -->
+<section data-screen-label="Mid promotion" style="padding:clamp(30px,4.4vw,60px) 20px 0">
+  <div data-rv="1" style="opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;max-width:1200px;margin:0 auto">
+    <a href="index.html#install" data-ad-slot-mid="" style="display:block;position:relative;width:100%;aspect-ratio:1180/100;min-height:55px;border-radius:20px;overflow:hidden;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%);border:1px solid #E0E0E0"><span aria-hidden="true" style="position:absolute;top:8px;left:10px;z-index:2;display:inline-flex;align-items:center;padding:4px 9px;border-radius:6px;background:rgba(255,255,255,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #E0E0E0;font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3">BharatNXT promotion</span><image-slot id="res-ad-mid" shape="rect" placeholder=" "></image-slot></a>
   </div>
 </section>
 
@@ -217,14 +266,15 @@
       <div style="font-size:13px;color:#9092A3">{{ countLabel }}</div>
     </div>
     <div data-grid="" style="{{ gridStyle }}">
-      <sc-for list="{{ list }}" as="a" hint-placeholder-count="6">
-        <a href="{{ a.href }}" style="{{ a.cardStyle }}" style-hover="box-shadow:0 12px 32px rgba(30,50,90,.07);transform:translateY(-2px)">
-          <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF;margin-bottom:11px">{{ a.category }}</span>
-          <span style="display:block;font-size:17px;font-weight:700;letter-spacing:-.4px;line-height:1.35;color:#314259;margin-bottom:8px;text-wrap:pretty">{{ a.title }}</span>
-          <span style="display:block;font-size:13.5px;line-height:1.58;color:#686D77;margin-bottom:18px;text-wrap:pretty">{{ a.blurb }}</span>
-          <span style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto">
-            <span style="font-size:12.5px;color:#9092A3">{{ a.readTime }}</span>
-            <span style="display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:#0029FF">Read <span>→</span></span>
+      <sc-for list="{{ list }}" as="a" hint-placeholder-count="3">
+        <a href="{{ a.href }}" style="display:flex;flex-direction:column;background:#fff;border:1px solid #E0E0E0;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(30,50,90,.035);transition:box-shadow .3s ease,transform .3s ease" style-hover="box-shadow:0 12px 32px rgba(30,50,90,.07);transform:translateY(-2px)">
+          <span style="position:relative;display:block;width:100%;aspect-ratio:16/10;background:linear-gradient(150deg,#F5F5F5 0%,#FAFBFF 100%)"><image-slot id="{{ a.imgId }}" shape="rect" placeholder=" "></image-slot></span>
+          <span style="display:flex;flex-direction:column;flex:1;padding:clamp(16px,2vw,20px)">
+            <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF;margin-bottom:10px">{{ a.category }}</span>
+            <span style="display:block;font-size:16px;font-weight:700;letter-spacing:-.3px;line-height:1.34;color:#314259;margin-bottom:16px;text-wrap:pretty">{{ a.title }}</span>
+            <span style="display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin-top:auto;font-size:12.5px;color:#9092A3">
+              <span>by {{ a.author }}</span><span aria-hidden="true">·</span><span>{{ a.date }}</span><span aria-hidden="true">·</span><span>{{ a.readTime }}</span>
+            </span>
           </span>
         </a>
       </sc-for>
@@ -235,59 +285,6 @@
         <div style="font-size:14px;color:#686D77">Try a plainer word: supplier, stock, late payment or loan.</div>
       </div>
     </sc-if>
-  </div>
-</section>
-
-<!-- ══ TOOLS ══ -->
-<section id="tools" data-screen-label="Tools" style="padding:clamp(34px,5vw,72px) 20px 0">
-  <div data-rv="1" style="opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;max-width:1200px;margin:0 auto">
-    <h2 style="font-size:clamp(18px,2.1vw,22px);font-weight:800;letter-spacing:-.6px;color:#314259;margin-bottom:6px;text-wrap:pretty">Useful tools</h2>
-    <p style="font-size:14.5px;line-height:1.6;color:#686D77;margin-bottom:clamp(16px,2.2vw,24px)">Put your own numbers in. No sign-up.</p>
-    <div data-tools-grid="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)">
-
-      <a href="tool.html?t=working-capital" style="display:flex;flex-direction:column;background:#fff;border:1px solid #E0E0E0;border-radius:20px;box-shadow:0 10px 30px rgba(30,50,90,.04);padding:16px;transition:box-shadow .3s ease,transform .3s ease" style-hover="box-shadow:0 16px 40px rgba(30,50,90,.08);transform:translateY(-2px)">
-        <span style="display:block;background:linear-gradient(160deg,#FAFAFA,#F7F8FA);border:1px solid #EEEEEE;border-radius:14px;padding:16px;margin-bottom:16px">
-          <span style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;font-size:12.5px;color:#686D77">Monthly sales <b style="color:#314259;font-weight:600">₹5,00,000</b></span>
-          <span style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;font-size:12.5px;color:#686D77">Monthly expenses <b style="color:#314259;font-weight:600">₹3,50,000</b></span>
-          <span style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;padding-top:11px;border-top:1px solid #EEEEEE;font-size:12.5px;font-weight:600;color:#314259">Cash you need <b style="color:#0029FF;font-weight:700;font-size:15px">₹2,10,000</b></span>
-        </span>
-        <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3;margin-bottom:6px">Calculator</span>
-        <span style="display:block;font-size:15.5px;font-weight:700;letter-spacing:-.3px;color:#314259;margin-bottom:14px">Working Capital</span>
-        <span style="display:inline-flex;align-items:center;gap:7px;margin-top:auto;font-size:13.5px;font-weight:600;color:#0029FF">Open tool <span>→</span></span>
-      </a>
-
-      <a href="tool.html?t=cash-flow" style="display:flex;flex-direction:column;background:#fff;border:1px solid #E0E0E0;border-radius:20px;box-shadow:0 10px 30px rgba(30,50,90,.04);padding:16px;transition:box-shadow .3s ease,transform .3s ease" style-hover="box-shadow:0 16px 40px rgba(30,50,90,.08);transform:translateY(-2px)">
-        <span style="display:block;background:linear-gradient(160deg,#FAFAFA,#F7F8FA);border:1px solid #EEEEEE;border-radius:14px;padding:16px;margin-bottom:16px">
-          <span style="display:flex;align-items:flex-end;gap:6px;height:78px;padding-bottom:10px">
-            <span style="flex:1;height:34%;background:#E1E8F5;border-radius:5px 5px 0 0;display:block"></span>
-            <span style="flex:1;height:58%;background:#E1E8F5;border-radius:5px 5px 0 0;display:block"></span>
-            <span style="flex:1;height:44%;background:#E1E8F5;border-radius:5px 5px 0 0;display:block"></span>
-            <span style="flex:1;height:72%;background:#E1E8F5;border-radius:5px 5px 0 0;display:block"></span>
-            <span style="flex:1;height:26%;background:#0029FF;border-radius:5px 5px 0 0;display:block"></span>
-            <span style="flex:1;height:86%;background:#E1E8F5;border-radius:5px 5px 0 0;display:block"></span>
-          </span>
-          <span style="display:flex;align-items:center;justify-content:space-between;padding-top:11px;border-top:1px solid #EEEEEE;font-size:12.5px;font-weight:600;color:#314259">Tightest week <b style="color:#0029FF;font-weight:700">Week 5</b></span>
-        </span>
-        <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3;margin-bottom:6px">Calculator</span>
-        <span style="display:block;font-size:15.5px;font-weight:700;letter-spacing:-.3px;color:#314259;margin-bottom:14px">Cash Flow</span>
-        <span style="display:inline-flex;align-items:center;gap:7px;margin-top:auto;font-size:13.5px;font-weight:600;color:#0029FF">Open tool <span>→</span></span>
-      </a>
-
-      <a href="tool.html?t=funding-fit" style="display:flex;flex-direction:column;background:#fff;border:1px solid #E0E0E0;border-radius:20px;box-shadow:0 10px 30px rgba(30,50,90,.04);padding:16px;transition:box-shadow .3s ease,transform .3s ease" style-hover="box-shadow:0 16px 40px rgba(30,50,90,.08);transform:translateY(-2px)">
-        <span style="display:block;background:linear-gradient(160deg,#FAFAFA,#F7F8FA);border:1px solid #EEEEEE;border-radius:14px;padding:16px;margin-bottom:16px">
-          <span style="display:flex;flex-direction:column;gap:9px">
-            <span style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#686D77"><span style="width:15px;height:15px;border-radius:50%;background:#0029FF;flex-shrink:0"></span>Money needed for stock</span>
-            <span style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#686D77"><span style="width:15px;height:15px;border-radius:50%;background:#0029FF;flex-shrink:0"></span>Customers pay you late</span>
-            <span style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#9092A3"><span style="width:15px;height:15px;border-radius:50%;border:1.5px solid #DDE4F0;flex-shrink:0"></span>One-time purchase</span>
-          </span>
-          <span style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:11px;border-top:1px solid #EEEEEE;font-size:12.5px;font-weight:600;color:#314259">Likely fit <b style="color:#0029FF;font-weight:700">Credit line</b></span>
-        </span>
-        <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#9092A3;margin-bottom:6px">Check</span>
-        <span style="display:block;font-size:15.5px;font-weight:700;letter-spacing:-.3px;color:#314259;margin-bottom:14px">Funding Fit</span>
-        <span style="display:inline-flex;align-items:center;gap:7px;margin-top:auto;font-size:13.5px;font-weight:600;color:#0029FF">Open tool <span>→</span></span>
-      </a>
-
-    </div>
   </div>
 </section>
 
@@ -322,19 +319,25 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 const ARTICLES = [
-  { slug:'why-profitable-businesses-run-out-of-cash', title:'Why profitable businesses still run out of cash', category:'Cash flow', blurb:'Profit is not the same as cash in the bank.', readTime:'5 min read', tags:['cash','late','understand'] },
-  { slug:'loan-vs-credit-line', title:'Loan or credit line: what is the difference?', category:'Credit', blurb:'One is a single large amount. The other you use only when you need it.', readTime:'4 min read', tags:['loan','grow'] },
-  { slug:'pay-supplier-without-card-machine', title:'How to pay a supplier who has no card machine', category:'Payments', blurb:'Your supplier gets a normal bank transfer into his own account.', readTime:'3 min read', tags:['supplier'] },
-  { slug:'what-is-working-capital', title:'What is working capital, in plain English', category:'Working capital', blurb:'The money you need between buying goods and getting paid for them.', readTime:'6 min read', tags:['stock','grow','understand'] },
-  { slug:'plan-supplier-payments', title:'How to plan supplier payments around your collections', category:'Cash flow', blurb:'Line up what you pay with what you collect.', readTime:'4 min read', tags:['supplier','cash'] },
-  { slug:'customers-pay-late', title:'How to manage customers who pay late', category:'Cash flow', blurb:'Shorten the gap without spoiling the relationship.', readTime:'5 min read', tags:['late','cash'] },
-  { slug:'business-credit-score', title:'How business credit scores work', category:'Credit', blurb:'What lenders look at, and what you can fix this month.', readTime:'6 min read', tags:['loan','understand'] },
-  { slug:'borrow-to-buy-stock', title:'Should you borrow to buy stock?', category:'Credit', blurb:'Three questions to ask before you take the money.', readTime:'4 min read', tags:['loan','stock','grow'] }
+  { slug:'why-profitable-businesses-run-out-of-cash', title:'Why profitable businesses still run out of cash', category:'Cash flow', blurb:'Profit is not the same as cash in the bank.', readTime:'5 min read', date:'28 Aug 26', tags:['cash','late','understand'] },
+  { slug:'loan-vs-credit-line', title:'Loan or credit line: what is the difference?', category:'Credit', blurb:'One is a single large amount. The other you use only when you need it.', readTime:'4 min read', date:'21 Aug 26', tags:['loan','grow'] },
+  { slug:'pay-supplier-without-card-machine', title:'How to pay a supplier who has no card machine', category:'Payments', blurb:'Your supplier gets a normal bank transfer into his own account.', readTime:'3 min read', date:'14 Aug 26', tags:['supplier'] },
+  { slug:'what-is-working-capital', title:'What is working capital, in plain English', category:'Working capital', blurb:'The money you need between buying goods and getting paid for them.', readTime:'6 min read', date:'07 Aug 26', tags:['stock','grow','understand'] },
+  { slug:'plan-supplier-payments', title:'How to plan supplier payments around your collections', category:'Cash flow', blurb:'Line up what you pay with what you collect.', readTime:'4 min read', date:'31 Jul 26', tags:['supplier','cash'] },
+  { slug:'customers-pay-late', title:'How to manage customers who pay late', category:'Cash flow', blurb:'Shorten the gap without spoiling the relationship.', readTime:'5 min read', date:'24 Jul 26', tags:['late','cash'] },
+  { slug:'business-credit-score', title:'How business credit scores work', category:'Credit', blurb:'What lenders look at, and what you can fix this month.', readTime:'6 min read', date:'17 Jul 26', tags:['loan','understand'] },
+  { slug:'borrow-to-buy-stock', title:'Should you borrow to buy stock?', category:'Credit', blurb:'Three questions to ask before you take the money.', readTime:'4 min read', date:'10 Jul 26', tags:['loan','stock','grow'] }
 ];
 
-const RECENT = 6; // the blog lists the most recent posts only
+const AUTHOR = 'BharatNXT Editorial Team';
 
-const TINTS = ['#FFFFFF', '#FCFDFF', '#FFFFFF', '#FBFBFE', '#FFFFFF', '#FCFDFF'];
+// Slugs surfaced in the Featured carousel, in slide order.
+const FEATURED = ['why-profitable-businesses-run-out-of-cash', 'what-is-working-capital', 'business-credit-score', 'plan-supplier-payments', 'borrow-to-buy-stock'];
+
+// Slugs surfaced in the Trending rail — a curated pick, not just the newest.
+const TRENDING = ['loan-vs-credit-line', 'pay-supplier-without-card-machine', 'customers-pay-late'];
+
+const RECENT = 3; // the blog lists the most recent posts only
 
 const ART = (slug) => 'article.html?a=' + slug;
 
@@ -348,7 +351,7 @@ class Component extends DCLogic {
 
 
     // Reveal is driven by a rect test on scroll/resize/hashchange rather than a
-    // one-shot IntersectionObserver: an instantaneous anchor jump (#tools) coalesces
+    // one-shot IntersectionObserver: an instantaneous anchor jump (#latest) coalesces
     // IO callbacks, and a one-shot settle leaves those blocks stuck at opacity 0.
     const reveal = Array.from(root.querySelectorAll('[data-rv]'));
     const settle = () => {
@@ -387,16 +390,131 @@ class Component extends DCLogic {
     const mqT = window.matchMedia('(max-width: 1020px)');
     const apply = () => {
       const m = mqM.matches, t = mqT.matches;
-      set('[data-tools-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))' });
+      set('[data-trending-grid],[data-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))' });
       set('[data-hero-row]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,380px)', alignItems: t ? 'stretch' : 'end' });
       set('[data-featured]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,0.85fr) minmax(0,1fr)' });
       // stacked: pin a ratio (a min-height floor lets the slot's intrinsic 3:2 take over);
       // two-column: let align-items:stretch match the text column
       set('[data-feat-img]', t ? { aspectRatio: m ? '16 / 10' : '16 / 8', minHeight: '0px' } : { aspectRatio: 'auto', minHeight: '260px' });
       set('[data-ad-slot]', { aspectRatio: m ? '4 / 3' : t ? '16 / 6' : '1180 / 260' });
+      set('[data-ad-slot-mid]', { aspectRatio: m ? '32 / 9' : t ? '21 / 3.5' : '1180 / 100' });
+      set('[data-feat-prev],[data-feat-next]', { width: m ? '34px' : '42px', height: m ? '34px' : '42px' });
+      set('[data-feat-prev]', { left: m ? '8px' : '14px' });
+      set('[data-feat-next]', { right: m ? '8px' : '14px' });
     };
     apply();
     [mqM, mqT].forEach(mq => { if (mq.addEventListener) { mq.addEventListener('change', apply); this.cleanups.push(() => mq.removeEventListener('change', apply)); } });
+
+    // Featured carousel: one full-width slide per view (scroll-snap), a dot
+    // pager, a continuous scale/opacity "depth" wash driven off scroll
+    // position (each slide breathes in as it centers, out as it leaves —
+    // reads as a deck of cards rather than a flat swap), and autoplay that
+    // backs off the moment a person actually touches the rail.
+    const featCarousel = root.querySelector('[data-feat-carousel]');
+    if (featCarousel) {
+      const track = featCarousel.querySelector('[data-feat-track]');
+      const dotsWrap = featCarousel.querySelector('[data-feat-dots]');
+      const slides = track ? Array.from(track.querySelectorAll('[data-featured]')) : [];
+      if (track && dotsWrap && slides.length > 1) {
+        const dots = slides.map((slide, i) => {
+          const d = document.createElement('button');
+          d.type = 'button';
+          d.setAttribute('aria-label', 'Go to featured post ' + (i + 1));
+          d.style.cssText = 'width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#DDE4F0;cursor:pointer;transition:background .2s ease,transform .2s ease';
+          d.addEventListener('click', () => { pause(6000); goTo(i); });
+          dotsWrap.appendChild(d);
+          return d;
+        });
+
+        let active = -1;
+        const paintDots = i => {
+          if (i === active) return;
+          active = i;
+          dots.forEach((d, k) => {
+            d.style.background = k === i ? '#0029FF' : '#DDE4F0';
+            d.style.transform = k === i ? 'scale(1.25)' : 'none';
+          });
+        };
+        // Depth wash: every slide gets a scale/opacity purely as a function
+        // of its own distance from track-center, each scroll frame — no
+        // per-slide state, so it can't drift out of sync with a drag,
+        // a dot click, or autoplay.
+        const paintDepth = center => {
+          slides.forEach(s => {
+            const dist = Math.abs(s.offsetLeft + s.offsetWidth / 2 - center) / (s.offsetWidth || 1);
+            const a = Math.min(1, dist);
+            s.style.transform = 'scale(' + (1 - 0.06 * a) + ')';
+            s.style.opacity = String(1 - 0.5 * a);
+          });
+        };
+
+        let ticking = false;
+        const onFeatScroll = () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            ticking = false;
+            const center = track.scrollLeft + track.clientWidth / 2;
+            paintDepth(center);
+            let closest = 0, closestD = Infinity;
+            slides.forEach((s, i) => {
+              const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - center);
+              if (d < closestD) { closestD = d; closest = i; }
+            });
+            paintDots(closest);
+          });
+        };
+        track.addEventListener('scroll', onFeatScroll, { passive: true });
+        onFeatScroll();
+        this.cleanups.push(() => track.removeEventListener('scroll', onFeatScroll));
+
+        // Autoplay
+        const goTo = i => {
+          const idx = (i + slides.length) % slides.length;
+          track.scrollTo({ left: slides[idx].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        };
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const AUTOPLAY_MS = 5000;
+        let autoT = null;
+        const stopAuto = () => { if (autoT) { clearInterval(autoT); autoT = null; } };
+        const startAuto = () => {
+          if (reducedMotion) return;
+          stopAuto();
+          autoT = setInterval(() => goTo((active < 0 ? 0 : active) + 1), AUTOPLAY_MS);
+        };
+        // pause(ms): stop autoplay now, resume after ms of no further interaction
+        let resumeT = null;
+        const pause = (ms) => {
+          stopAuto();
+          clearTimeout(resumeT);
+          resumeT = setTimeout(startAuto, ms);
+        };
+        featCarousel.addEventListener('pointerenter', () => pause(60000));
+        featCarousel.addEventListener('pointerleave', () => pause(1200));
+        featCarousel.addEventListener('touchstart', () => pause(60000), { passive: true });
+        featCarousel.addEventListener('touchend', () => pause(3500), { passive: true });
+        const onVis = () => { if (document.hidden) stopAuto(); else startAuto(); };
+        document.addEventListener('visibilitychange', onVis);
+        startAuto();
+        this.cleanups.push(() => {
+          stopAuto();
+          clearTimeout(resumeT);
+          document.removeEventListener('visibilitychange', onVis);
+        });
+
+        // Prev/next liquid-glass arrows (desktop only — see apply() above)
+        const prevBtn = featCarousel.querySelector('[data-feat-prev]');
+        const nextBtn = featCarousel.querySelector('[data-feat-next]');
+        const onPrev = () => { pause(6000); goTo((active < 0 ? 0 : active) - 1); };
+        const onNext = () => { pause(6000); goTo((active < 0 ? 0 : active) + 1); };
+        if (prevBtn) prevBtn.addEventListener('click', onPrev);
+        if (nextBtn) nextBtn.addEventListener('click', onNext);
+        this.cleanups.push(() => {
+          if (prevBtn) prevBtn.removeEventListener('click', onPrev);
+          if (nextBtn) nextBtn.removeEventListener('click', onNext);
+        });
+      }
+    }
 
     // dropdown groups (Products / Resources / About Us), one wiring for all
     const ddClosers = []; // opening one group instantly closes its siblings,
@@ -436,9 +554,9 @@ class Component extends DCLogic {
       btn.addEventListener('click', onTap);
       this.cleanups.push(() => btn.removeEventListener('click', onTap));
     });
-    // liquid-glass pill: gloss highlight follows the cursor (iOS-style)
-    const pill = root.querySelector('[data-glass-pill]');
-    if (pill) {
+    // liquid-glass: gloss highlight follows the cursor (iOS-style) — the nav
+    // pill and the featured-carousel arrows all opt in via [data-glass-pill]
+    root.querySelectorAll('[data-glass-pill]').forEach(pill => {
       const gloss = pill.querySelector('[data-glass-gloss]');
       const onMove = e => {
         const r = pill.getBoundingClientRect();
@@ -454,7 +572,7 @@ class Component extends DCLogic {
       pill.addEventListener('mousemove', onMove);
       pill.addEventListener('mouseleave', onLeave);
       this.cleanups.push(() => { pill.removeEventListener('mousemove', onMove); pill.removeEventListener('mouseleave', onLeave); });
-    }
+    });
     // ---- mobile hamburger (identical to the homepage header)
     const burger = root.querySelector('[data-burger]');
     const sheet = root.querySelector('[data-mobile-nav]');
@@ -514,16 +632,26 @@ class Component extends DCLogic {
       onSearch: e => this.setState({ q: e.target.value }),
       gridHeading,
       empty: all.length === 0,
-      gridStyle: all.length === 0 ? 'display:none' : 'display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:clamp(12px,1.6vw,18px)',
+      gridStyle: all.length === 0 ? 'display:none' : 'display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)',
       countLabel: list.length + (list.length === 1 ? ' post' : ' posts'),
-      featuredHref: ART(ARTICLES[0].slug),
+      featured: FEATURED.map(slug => ARTICLES.find(a => a.slug === slug)).filter(Boolean).map((a, i) => ({
+        ...a,
+        href: ART(a.slug),
+        imgId: 'res-feat-' + i
+      })),
       catHrefCash: '?cat=' + encodeURIComponent('Cash flow') + '#latest',
       catHrefPay: '?cat=' + encodeURIComponent('Payments') + '#latest',
+      trending: TRENDING.map(slug => ARTICLES.find(a => a.slug === slug)).filter(Boolean).map((a, i) => ({
+        ...a,
+        href: ART(a.slug),
+        author: AUTHOR,
+        imgId: 'res-trend-' + i
+      })),
       list: list.map((a, i) => ({
         ...a,
         href: ART(a.slug),
-        cardStyle: 'display:flex;flex-direction:column;background:' + TINTS[i % TINTS.length]
-          + ';border:1px solid #E0E0E0;border-radius:20px;box-shadow:0 8px 24px rgba(30,50,90,.035);padding:clamp(18px,2vw,22px);min-height:196px;transition:box-shadow .3s ease,transform .3s ease'
+        author: AUTHOR,
+        imgId: 'res-recent-' + i
       }))
     };
   }
