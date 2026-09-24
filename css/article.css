@@ -5,4 +5,6 @@ body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
 [data-body] h2{scroll-margin-top:96px}
 summary::-webkit-details-marker{display:none}
 summary{list-style:none}
+/* install band headline pulse, shared with index.html */
+@keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}

@@ -4,4 +4,6 @@ body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
 [data-rail]{scrollbar-width:none;-ms-overflow-style:none}
 [data-rail]::-webkit-scrollbar{display:none}
 :focus-visible{outline:2px solid #0029FF;outline-offset:3px;border-radius:8px}
+/* install band headline pulse, shared with index.html */
+@keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}

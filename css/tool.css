@@ -7,4 +7,6 @@ input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;ba
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-8.5px;border-radius:50%;background:#0029FF;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,41,255,.3);cursor:pointer}
 input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:#EEEEEE}
 input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#0029FF;border:3px solid #fff;cursor:pointer}
+/* install band headline pulse, shared with index.html */
+@keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}

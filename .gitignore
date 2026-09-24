@@ -4,3 +4,8 @@ Thumbs.db
 node_modules/
 .vscode/
 .claude/
+
+# Source artwork. The pages load the generated .webp sitting beside these;
+# the originals stay local so the repo isn't carrying ~3.9MB nothing requests.
+assets/images/cards/*.png
+assets/images/electronics stock/

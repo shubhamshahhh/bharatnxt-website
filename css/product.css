@@ -2,4 +2,43 @@
 html{line-height:1.5;-webkit-text-size-adjust:100%}
 body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F7F8FA;color:#314259;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 :focus-visible{outline:2px solid #0029FF;outline-offset:3px;border-radius:8px}
-@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+/* rich product pages (PRODUCTS[].rich) only */
+@keyframes bnTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes bnBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+@keyframes bnSpin{to{transform:rotate(360deg)}}
+/* Hero card arc. Each card orbits a pivot below the art box: rotate out to the
+   arc angle, push out by the radius, then counter-rotate by less than the full
+   angle so the card stays near-upright but still tilts at the ends - the way a
+   stack of cards fans open in the hand. --r and --cw are written by a
+   ResizeObserver so the arc scales with the art box; the inline fallbacks keep
+   it sane if ResizeObserver is missing.
+   z-index ramps monotonically rather than peaking in the middle: every card
+   therefore passes over the one behind it in the direction of travel, like a
+   deck being fanned open, instead of both halves tucking under the apex. The
+   wrap from 24 back to 1 lands at the sweep ends where opacity is already 0. */
+@keyframes bnCardArc{
+  0%{transform:translate(-50%,-50%) rotate(-66deg) translateY(calc(-1 * var(--r,250px))) rotate(44deg) scale(.68);opacity:0;z-index:1}
+  7%{opacity:1}
+  50%{transform:translate(-50%,-50%) rotate(0deg) translateY(calc(-1 * var(--r,250px))) rotate(0deg) scale(1.1)}
+  93%{opacity:1}
+  100%{transform:translate(-50%,-50%) rotate(66deg) translateY(calc(-1 * var(--r,250px))) rotate(-44deg) scale(.68);opacity:0;z-index:24}
+}
+/* The box floor clips the sweep well before the ends, so cards would otherwise
+   be chopped mid-opacity at the bottom corners. Dissolve them at the edges
+   instead, independently of whatever height the box ends up with. */
+[data-cp-arc]{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%)}
+/* the gloss sweeps across only while the card is near the apex */
+@keyframes bnCardShine{
+  0%,38%{transform:translateX(-170%) skewX(-18deg)}
+  60%,100%{transform:translateX(270%) skewX(-18deg)}
+}
+/* the in-phone screens are decorative composites; keep their scrollbars out of
+   the frame so a screen never reads as a real scrollable region */
+[data-cp-screen]::-webkit-scrollbar{display:none}
+[data-cp-screen]{scrollbar-width:none}
+/* install band headline pulse, shared with index.html */
+@keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}
+  /* the ticker is the one motion that carries no information; stop it outright
+     rather than letting the blanket rule freeze it mid-slide */
+  [data-cp-tick-track]{transform:none !important}}
