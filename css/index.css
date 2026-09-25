@@ -15,6 +15,9 @@ summary{list-style:none}
    a dropped image, so an author-supplied src leaves the dashed drop ring
    painted on top of real artwork. */
 [data-app-art] image-slot::part(ring){display:none}
+/* and the how-it-works step art, which carries an author-supplied src in
+   both the mobile deck and the desktop tab panels */
+image-slot[id^="v5-step-"]::part(ring){display:none}
 @keyframes bnBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 @keyframes bnStep{0%,100%{opacity:.28}12%,26%{opacity:1}}
 @keyframes bnPing{0%{transform:scale(.6);opacity:.85}100%{transform:scale(2.4);opacity:0}}
