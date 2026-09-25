@@ -184,9 +184,9 @@
     <!-- Real team photos, four of the twelve. They are 400px originals, so the
          cluster is sized under that and never upscaled. Decorative - the rail
          in Life at BharatNXT carries the same faces with proper alt text. -->
-    <div data-hero-art="" aria-hidden="true" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .7s ease .12s,transform .7s ease .12s;position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.7vw,24px)">
+    <div data-hero-art="" aria-hidden="true" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .7s ease .12s,transform .7s ease .12s;position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0">
       <sc-for list="{{ heroArt }}" as="ha">
-        <figure style="position:relative;margin:0;padding:9px 9px 26px;background:#fff;border-radius:3px;box-shadow:0 12px 28px rgba(17,26,61,.14),0 2px 5px rgba(17,26,61,.10);transform:{{ ha.tilt }}">
+        <figure data-hero-card="" style="--t:{{ ha.tilt }};position:relative;z-index:{{ ha.z }};{{ ha.off }};padding:9px 9px 26px;background:#fff;border-radius:3px;box-shadow:0 12px 28px rgba(17,26,61,.14),0 2px 5px rgba(17,26,61,.10);transform:var(--t)">
           <span aria-hidden="true" style="position:absolute;{{ ha.tapePos }};width:{{ ha.tapeW }};height:19px;transform:rotate({{ ha.tapeRot }});background:linear-gradient(180deg,rgba(255,243,168,.66) 0%,rgba(255,222,0,.30) 46%,rgba(255,243,168,.60) 100%);box-shadow:0 1px 3px rgba(17,26,61,.15);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)"></span>
           <img src="{{ ha.src }}" alt="" width="400" height="245" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:400/245;object-fit:cover;background:#EDF2FF">
         </figure>
@@ -1157,14 +1157,23 @@ class Component extends DCLogic {
       // the block reads as four things someone stuck up, not a template
       // repeated four times. Every value is precomputed - the template runtime
       // cannot build a style string from an expression.
+      // A pile, not a grid: each card is pulled toward the middle so it laps
+      // its neighbours, and z rises with reading order so the overlap looks
+      // deliberate rather than arbitrary. Hover lifts one clear of the rest -
+      // that rule lives in css/careers.css because style-hover is not
+      // interpolated, so a per-card hover transform cannot be written here.
       heroArt: [
-        { src: LIFE[2].src, tilt: 'translateY(6px) rotate(-1.4deg)',
+        { src: LIFE[2].src, tilt: 'translateY(6px) rotate(-2.2deg)', z: '1',
+          off: 'margin:0 -30px -26px 0',
           tapePos: 'top:-10px;left:-19px', tapeW: '78px', tapeRot: '-39deg' },
-        { src: LIFE[4].src, tilt: 'translateY(-8px) rotate(1.1deg)',
+        { src: LIFE[4].src, tilt: 'translateY(-8px) rotate(1.8deg)', z: '2',
+          off: 'margin:26px 0 0 -30px',
           tapePos: 'top:-9px;right:-18px', tapeW: '74px', tapeRot: '38deg' },
-        { src: LIFE[7].src, tilt: 'translateY(4px) rotate(1.6deg)',
+        { src: LIFE[7].src, tilt: 'translateY(4px) rotate(2.4deg)', z: '3',
+          off: 'margin:-26px -24px 0 0',
           tapePos: 'top:-9px;left:50%;margin-left:-41px', tapeW: '82px', tapeRot: '-2.4deg' },
-        { src: LIFE[10].src, tilt: 'translateY(-6px) rotate(-1deg)',
+        { src: LIFE[10].src, tilt: 'translateY(-6px) rotate(-1.6deg)', z: '4',
+          off: 'margin:-10px 0 0 -24px',
           tapePos: 'top:-11px;left:-16px', tapeW: '70px', tapeRot: '-45deg' }
       ],
       why: WHY.map((w, i) => ({ ...w, i: String(i), n: String(i + 1).padStart(2, '0') })),
