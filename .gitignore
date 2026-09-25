@@ -9,3 +9,6 @@ node_modules/
 # the originals stay local so the repo isn't carrying ~3.9MB nothing requests.
 assets/images/cards/*.png
 assets/images/electronics stock/
+
+# Windows writes these into any folder copied off a network/shared drive
+desktop.ini

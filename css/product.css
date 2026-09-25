@@ -36,6 +36,9 @@ body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
    the frame so a screen never reads as a real scrollable region */
 [data-cp-screen]::-webkit-scrollbar{display:none}
 [data-cp-screen]{scrollbar-width:none}
+/* image-slot only sets data-filled for an image dropped in the editor, so an
+   author-supplied src leaves the dashed drop ring painted over real artwork */
+[data-cp-value-art] image-slot::part(ring){display:none}
 /* install band headline pulse, shared with index.html */
 @keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}

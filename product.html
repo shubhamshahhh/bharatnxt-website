@@ -726,10 +726,13 @@ const PRODUCTS = [
       sub: 'Unlock time, preserve working capital and keep every business opportunity within reach.',
       items: [
         { n: '01', slot: 'cp-value-1', shot: 'Credit days, calendar or statement cycle',
+          img: 'assets/images/Cards%20Section%20Placeholders/50days.webp',
           title: 'Up to 50 credit days', text: 'Your supplier is paid today. You settle your bank at the end of your card cycle.' },
         { n: '02', slot: 'cp-value-2', shot: 'Supplier receiving a bank credit, no machine',
+          img: 'assets/images/Cards%20Section%20Placeholders/No%20supplier%20onboarding.webp',
           title: 'No supplier onboarding', text: 'He needs no machine, no app and no new bank account. He just sees a bank credit.' },
         { n: '03', slot: 'cp-value-3', shot: 'Card rewards or points earned',
+          img: 'assets/images/Cards%20Section%20Placeholders/Card%20rewards%20continue1.webp',
           title: 'Card rewards continue', text: 'Every payment keeps earning what your card already earns.' } ] },
 
     how: {
@@ -1435,6 +1438,12 @@ class Component extends DCLogic {
 
     // the FAQ renders and lays itself out from js/faq-data.js on every page,
     // at the homepage's own 760 breakpoint rather than this page's
+    ((p0.value && p0.value.items) || []).forEach(v => {
+      if (!v.img) return;
+      const el = root.querySelector('[data-cp-value-card] image-slot[id="' + v.slot + '"]');
+      if (el && el.getAttribute('src') !== v.img) el.setAttribute('src', v.img);
+    });
+
     if (window.BNXT_FAQ_INIT) window.BNXT_FAQ_INIT(root, this.cleanups);
     if (window.BNXT_INSTALL_INIT) window.BNXT_INSTALL_INIT(root, this.cleanups);
 
