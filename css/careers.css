@@ -21,11 +21,17 @@ body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
   0%,100%{transform:translateX(-50%) rotate(calc(var(--r) - 1.2deg))}
   50%{transform:translateX(-50%) rotate(calc(var(--r) + 1.2deg))}
 }
-[data-pile-scroll]::-webkit-scrollbar{display:none}
-[data-pile-scroll]{scrollbar-width:none}
+/* The line drifts as one piece: rope, pegs and photos together. The list is
+   rendered twice and the track slides exactly half its width, so the wrap is
+   invisible - same translateX(-50%) trick as the homepage ticker. */
+@keyframes bnPileDrift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-pile-scroll]:hover [data-pile],
+[data-pile-scroll]:focus-within [data-pile]{animation-play-state:paused}
 /* hide the filter rail's scrollbar on mobile without losing the scroll */
 [data-job-filters] > div::-webkit-scrollbar{display:none}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}
   /* the cards keep their authored tilt: the base angle is in the inline
      transform, so killing the animation leaves a still, pegged line rather
-     than a row of straightened rectangles */}
+     than a row of straightened rectangles. The drift carries no information,
+     so stop it outright instead of freezing it mid-slide. */
+  [data-pile]{transform:none !important}}

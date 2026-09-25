@@ -227,9 +227,9 @@
       <h2 style="font-size:clamp(24px,3.6vw,38px);font-weight:900;letter-spacing:-1.4px;line-height:1.08;color:#111A3D;margin-bottom:12px;text-wrap:pretty">Three things a business needs money to do.</h2>
       <p style="font-size:15px;line-height:1.65;color:#686D77;max-width:52ch;text-wrap:pretty">Run the operation. Manage what moves through it. Grow past what it can fund on its own. Every product we ship sits under one of those.</p>
     </div>
-    <div data-pillars="" style="display:grid;gap:clamp(12px,1.6vw,18px)">
+    <div data-pillars="" style="display:block">
       <sc-for list="{{ pillars }}" as="p">
-        <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;border-radius:20px;background:{{ p.bg }};border:1px solid {{ p.border }};padding:clamp(20px,2.6vw,34px)">
+        <div data-pillar-card="{{ p.i }}" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;border-radius:20px;background:{{ p.bg }};border:1px solid {{ p.border }};padding:clamp(20px,2.6vw,34px)">
           <div data-pillar-inner="" style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(18px,2.6vw,44px);align-items:start">
             <div>
               <span style="display:inline-block;font-size:11px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#0029FF;background:#fff;border-radius:100px;padding:6px 13px;margin-bottom:12px">{{ p.tag }}</span>
@@ -304,12 +304,16 @@
     <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;margin-bottom:clamp(18px,2.4vw,30px)">
       <h2 style="font-size:clamp(24px,3.6vw,38px);font-weight:900;letter-spacing:-1.4px;line-height:1.08;color:#111A3D;max-width:18ch;text-wrap:pretty">Six things we actually hold each other to.</h2>
     </div>
-    <sc-for list="{{ values }}" as="v">
-      <div data-value-row="" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(14px,3vw,56px);align-items:start;padding:clamp(20px,2.6vw,32px) 0;border-top:1px solid #E0E0E0">
-        <h3 style="font-size:clamp(20px,2.8vw,30px);font-weight:900;letter-spacing:-1px;line-height:1.1;color:#111A3D;text-wrap:pretty">{{ v.name }}</h3>
-        <p style="font-size:14.5px;line-height:1.7;color:#4B5580;max-width:62ch;text-wrap:pretty">{{ v.text }}</p>
-      </div>
-    </sc-for>
+    <!-- Two columns rather than six full-width rows: same six values, same
+         words, roughly half the scroll. -->
+    <div data-values-grid="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,4vw,64px)">
+      <sc-for list="{{ values }}" as="v">
+        <div data-value-row="" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;padding:clamp(15px,1.8vw,20px) 0;border-top:1px solid #E0E0E0">
+          <h3 style="font-size:clamp(17px,1.9vw,21px);font-weight:900;letter-spacing:-.6px;line-height:1.18;color:#111A3D;margin-bottom:6px;text-wrap:pretty">{{ v.name }}</h3>
+          <p style="font-size:14px;line-height:1.6;color:#4B5580;max-width:52ch;text-wrap:pretty">{{ v.text }}</p>
+        </div>
+      </sc-for>
+    </div>
   </div>
 </section>
 
@@ -331,22 +335,24 @@
        the string at a width nobody tested. Two strings of six rather than one
        of twelve: across a 1200px run, twelve cards leave 96px each and overlap
        into mush. -->
-  <sc-for list="{{ lifeRows }}" as="row">
-    <div data-pile-scroll="" style="padding:0 20px;-webkit-overflow-scrolling:touch">
-      <div data-pile="" style="position:relative;max-width:1200px;margin:0 auto">
-        <svg data-rope="" aria-hidden="true" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none">
-          <path data-rope-path="" fill="none" stroke="#C2CBE8" stroke-width="2" stroke-linecap="round"></path>
-        </svg>
-        <sc-for list="{{ row.items }}" as="ph">
-          <figure data-polaroid="{{ ph.i }}" style="--r:{{ ph.rot }};--d:{{ ph.d }};position:absolute;top:0;left:0;margin:0;width:var(--pw);padding:9px 9px 28px;background:#fff;border-radius:3px;box-shadow:0 10px 22px rgba(17,26,61,.16),0 2px 5px rgba(17,26,61,.10);transform-origin:50% -6px;transform:translateX(-50%) rotate(var(--r));animation:bnPegSway 6.5s ease-in-out infinite var(--d);will-change:transform">
-            <span aria-hidden="true" data-peg="" style="position:absolute;top:-11px;left:50%;width:11px;height:17px;margin-left:-5.5px;border-radius:3px;background:#FFDE00;box-shadow:0 1px 2px rgba(17,26,61,.3)"></span>
-            <img src="{{ ph.src }}" alt="{{ ph.alt }}" width="400" height="245" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:400/245;object-fit:cover;background:#EDF2FF">
-            <figcaption style="position:absolute;left:9px;right:9px;bottom:6px;height:17px;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:#9092A3;text-align:center;overflow:hidden;white-space:nowrap">{{ ph.cap }}</figcaption>
-          </figure>
-        </sc-for>
-      </div>
+  <!-- One line, drifting. The list is rendered twice and the track slides
+       exactly half its width, so the loop has no seam - the same trick the
+       homepage ticker uses. The rope's sag repeats on a period that divides
+       the half exactly, so the curve meets itself at the wrap too. -->
+  <div data-pile-scroll="" style="position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 96%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 96%,transparent 100%)">
+    <div data-pile="" style="position:relative;width:max-content;animation:bnPileDrift 68s linear infinite;will-change:transform">
+      <svg data-rope="" aria-hidden="true" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none">
+        <path data-rope-path="" fill="none" stroke="#C2CBE8" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+      <sc-for list="{{ lifeLoop }}" as="ph">
+        <figure data-polaroid="{{ ph.i }}" style="--r:{{ ph.rot }};--d:{{ ph.d }};position:absolute;top:0;left:0;margin:0;width:var(--pw);padding:9px 9px 28px;background:#fff;border-radius:3px;box-shadow:0 10px 22px rgba(17,26,61,.16),0 2px 5px rgba(17,26,61,.10);transform-origin:50% -6px;transform:translateX(-50%) rotate(var(--r));animation:bnPegSway 6.5s ease-in-out infinite var(--d);will-change:transform">
+          <span aria-hidden="true" data-peg="" style="position:absolute;top:-11px;left:50%;width:11px;height:17px;margin-left:-5.5px;border-radius:3px;background:#FFDE00;box-shadow:0 1px 2px rgba(17,26,61,.3)"></span>
+          <img src="{{ ph.src }}" alt="{{ ph.alt }}" width="400" height="245" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:400/245;object-fit:cover;background:#EDF2FF">
+          <figcaption style="position:absolute;left:9px;right:9px;bottom:6px;height:17px;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:#9092A3;text-align:center;overflow:hidden;white-space:nowrap">{{ ph.cap }}</figcaption>
+        </figure>
+      </sc-for>
     </div>
-  </sc-for>
+  </div>
   <div style="max-width:1200px;margin:0 auto;padding:0 20px">
     <div data-perks="" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,34px)">
       <sc-for list="{{ perks }}" as="pk">
@@ -394,26 +400,6 @@
       </sc-for>
     </div>
     <p data-job-empty="" style="display:none;font-size:14.5px;line-height:1.6;color:#686D77;background:#fff;border:1px solid #E4E7F2;border-radius:18px;padding:clamp(18px,2.2vw,26px);margin-top:10px">No roles match those filters right now. Clear a filter, or send us your CV below and we'll come back to you when something opens.</p>
-  </div>
-</section>
-
-<!-- ══ SELECTION PROCESS ══ the three stages BharatNXT actually publishes. -->
-<section data-screen-label="Selection process" style="padding:clamp(34px,5vw,76px) 20px 0">
-  <div style="max-width:1200px;margin:0 auto">
-    <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;margin-bottom:clamp(18px,2.4vw,30px);max-width:600px">
-      <h2 style="font-size:clamp(24px,3.6vw,38px);font-weight:900;letter-spacing:-1.4px;line-height:1.08;color:#111A3D;margin-bottom:10px;text-wrap:pretty">How we'll get to know you.</h2>
-      <p style="font-size:15px;line-height:1.65;color:#686D77;max-width:48ch;text-wrap:pretty">Three stages. No surprise rounds bolted on at the end.</p>
-    </div>
-    <div data-steps="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,22px)">
-      <sc-for list="{{ steps }}" as="st">
-        <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;position:relative;background:#fff;border:1px solid #E4E7F2;border-radius:18px;padding:clamp(20px,2.4vw,30px)">
-          <span data-step-icon="{{ st.i }}" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;background:#EEF3FF;border:1px solid #DCE4FF;color:#0029FF;margin-bottom:14px"></span>
-          <span style="display:block;font-size:11px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;margin-bottom:6px">Stage {{ st.n }}</span>
-          <h3 style="font-size:clamp(17px,2.1vw,22px);font-weight:800;letter-spacing:-.6px;line-height:1.22;color:#111A3D;margin-bottom:8px;text-wrap:pretty">{{ st.title }}</h3>
-          <p style="font-size:14px;line-height:1.6;color:#4B5580;max-width:36ch;text-wrap:pretty">{{ st.text }}</p>
-        </div>
-      </sc-for>
-    </div>
   </div>
 </section>
 
@@ -664,19 +650,6 @@ const PERKS = [
   { head: 'Growth & community', items: ['Knowledge sessions', 'Industry conferences', 'Office events, programs and offsites'] }
 ];
 
-/* The three stages the company publishes - no others. Icons are drawn inline
-   in the repo's own style rather than pulled from the WordPress theme. */
-const ICON = {
-  assignment: '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"></path><path d="M16 5h2a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h2"></path><path d="M9 12l2 2 4-4"></path></svg>',
-  psychometric: '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 0 0-4 4 3 3 0 0 0-1 5.8V16a3 3 0 0 0 5 2.2A3 3 0 0 0 17 16v-2.2A3 3 0 0 0 16 8a4 4 0 0 0-4-4z"></path><path d="M12 4v15"></path></svg>',
-  f2f: '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="2.6"></circle><circle cx="16" cy="9" r="2.6"></circle><path d="M3.5 19a4.5 4.5 0 0 1 9 0"></path><path d="M13 19a4.5 4.5 0 0 1 7.5-3.3"></path></svg>'
-};
-const STEPS = [
-  { title: 'Assignment', icon: ICON.assignment, text: 'A piece of real work, close to what the role actually involves.' },
-  { title: 'Psychometric', icon: ICON.psychometric, text: 'How you think and how you work, so we can talk about fit honestly.' },
-  { title: 'F2F', icon: ICON.f2f, text: 'Face to face with the people you would be working alongside.' }
-];
-
 /* The 12 photos BharatNXT publishes on its careers site. They are 400x245
    originals - the largest available - so the rail shows them at native width
    rather than blowing one up into a hero tile. */
@@ -836,6 +809,89 @@ class Component extends DCLogic {
       }
     }
 
+    // ---- Life at BharatNXT: one drifting line of pegged polaroids.
+    // The rope and every hanging point come from one sag function, so they
+    // cannot disagree at a width nobody tested. The list is rendered twice and
+    // the track slides half its width, so the wrap is invisible - which only
+    // holds if the sag period divides that half exactly.
+    const pile = root.querySelector('[data-pile]');
+    if (pile) {
+      const ropePath = pile.querySelector('[data-rope-path]');
+      const pegged = Array.from(pile.querySelectorAll('[data-polaroid]'));
+      const TOP = 26;                        // room above the line for the pegs
+      const layoutPile = () => {
+        if (!ropePath || !pegged.length) return;
+        const vw = window.innerWidth;
+        const pw = vw < 560 ? 132 : vw < 900 ? 152 : 184;
+        pile.style.setProperty('--pw', pw + 'px');
+        const step = pw + 20;                      // card pitch along the line
+        const half = (pegged.length / 2) * step;   // one full copy of the list
+        const track = half * 2;
+        pile.style.width = track + 'px';
+        // two swags per copy; the period has to divide `half` exactly or the
+        // curve would not meet itself where the track wraps
+        const period = half / 2;
+        const amp = Math.max(16, Math.min(40, step * 0.22));
+        const sagAt = x => TOP + amp * (1 - Math.cos(2 * Math.PI * x / period)) / 2;
+        let tallest = 0;
+        pegged.forEach((el, i) => {
+          const x = (i + 0.5) * step;
+          const y = sagAt(x);
+          el.style.left = x.toFixed(1) + 'px';
+          el.style.top = y.toFixed(1) + 'px';
+          tallest = Math.max(tallest, y + el.offsetHeight);
+        });
+        let d = 'M 0 ' + sagAt(0).toFixed(1);
+        const SEG = Math.max(96, Math.round(track / 14));
+        for (let k = 1; k <= SEG; k++) {
+          const x = (k / SEG) * track;
+          d += ' L ' + x.toFixed(1) + ' ' + sagAt(x).toFixed(1);
+        }
+        ropePath.setAttribute('d', d);
+        pile.style.height = Math.ceil(tallest + 14) + 'px';
+      };
+      layoutPile();
+      // the cards size from their image, so re-run once decoding finishes
+      root.querySelectorAll('[data-polaroid] img').forEach(img => {
+        if (img.complete) return;
+        const onLoad = () => layoutPile();
+        img.addEventListener('load', onLoad);
+        this.cleanups.push(() => img.removeEventListener('load', onLoad));
+      });
+      let pileTick = false;
+      const onPileResize = () => {
+        if (pileTick) return;
+        pileTick = true;
+        requestAnimationFrame(() => { pileTick = false; layoutPile(); });
+      };
+      window.addEventListener('resize', onPileResize);
+      this.cleanups.push(() => window.removeEventListener('resize', onPileResize));
+    }
+
+    // ---- What you'll build: the cards gather into a stack, the same pattern
+    // the homepage uses for its product cards. Later cards sit above earlier
+    // ones so the deck builds correctly rather than the first card covering
+    // everything behind it.
+    const pillarCards = Array.from(root.querySelectorAll('[data-pillar-card]'));
+    if (pillarCards.length) {
+      const stackPillars = () => {
+        // Sticky stacking needs room to travel: below 760 the cards are tall
+        // enough that pinning them just holds one on screen for a whole screen
+        // of scrolling, so they stay a plain stacked list there.
+        const narrow = window.innerWidth < 760;
+        pillarCards.forEach((el, i) => {
+          el.style.position = narrow ? 'static' : 'sticky';
+          el.style.top = narrow ? 'auto' : (88 + i * 12) + 'px';
+          el.style.zIndex = String(i + 2);
+          el.style.marginBottom = narrow ? 'clamp(12px,1.6vw,18px)' : 'clamp(14px,1.8vw,22px)';
+        });
+      };
+      stackPillars();
+      const onStackResize = () => stackPillars();
+      window.addEventListener('resize', onStackResize);
+      this.cleanups.push(() => window.removeEventListener('resize', onStackResize));
+    }
+
     // ---- Impact counters. These write textContent, so each [data-cr-stat]
     // has to stay a leaf text node - nesting anything inside one would be
     // wiped on the first frame.
@@ -869,97 +925,6 @@ class Component extends DCLogic {
       }
     }
 
-    // Selection-process icons are injected rather than interpolated: {{ }} is
-    // escaped as text by the runtime, so inline SVG travelling that way renders
-    // as visible source. js/faq-data.js does the same for its topic icons.
-    root.querySelectorAll('[data-step-icon]').forEach(el => {
-      const s = STEPS[parseInt(el.getAttribute('data-step-icon'), 10)];
-      if (s && s.icon) el.innerHTML = s.icon;
-    });
-
-    // ---- Life at BharatNXT: polaroids pegged to a line.
-    // The rope and every hanging point come from one sag function, so they
-    // cannot disagree at a width nobody tested. Positions are written in px
-    // after measuring, because the cards are absolutely positioned and the
-    // container has to be told how tall to be.
-    const piles = Array.from(root.querySelectorAll('[data-pile]'));
-    if (piles.length) {
-      const TOP = 26;                        // room above the line for the pegs
-      const layoutPile = () => {
-        const narrow = window.innerWidth < 760;
-        piles.forEach(pile => {
-          const ropePath = pile.querySelector('[data-rope-path]');
-          const pegged = Array.from(pile.querySelectorAll('[data-polaroid]'));
-          const scroller = pile.parentElement;
-          if (!ropePath || !pegged.length) return;
-
-          // On a phone six across would be ~55px each, so the string keeps a
-          // usable card size and scrolls sideways instead of shrinking. On
-          // desktop the width is left to the stylesheet.
-          if (narrow) {
-            pile.style.maxWidth = 'none';
-            pile.style.width = Math.max(scroller.clientWidth - 40, pegged.length * 128) + 'px';
-          } else {
-            pile.style.maxWidth = '1200px';
-            pile.style.width = '';
-          }
-          scroller.style.overflowX = narrow ? 'auto' : 'visible';
-          scroller.style.overflowY = narrow ? 'hidden' : 'visible';
-
-          // One source of truth: the width the box actually ended up, read back
-          // after the write. Deriving positions from a number the box then
-          // clamps (max-width) is what put the rope and the cards on different
-          // runs the first time around.
-          const track = pile.clientWidth;
-          if (!track) return;
-
-          const pw = Math.max(108, Math.min(186, track / pegged.length - 16));
-          pile.style.setProperty('--pw', pw + 'px');
-          // sag scales with the run so the curve reads the same at every width
-          const sag = Math.max(14, Math.min(44, track * 0.05));
-          let tallest = 0;
-          pegged.forEach((el, i) => {
-            const t = (i + 0.5) / pegged.length;
-            const y = TOP + sag * Math.sin(Math.PI * t);
-            el.style.left = (t * track).toFixed(1) + 'px';
-            el.style.top = y.toFixed(1) + 'px';
-            tallest = Math.max(tallest, y + el.offsetHeight);
-          });
-          let d = 'M 0 ' + TOP;
-          for (let k = 1; k <= 48; k++) {
-            const t = k / 48;
-            d += ' L ' + (t * track).toFixed(1) + ' ' + (TOP + sag * Math.sin(Math.PI * t)).toFixed(1);
-          }
-          ropePath.setAttribute('d', d);
-          pile.style.height = Math.ceil(tallest + 14) + 'px';
-        });
-      };
-      layoutPile();
-      // the cards size from their image, so re-run once decoding finishes
-      root.querySelectorAll('[data-polaroid] img').forEach(img => {
-        if (img.complete) return;
-        const onLoad = () => layoutPile();
-        img.addEventListener('load', onLoad);
-        this.cleanups.push(() => img.removeEventListener('load', onLoad));
-      });
-      let pileTick = false;
-      const onPileResize = () => {
-        if (pileTick) return;
-        pileTick = true;
-        requestAnimationFrame(() => { pileTick = false; layoutPile(); });
-      };
-      window.addEventListener('resize', onPileResize);
-      this.cleanups.push(() => window.removeEventListener('resize', onPileResize));
-    }
-
-    // Selection-process icons are injected rather than interpolated: {{ }} is
-    // escaped as text by the runtime, so inline SVG travelling that way renders
-    // as visible source. js/faq-data.js does the same for its topic icons.
-    root.querySelectorAll('[data-step-icon]').forEach(el => {
-      const s = STEPS[parseInt(el.getAttribute('data-step-icon'), 10)];
-      if (s && s.icon) el.innerHTML = s.icon;
-    });
-
     // ---- analytics on the two CTAs that matter here
     const resumeCta = root.querySelector('[data-resume-cta]');
     if (resumeCta) {
@@ -984,9 +949,8 @@ class Component extends DCLogic {
       set('[data-pillar-inner]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,.9fr) minmax(0,1.1fr)' });
       set('[data-pillar-tiles]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))' });
       set('[data-impact-grid]', { gridTemplateColumns: m ? 'repeat(2,minmax(0,1fr))' : t ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))' });
-      set('[data-value-row]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,.78fr) minmax(0,1.22fr)' });
+      set('[data-values-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))' });
       set('[data-perks]', { gridTemplateColumns: m ? 'repeat(2,minmax(0,1fr))' : t ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))' });
-      set('[data-steps]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))' });
       set('[data-open-app]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,1.25fr) minmax(0,.75fr)' });
       set('[data-job-row]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'minmax(0,1fr) auto', gap: m ? '12px' : '14px' });
       set('[data-hero-ctas] a', { flex: m ? '1 1 100%' : '0 0 auto' });
@@ -1144,7 +1108,7 @@ class Component extends DCLogic {
         { src: LIFE[10].src, tilt: 'translateY(-6px) rotate(-1deg)' }
       ],
       why: WHY.map((w, i) => ({ ...w, i: String(i), n: String(i + 1).padStart(2, '0') })),
-      pillars: PILLARS,
+      pillars: PILLARS.map((p, i) => ({ ...p, i: String(i) })),
       // counters start at zero and animate up; the starred rating has no count
       // and is printed as authored
       stats: STATS.map((s, i) => ({
@@ -1156,20 +1120,18 @@ class Component extends DCLogic {
       flow: FLOW.map((f, i) => ({ ...f, i: String(i), n: String(i + 1) })),
       values: VALUES,
       perks: PERKS,
-      steps: STEPS.map((s, i) => ({ ...s, i: String(i), n: String(i + 1) })),
       // Rotations and sway offsets are derived from the index, never
-      // Math.random: a value that changed between renders would make the whole
-      // line jump. Six per string.
-      lifeRows: [0, 1].map(r => ({
-        items: LIFE.slice(r * 6, r * 6 + 6).map((p, k) => {
-          const i = r * 6 + k;
-          return {
-            ...p, i: String(i),
-            rot: ((i % 2 ? 1 : -1) * (1.6 + (i * 37 % 19) / 10)).toFixed(2) + 'deg',
-            d: '-' + ((i * 43 % 65) / 10).toFixed(2) + 's'
-          };
-        })
-      }))
+      // Math.random: a value that changed between renders would make the line
+      // jump. Rendered twice so the -50% drift loops without a seam, and the
+      // copy keeps each photo's angle so the wrap is invisible.
+      lifeLoop: LIFE.concat(LIFE).map((p, i) => {
+        const k = i % LIFE.length;
+        return {
+          ...p, i: String(i),
+          rot: ((k % 2 ? 1 : -1) * (1.6 + (k * 37 % 19) / 10)).toFixed(2) + 'deg',
+          d: '-' + ((k * 43 % 65) / 10).toFixed(2) + 's'
+        };
+      })
     };
   }
 }
