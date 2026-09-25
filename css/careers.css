@@ -7,18 +7,25 @@ body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
    fallback is an invalid duration that silently never runs - so the page root
    declares --flow:1 and the same authored value works here too. */
 @keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
-/* Life at BharatNXT: the 12 team photos are 400x245 originals - the largest
-   the company publishes - so they are never scaled past their native width.
-   A drifting rail shows them all at 1:1 instead of blowing one up into a hero
-   tile, which at 400px would read soft. Same translateX(-50%) marquee as the
-   homepage ticker: the list is rendered twice and the track slides exactly
-   half its width, so the loop has no seam. */
-@keyframes bnRail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-[data-life-rail]:hover [data-life-track],
-[data-life-rail]:focus-within [data-life-track]{animation-play-state:paused}
+/* Life at BharatNXT: polaroids pegged to a line.
+   The 12 team photos are 400x245 originals - the largest the company
+   publishes - so a polaroid is always sized under that and never upscaled.
+
+   The sway rotates about a point just above the card, where the peg grips, so
+   each one pivots on its peg rather than spinning about its own middle. The
+   base angle rides in --r and the keyframes add to it, so a card keeps its
+   authored tilt at both ends of the swing. --d is a negative delay that offsets
+   each card in the cycle; it is baked into the markup because a delay rewritten
+   after mount re-seeks a running animation and the line falls out of phase. */
+@keyframes bnPegSway{
+  0%,100%{transform:translateX(-50%) rotate(calc(var(--r) - 1.2deg))}
+  50%{transform:translateX(-50%) rotate(calc(var(--r) + 1.2deg))}
+}
+[data-pile-scroll]::-webkit-scrollbar{display:none}
+[data-pile-scroll]{scrollbar-width:none}
 /* hide the filter rail's scrollbar on mobile without losing the scroll */
 [data-job-filters] > div::-webkit-scrollbar{display:none}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}
-  /* the rail carries no information, so stop it outright rather than letting
-     the blanket rule freeze it mid-slide with photos half out of frame */
-  [data-life-track]{transform:none !important}}
+  /* the cards keep their authored tilt: the base angle is in the inline
+     transform, so killing the animation leaves a still, pegged line rather
+     than a row of straightened rectangles */}
