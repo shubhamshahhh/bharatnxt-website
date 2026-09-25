@@ -308,9 +308,14 @@
          words, roughly half the scroll. -->
     <div data-values-grid="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,4vw,64px)">
       <sc-for list="{{ values }}" as="v">
-        <div data-value-row="" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;padding:clamp(15px,1.8vw,20px) 0;border-top:1px solid #E0E0E0">
-          <h3 style="font-size:clamp(17px,1.9vw,21px);font-weight:900;letter-spacing:-.6px;line-height:1.18;color:#111A3D;margin-bottom:6px;text-wrap:pretty">{{ v.name }}</h3>
-          <p style="font-size:14px;line-height:1.6;color:#4B5580;max-width:52ch;text-wrap:pretty">{{ v.text }}</p>
+        <div data-value-row="" data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;padding:clamp(13px,1.8vw,20px) 0;border-top:1px solid #E0E0E0">
+          <button type="button" data-val-btn="{{ v.i }}" aria-expanded="true" style="width:100%;font-family:inherit;text-align:left;background:transparent;border:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) 14px;gap:12px;align-items:center;cursor:default">
+            <h3 style="font-size:clamp(16.5px,1.9vw,21px);font-weight:900;letter-spacing:-.6px;line-height:1.18;color:#111A3D;text-wrap:pretty">{{ v.name }}</h3>
+            <span data-val-plus="{{ v.i }}" aria-hidden="true" style="display:none;position:relative;width:13px;height:13px;justify-self:end"><span style="position:absolute;top:5.5px;left:0;width:13px;height:2px;border-radius:2px;background:#0029FF"></span><span data-val-bar="{{ v.i }}" style="position:absolute;top:5.5px;left:0;width:13px;height:2px;border-radius:2px;background:#0029FF;transform:rotate(90deg);transition:transform .3s cubic-bezier(.2,0,0,1)"></span></span>
+          </button>
+          <div data-val-body="{{ v.i }}" style="display:grid;grid-template-rows:1fr;transition:grid-template-rows .3s cubic-bezier(.2,0,0,1)">
+            <div style="overflow:hidden"><p style="font-size:14px;line-height:1.6;color:#4B5580;max-width:52ch;padding-top:6px;text-wrap:pretty">{{ v.text }}</p></div>
+          </div>
         </div>
       </sc-for>
     </div>
@@ -809,6 +814,49 @@ class Component extends DCLogic {
       }
     }
 
+    // ---- Values: six full descriptions is a lot of phone. Below 760 they
+    // collapse to their names with the first open, so the section is a list
+    // you can scan rather than a wall you scroll past. On desktop there is
+    // room for all six, so everything stays open and the toggles are inert.
+    const valRows = Array.from(root.querySelectorAll('[data-value-row]'));
+    const setVal = (row, open) => {
+      const body = row.querySelector('[data-val-body]');
+      const btn = row.querySelector('[data-val-btn]');
+      const bar = row.querySelector('[data-val-bar]');
+      if (body) body.style.gridTemplateRows = open ? '1fr' : '0fr';
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (bar) bar.style.transform = open ? 'rotate(0deg)' : 'rotate(90deg)';
+    };
+    const valsNarrow = () => window.innerWidth < 760;
+    valRows.forEach((row, i) => {
+      const btn = row.querySelector('[data-val-btn]');
+      if (!btn) return;
+      const toggle = () => {
+        // inert on desktop, where everything is open anyway
+        if (!valsNarrow()) return;
+        const body = row.querySelector('[data-val-body]');
+        const open = body && body.style.gridTemplateRows === '1fr';
+        valRows.forEach(other => setVal(other, false));
+        if (!open) setVal(row, true);
+      };
+      btn.addEventListener('click', toggle);
+      this.cleanups.push(() => btn.removeEventListener('click', toggle));
+    });
+    const paintVals = () => {
+      const narrow = valsNarrow();
+      valRows.forEach((row, i) => {
+        const plus = row.querySelector('[data-val-plus]');
+        const btn = row.querySelector('[data-val-btn]');
+        if (plus) plus.style.display = narrow ? 'block' : 'none';
+        if (btn) btn.style.cursor = narrow ? 'pointer' : 'default';
+        setVal(row, narrow ? i === 0 : true);
+      });
+    };
+    paintVals();
+    const onValsResize = () => paintVals();
+    window.addEventListener('resize', onValsResize);
+    this.cleanups.push(() => window.removeEventListener('resize', onValsResize));
+
     // ---- Life at BharatNXT: one drifting line of pegged polaroids.
     // The rope and every hanging point come from one sag function, so they
     // cannot disagree at a width nobody tested. The list is rendered twice and
@@ -822,7 +870,9 @@ class Component extends DCLogic {
       const layoutPile = () => {
         if (!ropePath || !pegged.length) return;
         const vw = window.innerWidth;
-        const pw = vw < 560 ? 132 : vw < 900 ? 152 : 184;
+        // The source photos are 400px wide, so the card tops out well under
+        // that - 236 gives a 218px image area and still never upscales.
+        const pw = vw < 560 ? 172 : vw < 900 ? 200 : 236;
         pile.style.setProperty('--pw', pw + 'px');
         const step = pw + 20;                      // card pitch along the line
         const half = (pegged.length / 2) * step;   // one full copy of the list
@@ -875,15 +925,15 @@ class Component extends DCLogic {
     const pillarCards = Array.from(root.querySelectorAll('[data-pillar-card]'));
     if (pillarCards.length) {
       const stackPillars = () => {
-        // Sticky stacking needs room to travel: below 760 the cards are tall
-        // enough that pinning them just holds one on screen for a whole screen
-        // of scrolling, so they stay a plain stacked list there.
+        // Stacks at every width. The offset is smaller on a phone because the
+        // header pill is shorter there, and the cards are tall enough that a
+        // larger one would push the last card's heading off the top.
         const narrow = window.innerWidth < 760;
         pillarCards.forEach((el, i) => {
-          el.style.position = narrow ? 'static' : 'sticky';
-          el.style.top = narrow ? 'auto' : (88 + i * 12) + 'px';
+          el.style.position = 'sticky';
+          el.style.top = ((narrow ? 74 : 88) + i * (narrow ? 9 : 12)) + 'px';
           el.style.zIndex = String(i + 2);
-          el.style.marginBottom = narrow ? 'clamp(12px,1.6vw,18px)' : 'clamp(14px,1.8vw,22px)';
+          el.style.marginBottom = narrow ? '14px' : 'clamp(14px,1.8vw,22px)';
         });
       };
       stackPillars();
@@ -1118,7 +1168,7 @@ class Component extends DCLogic {
         value: s.count != null ? (s.prefix || '') + '0' + (s.suffix || '') : s.value
       })),
       flow: FLOW.map((f, i) => ({ ...f, i: String(i), n: String(i + 1) })),
-      values: VALUES,
+      values: VALUES.map((v, i) => ({ ...v, i: String(i) })),
       perks: PERKS,
       // Rotations and sway offsets are derived from the index, never
       // Math.random: a value that changed between renders would make the line
