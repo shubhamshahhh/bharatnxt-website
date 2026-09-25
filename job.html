@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Title and description live here rather than in <helmet> below: the helmet
+     manager re-syncs its own title element from the raw template on every
+     render, which would undo the per-job values written on mount. -->
+<title>Open roles | BharatNXT Careers</title>
+<meta name="description" content="An open role at BharatNXT. What you would own, what we are looking for, and how to apply.">
+<meta property="og:type" content="website">
 <script src="js/support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BharatNXT Editorial Team | BharatNXT Resources</title>
-<meta name="description" content="Business finance, payments and credit explained simply for Indian businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="js/image-slot.js"></script>
 <script src="js/faq-data.js"></script>
 <script src="js/install-band.js"></script>
 <script src="js/analytics.js"></script>
+<script src="js/jobs-data.js"></script>
 <link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/author.css">
+<link rel="stylesheet" href="css/job.css">
 </helmet>
-
-<div ref="{{ root }}" style="width:100%;background:#F7F8FA">
+<div ref="{{ root }}" style="--flow:1;width:100%;background:#F7F8FA">
 
 <svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs><filter id="bn-liquid" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="7" result="noise"></feTurbulence><feGaussianBlur in="noise" stdDeviation="1.2" result="soft"></feGaussianBlur><feDisplacementMap in="SourceGraphic" in2="soft" scale="18" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter></defs></svg>
 <div style="position:sticky;top:0;z-index:200;padding:12px 16px">
@@ -161,50 +166,137 @@
   </div>
 </div>
 
-<header data-screen-label="Author" style="padding:clamp(20px,2.6vw,30px) 20px 0">
+<!-- ══ JOB ══ everything here is rendered from window.BNXT_JOBS via job.html's
+     renderVals. A role whose prose has not been pasted in yet renders its
+     facts and a link to the full description, never an empty heading. -->
+<sc-if value="{{ found }}">
+<header data-screen-label="Job" style="padding:clamp(24px,3.4vw,44px) 20px 0">
   <div style="max-width:1180px;margin:0 auto">
-    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(20px,3vw,32px);font-size:12.5px;color:#9092A3">
-      <a href="resources.html" style="color:#686D77;font-weight:600" style-hover="color:#0029FF">Resources</a>
-      <span aria-hidden="true">›</span>
-      <span>Authors</span>
-    </nav>
-    <div data-author-head="" style="display:flex;align-items:flex-start;gap:clamp(18px,3vw,32px);padding-bottom:clamp(22px,3vw,32px);border-bottom:1px solid #EEEEEE">
-      <div style="width:clamp(88px,11vw,124px);height:clamp(88px,11vw,124px);flex-shrink:0;border-radius:50%;overflow:hidden;position:relative;background:#FAFAFA"><image-slot id="author-photo" shape="circle" placeholder=" "></image-slot></div>
-      <div style="min-width:0">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0029FF;margin-bottom:10px">Author</div>
-        <h1 style="font-size:clamp(23px,3.2vw,32px);font-weight:800;letter-spacing:-1px;line-height:1.14;color:#314259;margin-bottom:8px">BharatNXT Editorial Team</h1>
-        <div style="font-size:13.5px;font-weight:600;color:#9092A3;margin-bottom:13px">Business finance, payments and credit, explained simply</div>
-        <p style="font-size:14.5px;line-height:1.7;color:#686D77;max-width:620px;text-wrap:pretty">We write for the business owner who does his own banking. Everything here is checked against how payments, credit and GST actually work in India, in plain language, with the jargon explained wherever it cannot be avoided.</p>
+    <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#9092A3;margin-bottom:clamp(14px,1.8vw,22px)"><a href="index.html#top" style="color:#9092A3" style-hover="color:#0029FF">Home</a> <span aria-hidden="true">›</span> <a href="careers.html" style="color:#9092A3" style-hover="color:#0029FF">Careers</a> <span aria-hidden="true">›</span> <span style="color:#314259;font-weight:600">{{ job.title }}</span></nav>
+    <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease">
+      <span style="display:block;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0029FF;margin-bottom:10px">{{ job.fn }}</span>
+      <h1 style="font-size:clamp(26px,4.2vw,44px);font-weight:900;letter-spacing:-1.6px;line-height:1.06;color:#111A3D;margin-bottom:clamp(14px,1.8vw,20px);max-width:22ch;text-wrap:pretty">{{ job.title }}</h1>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(18px,2.2vw,26px)">
+        <span style="display:inline-flex;align-items:center;font-size:13px;font-weight:600;color:#686D77;background:#fff;border:1px solid #E0E0E0;border-radius:100px;padding:7px 15px">{{ job.locationLabel }}</span>
+        <sc-if value="{{ job.hasExp }}"><span style="display:inline-flex;align-items:center;font-size:13px;font-weight:600;color:#686D77;background:#fff;border:1px solid #E0E0E0;border-radius:100px;padding:7px 15px">{{ job.expLabel }}</span></sc-if>
+        <sc-if value="{{ job.hasType }}"><span style="display:inline-flex;align-items:center;font-size:13px;font-weight:600;color:#686D77;background:#fff;border:1px solid #E0E0E0;border-radius:100px;padding:7px 15px">{{ job.employmentType }}</span></sc-if>
       </div>
+      <a href="{{ job.applyUrl }}" target="_blank" rel="noopener" data-apply="top" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#0029FF;color:#fff;font-size:15px;font-weight:800;padding:15px 26px;border-radius:12px;min-height:52px" style-hover="background:#0018AA;color:#fff">Apply on LinkedIn <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
     </div>
   </div>
 </header>
 
-<section style="padding:clamp(24px,3.4vw,42px) 20px 0">
+<section data-screen-label="Role" style="padding:clamp(22px,3vw,40px) 20px 0">
+  <div data-job-cols="" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(22px,3.4vw,56px);align-items:start">
+    <div>
+      <!-- Nothing pasted in yet: say so plainly and point at the source of
+           truth, rather than printing headings with nothing under them. -->
+      <sc-if value="{{ job.isStub }}">
+        <div style="background:#fff;border:1px solid #E4E7F2;border-radius:18px;padding:clamp(20px,2.6vw,32px)">
+          <h2 style="font-size:clamp(18px,2.2vw,23px);font-weight:800;letter-spacing:-.7px;line-height:1.2;color:#111A3D;margin-bottom:10px;text-wrap:pretty">The full description lives on LinkedIn</h2>
+          <p style="font-size:14.5px;line-height:1.7;color:#4B5580;max-width:58ch;margin-bottom:18px;text-wrap:pretty">We're still bringing this one across. Everything about the role — what you'd own, what we're looking for and how to apply — is on the LinkedIn posting.</p>
+          <a href="{{ job.applyUrl }}" target="_blank" rel="noopener" data-apply="stub" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;border:1px solid #E0E0E0;color:#314259;font-size:14.5px;font-weight:700;padding:13px 22px;border-radius:12px;min-height:48px" style-hover="border-color:#0029FF;color:#0029FF">Read the full description <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ job.hasAbout }}">
+        <div style="margin-bottom:clamp(22px,3vw,38px)">
+          <h2 style="font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#111A3D;margin-bottom:12px;text-wrap:pretty">About the role</h2>
+          <p style="font-size:15px;line-height:1.75;color:#4B5580;max-width:66ch;text-wrap:pretty">{{ job.about }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ job.hasResponsibilities }}">
+        <div style="margin-bottom:clamp(22px,3vw,38px)">
+          <h2 style="font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#111A3D;margin-bottom:12px;text-wrap:pretty">What you'll do</h2>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;max-width:66ch">
+            <sc-for list="{{ job.responsibilities }}" as="r">
+              <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start"><span aria-hidden="true" style="margin-top:8px;width:6px;height:6px;border-radius:50%;background:#0029FF"></span><span style="font-size:15px;line-height:1.7;color:#4B5580;text-wrap:pretty">{{ r }}</span></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ job.hasRequirements }}">
+        <div style="margin-bottom:clamp(22px,3vw,38px)">
+          <h2 style="font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#111A3D;margin-bottom:12px;text-wrap:pretty">What we're looking for</h2>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;max-width:66ch">
+            <sc-for list="{{ job.requirements }}" as="rq">
+              <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start"><span aria-hidden="true" style="margin-top:8px;width:6px;height:6px;border-radius:50%;background:#0029FF"></span><span style="font-size:15px;line-height:1.7;color:#4B5580;text-wrap:pretty">{{ rq }}</span></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ job.hasWhy }}">
+        <div style="margin-bottom:clamp(22px,3vw,38px);background:#EEF3FF;border-radius:18px;padding:clamp(20px,2.6vw,30px)">
+          <h2 style="font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#111A3D;margin-bottom:12px;text-wrap:pretty">Why this role matters</h2>
+          <p style="font-size:15px;line-height:1.75;color:#314259;max-width:62ch;text-wrap:pretty">{{ job.whyItMatters }}</p>
+        </div>
+      </sc-if>
+
+      <!-- Self-selection. BharatNXT's own JDs are direct about who a role does
+           not suit; keeping that is the point, not softening it. -->
+      <sc-if value="{{ job.hasNotFor }}">
+        <div style="margin-bottom:clamp(22px,3vw,38px);border:1px solid #E0E0E0;border-radius:18px;padding:clamp(20px,2.6vw,30px)">
+          <h2 style="font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#111A3D;margin-bottom:8px;text-wrap:pretty">Who this role may not be for</h2>
+          <p style="font-size:14px;line-height:1.6;color:#9092A3;margin-bottom:14px;max-width:58ch">Worth reading before you apply. None of this is a judgement — it's just what the job is.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;max-width:66ch">
+            <sc-for list="{{ job.notFor }}" as="nf">
+              <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start"><span aria-hidden="true" style="margin-top:7px;display:block;width:8px;height:2px;border-radius:2px;background:#9092A3"></span><span style="font-size:15px;line-height:1.7;color:#4B5580;text-wrap:pretty">{{ nf }}</span></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-if>
+    </div>
+
+    <aside data-job-aside="" style="position:sticky;top:96px">
+      <div style="background:#fff;border:1px solid #E4E7F2;border-radius:18px;padding:clamp(18px,2.2vw,24px)">
+        <h2 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #DFE4F2">At a glance</h2>
+        <dl style="display:flex;flex-direction:column;gap:12px;margin-bottom:18px">
+          <div><dt style="font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9092A3;margin-bottom:3px">Function</dt><dd style="font-size:14.5px;font-weight:700;color:#314259">{{ job.fn }}</dd></div>
+          <div><dt style="font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9092A3;margin-bottom:3px">Location</dt><dd style="font-size:14.5px;font-weight:700;color:#314259">{{ job.locationLabel }}</dd></div>
+          <sc-if value="{{ job.hasExp }}"><div><dt style="font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9092A3;margin-bottom:3px">Experience</dt><dd style="font-size:14.5px;font-weight:700;color:#314259">{{ job.expLabel }}</dd></div></sc-if>
+          <sc-if value="{{ job.hasType }}"><div><dt style="font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9092A3;margin-bottom:3px">Employment type</dt><dd style="font-size:14.5px;font-weight:700;color:#314259">{{ job.employmentType }}</dd></div></sc-if>
+        </dl>
+        <a href="{{ job.applyUrl }}" target="_blank" rel="noopener" data-apply="aside" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#0029FF;color:#fff;font-size:14.5px;font-weight:800;padding:14px 20px;border-radius:12px;min-height:50px" style-hover="background:#0018AA;color:#fff">Apply on LinkedIn</a>
+        <p style="font-size:12px;line-height:1.5;color:#9092A3;margin-top:10px;text-align:center">Applications are handled on LinkedIn.</p>
+      </div>
+      <a href="careers.html#roles" style="display:block;font-size:13.5px;font-weight:700;color:#0029FF;margin-top:16px;text-align:center" style-hover="color:#0018AA">← All open roles</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ══ OTHER ROLES ══ -->
+<sc-if value="{{ hasOthers }}">
+<section data-screen-label="Other roles" style="padding:clamp(30px,4.4vw,64px) 20px 0">
   <div style="max-width:1180px;margin:0 auto">
-    <h2 style="font-size:clamp(18px,2.2vw,23px);font-weight:800;letter-spacing:-.7px;color:#314259;margin-bottom:14px">Articles by this author</h2>
-    <div data-grid="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,56px)">
-      <sc-for list="{{ articles }}" as="a" hint-placeholder-count="8">
-        <a href="{{ a.href }}" style="display:block;padding:18px 2px;border-bottom:1px solid #EEEEEE;transition:padding-left .2s ease" style-hover="padding-left:8px">
-          <span style="display:flex;align-items:center;gap:10px;margin-bottom:7px">
-            <span style="font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF">{{ a.category }}</span>
-            <span style="font-size:12px;color:#9092A3">{{ a.readTime }}</span>
-          </span>
-          <span style="display:block;font-size:15.5px;font-weight:800;letter-spacing:-.3px;line-height:1.32;color:#314259;margin-bottom:5px;text-wrap:pretty">{{ a.title }}</span>
-          <span style="display:block;font-size:13px;line-height:1.55;color:#7A82A4;text-wrap:pretty">{{ a.blurb }}</span>
+    <h2 data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;font-size:clamp(19px,2.4vw,26px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#111A3D;margin-bottom:clamp(14px,1.8vw,20px);text-wrap:pretty">Other open roles</h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ others }}" as="o">
+        <a href="{{ o.href }}" style="display:block;background:#fff;border:1px solid #E4E7F2;border-radius:18px;padding:clamp(16px,2vw,22px);transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease" style-hover="border-color:#0029FF;transform:translateY(-2px);box-shadow:0 12px 32px rgba(30,50,90,.07)">
+          <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#0029FF;margin-bottom:5px">{{ o.fn }}</span>
+          <span style="display:block;font-size:clamp(15.5px,1.8vw,18px);font-weight:800;letter-spacing:-.4px;line-height:1.3;color:#314259;margin-bottom:6px;text-wrap:pretty">{{ o.title }}</span>
+          <span style="display:block;font-size:12.5px;color:#9092A3">{{ o.locationLabel }}</span>
         </a>
       </sc-for>
     </div>
   </div>
 </section>
+</sc-if>
+</sc-if>
 
-<section style="padding:clamp(28px,4vw,52px) 20px clamp(28px,4vw,48px)">
-  <div style="max-width:1180px;margin:0 auto;background:linear-gradient(160deg,#F7F8FA,#FAFAFA);border:1px solid #EEEEEE;border-radius:18px;padding:clamp(20px,2.6vw,28px)">
-    <div style="font-size:17.5px;font-weight:800;letter-spacing:-.5px;color:#314259;margin-bottom:8px">Looking for something specific?</div>
-    <p style="font-size:15px;line-height:1.6;color:#686D77;margin-bottom:18px;max-width:460px;text-wrap:pretty">Search the full library, or start from the problem you are trying to solve.</p>
-    <a href="resources.html" style="display:inline-flex;align-items:center;justify-content:center;background:#0029FF;color:#fff;font-size:14.5px;font-weight:800;padding:14px 22px;border-radius:12px;min-height:48px" style-hover="background:#0018AA;color:#fff">Explore resources</a>
+<!-- ══ NOT FOUND ══ a bad slug must not quietly render a different role -->
+<sc-if value="{{ missing }}">
+<header data-screen-label="Role not found" style="padding:clamp(40px,7vw,96px) 20px clamp(30px,5vw,64px)">
+  <div style="max-width:640px;margin:0 auto;text-align:center">
+    <h1 style="font-size:clamp(24px,3.6vw,38px);font-weight:900;letter-spacing:-1.4px;line-height:1.1;color:#111A3D;margin-bottom:12px;text-wrap:pretty">That role isn't open any more.</h1>
+    <p style="font-size:15px;line-height:1.65;color:#686D77;margin-bottom:clamp(20px,2.6vw,30px);text-wrap:pretty">It may have been filled, or the link may be out of date. Here's everything we're hiring for right now.</p>
+    <a href="careers.html#roles" style="display:inline-flex;align-items:center;justify-content:center;background:#0029FF;color:#fff;font-size:15px;font-weight:800;padding:15px 26px;border-radius:12px;min-height:52px" style-hover="background:#0018AA;color:#fff">See all open roles</a>
   </div>
-</section>
+</header>
+</sc-if>
+
 
 <!-- ══ FAQS ══ same section as index.html; content, icons and the accordion
      all live in js/faq-data.js so there is one copy for the whole site -->
@@ -273,7 +365,7 @@
           <span style="display:block;font-size:14.5px;font-weight:900;letter-spacing:-.4px;color:#fff;margin-bottom:2px">Scan to install</span>
           <span style="display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.7)">Point your phone camera at the code.</span>
         </span>
-        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr-author-page" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
+        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr-job-page" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
       </div>
       <div style="font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px">Or get the link on your phone</div>
       <form data-sms-form="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px">
@@ -293,8 +385,8 @@
       <a href="tel:1800 000 0000" style="display:block;font-size:15px;font-weight:800;color:#111A3D;margin-bottom:4px" style-hover="color:#0029FF">1800 000 0000</a>
       <a href="mailto:support@bharatnxt.in" style="display:block;font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">support@bharatnxt.in</a>
       <div style="display:flex;gap:10px;margin-top:16px">
-        <a href="index.html#install" style="width:140px;height:42px;display:block;position:relative;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #DFE4F2"><image-slot id="v5-badge-play-auth" shape="rect" fit="contain" placeholder="Play badge"></image-slot></a>
-        <a href="index.html#install" style="width:140px;height:42px;display:block;position:relative;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #DFE4F2"><image-slot id="v5-badge-appstore-auth" shape="rect" fit="contain" placeholder="App Store badge"></image-slot></a>
+        <a href="index.html#install" style="width:140px;height:42px;display:block;position:relative;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #DFE4F2"><image-slot id="v5-badge-play-job" shape="rect" fit="contain" placeholder="Play badge"></image-slot></a>
+        <a href="index.html#install" style="width:140px;height:42px;display:block;position:relative;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #DFE4F2"><image-slot id="v5-badge-appstore-job" shape="rect" fit="contain" placeholder="App Store badge"></image-slot></a>
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:32px">
@@ -329,17 +421,6 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const ARTICLES = [
-  { slug:'why-profitable-businesses-run-out-of-cash', title:'Why profitable businesses still run out of cash', category:'Cash flow', blurb:'Profit is not the same as cash in the bank.', readTime:'5 min read' },
-  { slug:'loan-vs-credit-line', title:'Loan or credit line: what is the difference?', category:'Credit', blurb:'One is a single large amount. The other you use only when you need it.', readTime:'4 min read' },
-  { slug:'pay-supplier-without-card-machine', title:'How to pay a supplier who has no card machine', category:'Payments', blurb:'Your supplier gets a normal bank transfer into his own account.', readTime:'3 min read' },
-  { slug:'what-is-working-capital', title:'What is working capital, in plain English', category:'Working capital', blurb:'The money you need between buying goods and getting paid for them.', readTime:'6 min read' },
-  { slug:'plan-supplier-payments', title:'How to plan supplier payments around your collections', category:'Cash flow', blurb:'Line up what you pay with what you collect.', readTime:'4 min read' },
-  { slug:'customers-pay-late', title:'How to manage customers who pay late', category:'Cash flow', blurb:'Shorten the gap without spoiling the relationship.', readTime:'5 min read' },
-  { slug:'business-credit-score', title:'How business credit scores work', category:'Credit', blurb:'What lenders look at, and what you can fix this month.', readTime:'6 min read' },
-  { slug:'borrow-to-buy-stock', title:'Should you borrow to buy stock?', category:'Credit', blurb:'Three questions to ask before you take the money.', readTime:'4 min read' }
-];
-
 class Component extends DCLogic {
   componentDidMount() {
     this.cleanups = [];
@@ -385,15 +466,110 @@ class Component extends DCLogic {
         this.cleanups.push(() => mqBar.removeEventListener('change', paintBar));
       }
     }
+
+    const job = this.job;
+
+    if (job) {
+      // ---- per-job metadata. Re-asserted once after mount because the helmet
+      // manager re-syncs the title from the raw template on every render.
+      const metaTitle = job.title + ' | Careers at BharatNXT';
+      const metaDesc = job.summary ||
+        (job.title + ' - ' + job.locations.join(' / ') + '. Open role at BharatNXT.');
+      const canonical = 'https://bharatnxt.in/careers/' + job.slug;
+      const setMeta = (attr, key, content) => {
+        let el = document.head.querySelector('meta[' + attr + '="' + key + '"]');
+        if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.appendChild(el); }
+        if (el.getAttribute('content') !== content) el.setAttribute('content', content);
+      };
+      const writeMeta = () => {
+        if (document.title !== metaTitle) document.title = metaTitle;
+        setMeta('name', 'description', metaDesc);
+        setMeta('property', 'og:title', metaTitle);
+        setMeta('property', 'og:description', metaDesc);
+        setMeta('property', 'og:url', canonical);
+        setMeta('name', 'twitter:card', 'summary');
+        let link = document.head.querySelector('link[rel="canonical"]');
+        if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
+        if (link.getAttribute('href') !== canonical) link.setAttribute('href', canonical);
+      };
+      writeMeta();
+      const metaT = setTimeout(writeMeta, 0);
+      this.cleanups.push(() => clearTimeout(metaT));
+
+      // ---- JobPosting structured data. Only fields we actually hold go in:
+      // a guessed employmentType or an empty description would be worse than
+      // omitting them, and Google treats inaccurate postings harshly.
+      const ld = {
+        '@context': 'https://schema.org',
+        '@type': 'JobPosting',
+        title: job.title,
+        description: job.about || metaDesc,
+        datePosted: job.postedAt,
+        directApply: false,
+        hiringOrganization: {
+          '@type': 'Organization',
+          name: 'FCap Technologies Pvt Ltd',
+          alternateName: 'BharatNXT',
+          sameAs: 'https://bharatnxt.in'
+        },
+        jobLocation: job.locations.map(city => ({
+          '@type': 'Place',
+          address: { '@type': 'PostalAddress', addressLocality: city, addressCountry: 'IN' }
+        })),
+        url: canonical
+      };
+      if (job.employmentType) {
+        ld.employmentType = job.employmentType.toUpperCase().replace(/[^A-Z]/g, '_');
+      }
+      if (job.experience && job.experience.min != null) {
+        ld.experienceRequirements = {
+          '@type': 'OccupationalExperienceRequirements',
+          monthsOfExperience: job.experience.min * 12
+        };
+      }
+      const ldEl = document.createElement('script');
+      ldEl.type = 'application/ld+json';
+      ldEl.setAttribute('data-job-ld', '');
+      ldEl.textContent = JSON.stringify(ld);
+      document.head.appendChild(ldEl);
+      this.cleanups.push(() => { if (ldEl.parentNode) ldEl.parentNode.removeChild(ldEl); });
+
+      if (window.BNXT_TRACK) {
+        window.BNXT_TRACK('job_detail_view', { job_slug: job.slug, job_title: job.title });
+      }
+
+      root.querySelectorAll('[data-apply]').forEach(a => {
+        const onApply = () => {
+          if (!window.BNXT_TRACK) return;
+          window.BNXT_TRACK('apply_clicked', {
+            job_slug: job.slug, job_title: job.title,
+            placement: a.getAttribute('data-apply'), destination: 'linkedin'
+          });
+        };
+        a.addEventListener('click', onApply);
+        this.cleanups.push(() => a.removeEventListener('click', onApply));
+      });
+    } else if (window.BNXT_TRACK) {
+      let bad = '';
+      try { bad = new URLSearchParams(location.search).get('j') || ''; } catch (e) {}
+      window.BNXT_TRACK('job_detail_view', { job_slug: bad, job_found: false });
+    }
+
+    // ---- responsive. Both branches stated, so nothing needs restoring.
     const set = (sel, styles) => root.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
-    const mqM = window.matchMedia('(max-width: 700px)');
-    const apply = () => {
-      const m = mqM.matches;
-      set('[data-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))' });
-      set('[data-author-head]', { flexDirection: m ? 'column' : 'row' });
+    const mqT = window.matchMedia('(max-width: 1020px)');
+    const applyLayout = () => {
+      const t = mqT.matches;
+      set('[data-job-cols]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,300px)' });
+      // a sticky sidebar under a one-column stack would pin a card to the top
+      // of the screen for the whole page, so it goes static and moves up top
+      set('[data-job-aside]', { position: t ? 'static' : 'sticky', order: t ? '-1' : '0' });
     };
-    apply();
-    if (mqM.addEventListener) { mqM.addEventListener('change', apply); this.cleanups.push(() => mqM.removeEventListener('change', apply)); }
+    applyLayout();
+    if (mqT.addEventListener) {
+      mqT.addEventListener('change', applyLayout);
+      this.cleanups.push(() => mqT.removeEventListener('change', applyLayout));
+    }
 
     // dropdown groups (Products / Resources / About Us), one wiring for all
     const ddClosers = []; // opening one group instantly closes its siblings,
@@ -490,14 +666,32 @@ class Component extends DCLogic {
     }
   }
 
+  get job() {
+    let slug = '';
+    try { slug = new URLSearchParams(location.search).get('j') || ''; } catch (e) {}
+    if (!slug) return null;
+    return (window.BNXT_JOBS || []).filter(j => j.slug === slug)[0] || null;
+  }
+
   componentWillUnmount() { (this.cleanups || []).forEach(fn => fn()); }
 
   renderVals() {
-    const faq = window.BNXT_FAQ || [];
+    // Deliberately unlike product.html / tool.html, which fall back to item 0
+    // on an unknown slug. Showing a candidate a different role than the URL
+    // asked for is worse than telling them the role has closed.
+    const job = this.job;
+    const vm = job && window.BNXT_JOB_VM ? window.BNXT_JOB_VM(job) : null;
+    const others = (window.BNXT_JOBS || [])
+      .filter(j => !job || j.slug !== job.slug)
+      .map(window.BNXT_JOB_VM);
     return {
-      faq: faq,
       root: el => { this.root = el; },
-      articles: ARTICLES.map(a => ({ ...a, href: 'article.html?a=' + a.slug }))
+      faq: window.BNXT_FAQ || [],
+      found: !!vm,
+      missing: !vm,
+      job: vm || {},
+      others: others,
+      hasOthers: others.length > 0
     };
   }
 }

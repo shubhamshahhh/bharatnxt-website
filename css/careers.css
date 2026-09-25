@@ -1,0 +1,24 @@
+/* careers.html page-only rules. Shared rules live in css/global.css. */
+html{line-height:1.5;-webkit-text-size-adjust:100%}
+body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F7F8FA;color:#314259;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+:focus-visible{outline:3px solid #0029FF;outline-offset:2px;border-radius:6px}
+/* install band headline pulse, shared with index.html. index declares --flow on
+   its root div; this page does not, and calc(3.4s / var(--flow)) with no
+   fallback is an invalid duration that silently never runs - so the page root
+   declares --flow:1 and the same authored value works here too. */
+@keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
+/* Life at BharatNXT: the 12 team photos are 400x245 originals - the largest
+   the company publishes - so they are never scaled past their native width.
+   A drifting rail shows them all at 1:1 instead of blowing one up into a hero
+   tile, which at 400px would read soft. Same translateX(-50%) marquee as the
+   homepage ticker: the list is rendered twice and the track slides exactly
+   half its width, so the loop has no seam. */
+@keyframes bnRail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-life-rail]:hover [data-life-track],
+[data-life-rail]:focus-within [data-life-track]{animation-play-state:paused}
+/* hide the filter rail's scrollbar on mobile without losing the scroll */
+[data-job-filters] > div::-webkit-scrollbar{display:none}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}
+  /* the rail carries no information, so stop it outright rather than letting
+     the blanket rule freeze it mid-slide with photos half out of frame */
+  [data-life-track]{transform:none !important}}

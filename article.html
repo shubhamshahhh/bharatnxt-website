@@ -15,6 +15,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <script src="js/image-slot.js"></script>
 <script src="js/faq-data.js"></script>
+<script src="js/install-band.js"></script>
+<script src="js/analytics.js"></script>
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/article.css">
 </helmet>
@@ -90,7 +92,7 @@
             <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Brand, Values &amp; Culture</a>
             <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Our Story</a>
             <a href="index.html#trust" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Risk &amp; Compliance</a>
-            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Careers</a>
+            <a href="careers.html" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Careers</a>
             <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Media &amp; PR</a>
           </div>
           </div>
@@ -152,7 +154,7 @@
           <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Brand, Values &amp; Culture</a>
           <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Our Story</a>
           <a href="index.html#trust" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Risk &amp; Compliance</a>
-          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Careers</a>
+          <a href="careers.html" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Careers</a>
           <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Media &amp; PR</a>
         </div>
       </div>
@@ -407,27 +409,34 @@
 </section>
 
 <!-- ══ INSTALL ══ the homepage's band, on every page that has a footer -->
-<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(34px,4vw,60px) 20px">
-  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
-  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,2.6vw,40px);align-items:center">
+<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(24px,2.8vw,40px) 20px">
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(18px,2.4vw,34px);align-items:center">
+    
+
     <div>
-      <div style="font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow 3.4s ease-in-out infinite;margin-bottom:6px">Kuch Bada Karte Hai.</div>
-      <div style="font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</div>
-      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.45;color:rgba(255,255,255,.9);margin-bottom:12px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p>
-      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-bottom:16px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span aria-hidden="true" style="color:#FFFF00;letter-spacing:1px;white-space:nowrap">★★★★★</span>4.6 · 41L+ installs · 37K+ reviews · ₹0 joining fee</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="index.html#install" aria-label="Get BharatNXT on the App Store" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:170px;min-height:52px;background:#050A1F;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(5,10,31,.4);color:#fff"><span aria-hidden="true" style="display:block;flex-shrink:0;width:18px;height:18px;background:url('assets/apple%20appstore%20small.png') center/contain no-repeat;filter:invert(1)"></span><span style="text-align:left;line-height:1.2"><span style="display:block;font-size:10px;font-weight:600;color:rgba(255,255,255,.72)">Download on the</span><span style="display:block;font-size:15px;font-weight:800;color:#fff">App Store</span></span></a>
-        <a href="index.html#install" aria-label="Get BharatNXT on Google Play" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:170px;min-height:52px;background:#050A1F;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(5,10,31,.4);color:#fff"><span aria-hidden="true" style="display:block;flex-shrink:0;width:18px;height:18px;background:url('assets/google%20playstore%20small.png') center/contain no-repeat"></span><span style="text-align:left;line-height:1.2"><span style="display:block;font-size:10px;font-weight:600;color:rgba(255,255,255,.72)">Get it on</span><span style="display:block;font-size:15px;font-weight:800;color:#fff">Google Play</span></span></a>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(7px,1.2vw,12px);margin-bottom:9px"><span style="font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow calc(3.4s / var(--flow)) ease-in-out infinite">Kuch Bada Karte Hai.</span></div>
+      <span style="display:block;font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</span>
+      <a data-mob-only="" href="#" style="display:none;align-items:center;justify-content:center;gap:9px;background:#FFFF00;color:#111A3D;font-size:16px;font-weight:900;padding:13px 24px;border-radius:13px;min-height:50px;margin-bottom:12px" style-hover="color:#111A3D">Install the app →</a>
+      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 1L+ installs · 38 MB · No joining fee</div>
+      <div data-store-row="" style="display:flex;flex-wrap:wrap;gap:9px">
+        
+        
       </div>
-    </div>
-    <div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:16px;backdrop-filter:blur(14px)">
-      <div data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+    </div><div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px;backdrop-filter:blur(14px)">
+      <div data-desk-only="" data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18)">
         <span style="flex:1;min-width:0">
           <span style="display:block;font-size:14.5px;font-weight:900;letter-spacing:-.4px;color:#fff;margin-bottom:2px">Scan to install</span>
           <span style="display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.7)">Point your phone camera at the code.</span>
         </span>
-        <span style="width:84px;height:84px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="cp-qr-article" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
+        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr-article-page" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
       </div>
+      <div style="font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px">Or get the link on your phone</div>
+      <form data-sms-form="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px">
+        <input data-sms-input="" type="tel" inputmode="numeric" pattern="[0-9 ]*" maxlength="13" autocomplete="tel" placeholder="00000 00000" aria-label="Mobile number" style="min-width:0;min-height:44px;font-family:inherit;font-size:14.5px;font-weight:600;color:#111A3D;background:#fff;border:0;border-radius:11px;padding:11px 13px">
+        <button type="submit" style="min-height:44px;white-space:nowrap;font-family:inherit;font-size:14px;font-weight:800;color:#0029FF;background:#FFFF00;border:0;border-radius:11px;padding:11px 16px;cursor:pointer;transition:transform .08s ease" style-active="transform:scale(.98)">Send link</button>
+      </form>
+      <div data-sms-note="" style="font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.66);margin-top:7px">One text with the install link. No spam.</div>
     </div>
   </div>
 </section>
@@ -448,7 +457,7 @@
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=card-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Card Payments</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Business Ledger</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:160px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Funding Fit Check</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Contact Us</a><a href="index.html#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="careers.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:140px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Legal</h5><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Terms of Service</a><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Privacy Policy</a><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Grievance Officer</a><a href="index.html#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
     </div>
   </div>
@@ -768,6 +777,26 @@ class Component extends DCLogic {
     if (!root) return;
 
     if (window.BNXT_FAQ_INIT) window.BNXT_FAQ_INIT(root, this.cleanups);
+    if (window.BNXT_INSTALL_INIT) window.BNXT_INSTALL_INIT(root, this.cleanups);
+    // Scroll reveal. The FAQ heading ships at opacity:0 with data-rv="1" and had
+    // no driver on this page, so it never faded in - it was simply invisible.
+    // Same shape as product.html: observer where we can, straight to visible
+    // under reduced motion, and a timer that shows everything regardless so a
+    // missed callback can never leave content hidden.
+    const rvs = Array.from(root.querySelectorAll('[data-rv]'));
+    const showRv = el => { el.style.opacity = '1'; el.style.transform = 'none'; };
+    if (rvs.length) {
+      const reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      if ('IntersectionObserver' in window && !reduced) {
+        const rvIo = new IntersectionObserver(es => es.forEach(e => {
+          if (e.isIntersecting) { rvIo.unobserve(e.target); showRv(e.target); }
+        }), { rootMargin: '0px 0px -6% 0px', threshold: .04 });
+        rvs.forEach(el => rvIo.observe(el));
+        this.cleanups.push(() => rvIo.disconnect());
+      } else rvs.forEach(showRv);
+      const rvT = setTimeout(() => rvs.forEach(showRv), 2500);
+      this.cleanups.push(() => clearTimeout(rvT));
+    }
 
     // Floating install bar: mobile only, matching index.html's 760px rule. The
     // homepage buries this toggle inside applyDesk; none of this page's own

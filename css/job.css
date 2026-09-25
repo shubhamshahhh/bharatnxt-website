@@ -1,0 +1,8 @@
+/* job.html page-only rules. Shared rules live in css/global.css. */
+html{line-height:1.5;-webkit-text-size-adjust:100%}
+body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:#F7F8FA;color:#314259;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+:focus-visible{outline:3px solid #0029FF;outline-offset:2px;border-radius:6px}
+/* install band headline pulse, shared with index.html - see css/careers.css
+   for why the page root has to declare --flow */
+@keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}

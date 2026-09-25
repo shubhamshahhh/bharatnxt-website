@@ -20,6 +20,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <script src="js/image-slot.js"></script>
 <script src="js/faq-data.js"></script>
+<script src="js/install-band.js"></script>
+<script src="js/analytics.js"></script>
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/product.css">
 </helmet>
@@ -134,8 +136,8 @@
     <div data-hiw-sticky="" style="position:sticky;top:0;min-height:100vh;box-sizing:border-box;padding:96px 0 44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:clamp(28px,5vw,80px);align-items:center">
 
       <div data-hiw-copy="">
-        <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px"><span aria-hidden="true" style="width:26px;height:3px;border-radius:2px;background:#0029FF"></span><span style="font-size:12px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;color:#0029FF">{{ how.eyebrow }}</span></div>
-        <h2 style="font-size:clamp(28px,4.4vw,44px);font-weight:900;letter-spacing:-1.5px;line-height:1.06;color:#111A3D;margin-bottom:8px;text-wrap:pretty">{{ how.title }}</h2>
+        <div data-hiw-eyebrow="" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px"><span aria-hidden="true" style="width:26px;height:3px;border-radius:2px;background:#0029FF"></span><span style="font-size:12px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;color:#0029FF">{{ how.eyebrow }}</span></div>
+        <h2 data-hiw-title="" style="font-size:clamp(28px,4.4vw,44px);font-weight:900;letter-spacing:-1.5px;line-height:1.06;color:#111A3D;margin-bottom:8px;text-wrap:pretty">{{ how.title }}</h2>
         <p data-hiw-sub="" style="font-size:15.5px;line-height:1.6;color:#6B7398;margin-bottom:clamp(20px,2.6vw,32px);max-width:44ch;text-wrap:pretty">{{ how.sub }}</p>
 
         <div data-hiw-list="" style="position:relative">
@@ -353,7 +355,7 @@
             <span data-hiw-seg="{{ st.i }}" style="flex:1;height:3px;border-radius:2px;background:#E1E9FA;transition:background .35s ease"></span>
           </sc-for>
         </div>
-        <div style="position:relative;min-height:112px">
+        <div data-hiw-mbox="" style="position:relative;min-height:112px">
           <sc-for list="{{ howSteps }}" as="st">
             <div data-hiw-mtext="{{ st.i }}" style="position:absolute;inset:0;opacity:0;transform:translateY(8px);transition:opacity .4s cubic-bezier(.2,0,0,1),transform .4s cubic-bezier(.2,0,0,1);pointer-events:none">
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px">
@@ -539,27 +541,34 @@
 
 <sc-if value="{{ rich }}">
 <!-- ══ INSTALL ══ the homepage's band, on every page that has a footer -->
-<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(34px,4vw,60px) 20px">
-  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
-  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,2.6vw,40px);align-items:center">
+<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(24px,2.8vw,40px) 20px">
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(18px,2.4vw,34px);align-items:center">
+    
+
     <div>
-      <div style="font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow 3.4s ease-in-out infinite;margin-bottom:6px">Kuch Bada Karte Hai.</div>
-      <div style="font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</div>
-      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.45;color:rgba(255,255,255,.9);margin-bottom:12px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p>
-      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-bottom:16px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span aria-hidden="true" style="color:#FFFF00;letter-spacing:1px;white-space:nowrap">★★★★★</span>4.6 · 41L+ installs · 37K+ reviews · ₹0 joining fee</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="index.html#install" aria-label="Get BharatNXT on the App Store" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:170px;min-height:52px;background:#050A1F;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(5,10,31,.4);color:#fff"><span aria-hidden="true" style="display:block;flex-shrink:0;width:18px;height:18px;background:url('assets/apple%20appstore%20small.png') center/contain no-repeat;filter:invert(1)"></span><span style="text-align:left;line-height:1.2"><span style="display:block;font-size:10px;font-weight:600;color:rgba(255,255,255,.72)">Download on the</span><span style="display:block;font-size:15px;font-weight:800;color:#fff">App Store</span></span></a>
-        <a href="index.html#install" aria-label="Get BharatNXT on Google Play" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:170px;min-height:52px;background:#050A1F;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(5,10,31,.4);color:#fff"><span aria-hidden="true" style="display:block;flex-shrink:0;width:18px;height:18px;background:url('assets/google%20playstore%20small.png') center/contain no-repeat"></span><span style="text-align:left;line-height:1.2"><span style="display:block;font-size:10px;font-weight:600;color:rgba(255,255,255,.72)">Get it on</span><span style="display:block;font-size:15px;font-weight:800;color:#fff">Google Play</span></span></a>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(7px,1.2vw,12px);margin-bottom:9px"><span style="font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow calc(3.4s / var(--flow)) ease-in-out infinite">Kuch Bada Karte Hai.</span></div>
+      <span style="display:block;font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</span>
+      <a data-mob-only="" href="#" style="display:none;align-items:center;justify-content:center;gap:9px;background:#FFFF00;color:#111A3D;font-size:16px;font-weight:900;padding:13px 24px;border-radius:13px;min-height:50px;margin-bottom:12px" style-hover="color:#111A3D">Install the app →</a>
+      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 1L+ installs · 38 MB · No joining fee</div>
+      <div data-store-row="" style="display:flex;flex-wrap:wrap;gap:9px">
+        
+        
       </div>
-    </div>
-    <div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:16px;backdrop-filter:blur(14px)">
-      <div data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+    </div><div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px;backdrop-filter:blur(14px)">
+      <div data-desk-only="" data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18)">
         <span style="flex:1;min-width:0">
           <span style="display:block;font-size:14.5px;font-weight:900;letter-spacing:-.4px;color:#fff;margin-bottom:2px">Scan to install</span>
           <span style="display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.7)">Point your phone camera at the code.</span>
         </span>
-        <span style="width:84px;height:84px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="cp-qr-product-rich" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
+        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr-product-rich" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
       </div>
+      <div style="font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px">Or get the link on your phone</div>
+      <form data-sms-form="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px">
+        <input data-sms-input="" type="tel" inputmode="numeric" pattern="[0-9 ]*" maxlength="13" autocomplete="tel" placeholder="00000 00000" aria-label="Mobile number" style="min-width:0;min-height:44px;font-family:inherit;font-size:14.5px;font-weight:600;color:#111A3D;background:#fff;border:0;border-radius:11px;padding:11px 13px">
+        <button type="submit" style="min-height:44px;white-space:nowrap;font-family:inherit;font-size:14px;font-weight:800;color:#0029FF;background:#FFFF00;border:0;border-radius:11px;padding:11px 16px;cursor:pointer;transition:transform .08s ease" style-active="transform:scale(.98)">Send link</button>
+      </form>
+      <div data-sms-note="" style="font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.66);margin-top:7px">One text with the install link. No spam.</div>
     </div>
   </div>
 </section>
@@ -567,27 +576,34 @@
 
 <sc-if value="{{ plain }}">
 <!-- ══ INSTALL ══ the homepage's band, on every page that has a footer -->
-<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(34px,4vw,60px) 20px">
-  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
-  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,2.6vw,40px);align-items:center">
+<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(24px,2.8vw,40px) 20px">
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(18px,2.4vw,34px);align-items:center">
+    
+
     <div>
-      <div style="font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow 3.4s ease-in-out infinite;margin-bottom:6px">Kuch Bada Karte Hai.</div>
-      <div style="font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</div>
-      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.45;color:rgba(255,255,255,.9);margin-bottom:12px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p>
-      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-bottom:16px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span aria-hidden="true" style="color:#FFFF00;letter-spacing:1px;white-space:nowrap">★★★★★</span>4.6 · 41L+ installs · 37K+ reviews · ₹0 joining fee</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="index.html#install" aria-label="Get BharatNXT on the App Store" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:170px;min-height:52px;background:#050A1F;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(5,10,31,.4);color:#fff"><span aria-hidden="true" style="display:block;flex-shrink:0;width:18px;height:18px;background:url('assets/apple%20appstore%20small.png') center/contain no-repeat;filter:invert(1)"></span><span style="text-align:left;line-height:1.2"><span style="display:block;font-size:10px;font-weight:600;color:rgba(255,255,255,.72)">Download on the</span><span style="display:block;font-size:15px;font-weight:800;color:#fff">App Store</span></span></a>
-        <a href="index.html#install" aria-label="Get BharatNXT on Google Play" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:170px;min-height:52px;background:#050A1F;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(5,10,31,.4);color:#fff"><span aria-hidden="true" style="display:block;flex-shrink:0;width:18px;height:18px;background:url('assets/google%20playstore%20small.png') center/contain no-repeat"></span><span style="text-align:left;line-height:1.2"><span style="display:block;font-size:10px;font-weight:600;color:rgba(255,255,255,.72)">Get it on</span><span style="display:block;font-size:15px;font-weight:800;color:#fff">Google Play</span></span></a>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(7px,1.2vw,12px);margin-bottom:9px"><span style="font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow calc(3.4s / var(--flow)) ease-in-out infinite">Kuch Bada Karte Hai.</span></div>
+      <span style="display:block;font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</span>
+      <a data-mob-only="" href="#" style="display:none;align-items:center;justify-content:center;gap:9px;background:#FFFF00;color:#111A3D;font-size:16px;font-weight:900;padding:13px 24px;border-radius:13px;min-height:50px;margin-bottom:12px" style-hover="color:#111A3D">Install the app →</a>
+      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 1L+ installs · 38 MB · No joining fee</div>
+      <div data-store-row="" style="display:flex;flex-wrap:wrap;gap:9px">
+        
+        
       </div>
-    </div>
-    <div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:16px;backdrop-filter:blur(14px)">
-      <div data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+    </div><div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px;backdrop-filter:blur(14px)">
+      <div data-desk-only="" data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18)">
         <span style="flex:1;min-width:0">
           <span style="display:block;font-size:14.5px;font-weight:900;letter-spacing:-.4px;color:#fff;margin-bottom:2px">Scan to install</span>
           <span style="display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.7)">Point your phone camera at the code.</span>
         </span>
-        <span style="width:84px;height:84px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="cp-qr-product-plain" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
+        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr-product-plain" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
       </div>
+      <div style="font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px">Or get the link on your phone</div>
+      <form data-sms-form="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px">
+        <input data-sms-input="" type="tel" inputmode="numeric" pattern="[0-9 ]*" maxlength="13" autocomplete="tel" placeholder="00000 00000" aria-label="Mobile number" style="min-width:0;min-height:44px;font-family:inherit;font-size:14.5px;font-weight:600;color:#111A3D;background:#fff;border:0;border-radius:11px;padding:11px 13px">
+        <button type="submit" style="min-height:44px;white-space:nowrap;font-family:inherit;font-size:14px;font-weight:800;color:#0029FF;background:#FFFF00;border:0;border-radius:11px;padding:11px 16px;cursor:pointer;transition:transform .08s ease" style-active="transform:scale(.98)">Send link</button>
+      </form>
+      <div data-sms-note="" style="font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.66);margin-top:7px">One text with the install link. No spam.</div>
     </div>
   </div>
 </section>
@@ -609,7 +625,7 @@
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=card-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Card Payments</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Business Ledger</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:160px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Funding Fit Check</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Contact Us</a><a href="#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="careers.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:140px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Legal</h5><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Terms of Service</a><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Privacy Policy</a><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Grievance Officer</a><a href="#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
     </div>
   </div>
@@ -931,7 +947,7 @@ const NAV_GROUPS = [
     { head: 'More', items: [['Blogs', 'resources.html'], ['AchievHer', 'https://achievher.bharatnxt.in/', 'assets/images/achievher-logo-mark.png']] } ] },
   { id: 'about', label: 'Company', cols: [{ head: 'Company', items: [
     ['Vision', HOME + '#company'], ['Brand, Values & Culture', HOME + '#company'], ['Our Story', HOME + '#company'],
-    ['Risk & Compliance', HOME + '#trust'], ['Careers', HOME + '#company'], ['Media & PR', HOME + '#company'] ] }] },
+    ['Risk & Compliance', HOME + '#trust'], ['Careers', 'careers.html'], ['Media & PR', HOME + '#company'] ] }] },
 ];
 
 // ── rich page view model ───────────────────────────────────────────────────
@@ -1331,6 +1347,7 @@ class Component extends DCLogic {
     const track = root.querySelector('[data-hiw-track]');
     const sticky = root.querySelector('[data-hiw-sticky]');
     const mCopy = root.querySelector('[data-hiw-mcopy]');
+    const copyEl = root.querySelector('[data-hiw-copy]');
     const mTexts = Array.from(root.querySelectorAll('[data-hiw-mtext]'));
     const segs = Array.from(root.querySelectorAll('[data-hiw-seg]'));
     const phone = root.querySelector('[data-hiw-stage] [data-cp-phone]');
@@ -1419,6 +1436,7 @@ class Component extends DCLogic {
     // the FAQ renders and lays itself out from js/faq-data.js on every page,
     // at the homepage's own 760 breakpoint rather than this page's
     if (window.BNXT_FAQ_INIT) window.BNXT_FAQ_INIT(root, this.cleanups);
+    if (window.BNXT_INSTALL_INIT) window.BNXT_INSTALL_INIT(root, this.cleanups);
 
     // Value stack: later cards sit above earlier ones so the deck gathers
     // correctly, and each card's art lifts a touch as it arrives. Same pattern
@@ -1584,16 +1602,33 @@ class Component extends DCLogic {
           : { maxWidth: '38ch', marginTop: '0', marginBottom: '0' });
       }
       if (track) track.style.height = REDUCED ? 'auto' : narrow ? '440vh' : '560vh';
+      // The panel carries 88px of top padding so its first row clears the
+      // sticky header once pinned. On the way in it is not pinned yet, so that
+      // padding reads as a white band under the section above. Pull the track
+      // up over the dead space there - the 20px this section ends on plus the
+      // last card's 14px margin - which is as far as it can go before the
+      // gradient would paint over the card itself.
+      if (track) track.style.marginTop = narrow && !REDUCED ? '-34px' : '0';
       if (sticky) {
         if (REDUCED) Object.assign(sticky.style, { display: 'block', position: 'static', minHeight: '0', padding: 'clamp(30px,6vw,54px) 0 0' });
         else if (narrow) {
-          Object.assign(sticky.style, { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'sticky', padding: '84px 0 26px', gap: 'clamp(14px,3vw,22px)' });
+          Object.assign(sticky.style, { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', position: 'sticky', padding: '88px 0 10px', gap: '8px' });
           sticky.style.minHeight = '100vh';
           sticky.style.minHeight = '100svh';   // ignored where unsupported, so 100vh stands
         } else Object.assign(sticky.style, { display: 'grid', position: 'sticky', minHeight: '100vh', padding: '88px 0 32px', gridTemplateColumns: 'minmax(0,1fr) minmax(0,400px)', gap: 'clamp(28px,5vw,80px)' });
       }
       set('[data-hiw-copy]', { textAlign: narrow ? 'center' : 'left', width: narrow ? '100%' : 'auto', maxWidth: narrow ? '440px' : 'none' });
       set('[data-hiw-sub]', { display: narrow ? 'none' : 'block' });
+      // On narrow the phone is the story, and the headline was eating the
+      // height it needed; the eyebrow still names the section above it.
+      set('[data-hiw-title]', narrow
+        ? { position: 'absolute', width: '1px', height: '1px', margin: '0', padding: '0',
+            overflow: 'hidden', clipPath: 'inset(50%)', whiteSpace: 'nowrap' }
+        : { position: 'static', width: 'auto', height: 'auto', margin: '0 0 8px', padding: '0',
+            overflow: 'visible', clipPath: 'none', whiteSpace: 'normal' });
+      // the caption reserves room for the tallest step; 112 was cut for a
+      // wider column than narrow ever gets, and the slack costs phone height
+      set('[data-hiw-mbox]', { minHeight: narrow ? '104px' : '112px' });
       set('[data-hiw-list]', { display: wide ? 'block' : REDUCED ? 'block' : 'none' });
       if (mCopy) mCopy.style.display = narrow ? 'block' : 'none';
       // the phone is sized off viewport height on narrow screens so the caption
@@ -1605,8 +1640,25 @@ class Component extends DCLogic {
         if (narrow) {
           phone.style.height = 'auto';
           phone.style.maxWidth = 'none';
-          phone.style.width = 'min(clamp(228px,25vw,304px),calc((100vh - 336px) * 9 / 19))';
-          phone.style.width = 'min(clamp(228px,25vw,304px),calc((100svh - 336px) * 9 / 19))';
+          // The panel is one column at viewport height: eyebrow, phone, caption.
+          // Measure what those fixed rows actually take at this width and hand
+          // the phone whatever is left, instead of carrying a fixed reserve that
+          // drifts whenever the copy above or below it changes. The rows are all
+          // full-width, so none of them depends on the width computed here and
+          // there is no feedback loop. Both were already laid out above.
+          // 88 clears the sticky header pill, which stands 84px tall
+          const PAD = 88 + 10, GAP = 8 * 2;
+          const barEl = root.querySelector('[data-sticky-bar]');
+          // the bar floats 11px clear of the bottom edge, and wants air under
+          // the caption rather than sitting flush against it
+          const barH = barEl && getComputedStyle(barEl).display !== 'none'
+            ? barEl.getBoundingClientRect().height + 14 : 0;
+          const rows = (copyEl ? copyEl.getBoundingClientRect().height : 0) +
+                       (mCopy ? mCopy.getBoundingClientRect().height : 0);
+          const room = Math.max(0, window.innerHeight - PAD - GAP - barH - rows);
+          // 25vw never cleared the 228px floor on a phone, so every device got
+          // the same 228 however much room it had; 64vw actually engages.
+          phone.style.width = 'min(clamp(232px,64vw,320px),' + Math.round(room * 9 / 19) + 'px)';
         } else {
           // Wide: 302px is the cap on a tall window, but the phone is 9/19 so
           // its height is width x 2.111 — a fixed cap overflowed the sticky
