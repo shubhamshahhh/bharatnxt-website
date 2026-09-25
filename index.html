@@ -555,6 +555,12 @@
 </section>
 
 <!-- ══ WHO IT'S FOR ══ -->
+<!-- Hidden for now: set `showWho` true in renderVals to bring it back. The
+     markup below is untouched. It cannot simply be wrapped in an HTML
+     comment, because the section carries comments of its own and the first
+     terminator inside would close the wrapper early, letting the rest of
+     the section render as markup. -->
+<sc-if value="{{ showWho }}">
 <section id="who" data-screen-label="Who it's for" style="position:relative;padding:clamp(22px,2.6vw,38px) 20px">
   <div style="position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,41,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,41,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 85% at 50% 45%,#000 20%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 85% at 50% 45%,#000 20%,transparent 100%)"></div>
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
@@ -680,6 +686,7 @@
     </div>
   </div>
 </section>
+</sc-if>
 
 <!-- ══ PRODUCTS ══ -->
 <section id="products" data-screen-label="Everything in one app" style="position:relative;padding:clamp(22px,2.6vw,38px) 20px clamp(26px,3vw,44px)">
@@ -3667,6 +3674,10 @@ class Component extends DCLogic {
     return {
       root: r('rootEl'), sticky: r('sticky'),
       c1: r('c1'), c2: r('c2'), c3: r('c3'), c4: r('c4'),
+      // "Who it's for" is hidden for now. Set this true to bring it back - the
+      // section's markup and behaviour are both still in place, and every
+      // handler that touches it already bails when its elements are absent.
+      showWho: false,
       ctaLabel: this.props.ctaLabel ?? 'Download now'
     };
   }
