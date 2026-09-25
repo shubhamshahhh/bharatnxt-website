@@ -64,8 +64,8 @@
   </div>
 
   <div data-cp-hero-copy="" style="position:relative;z-index:3;flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;max-width:980px;margin:0 auto;padding:clamp(14px,2.2vw,30px) 20px clamp(6px,1.2vw,14px)">
-    <div data-cp-anim="1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.92);font-size:11.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;padding:7px 15px;border-radius:100px;margin-bottom:clamp(8px,1vw,12px);backdrop-filter:blur(8px)"><span aria-hidden="true" style="width:6px;height:6px;background:#FFFF00;border-radius:50%;flex-shrink:0;animation:bnBlink 2s infinite"></span>{{ hero.eyebrow }}</div>
-    <h1 data-cp-anim="2" style="font-size:clamp(32px,4.8vw,54px);font-weight:900;line-height:1.04;letter-spacing:-1.9px;color:#fff;margin-bottom:0;text-wrap:balance">{{ hero.title }}<br><span style="color:#FFFF00;text-shadow:0 0 44px rgba(255,255,0,.45)">{{ hero.accent }}</span></h1>
+    <div data-cp-anim="1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.92);font-size:11.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;padding:7px 15px;border-radius:100px;margin-bottom:clamp(8px,1vw,12px);backdrop-filter:blur(8px)"><span aria-hidden="true" style="width:6px;height:6px;background:#FFFF00;border-radius:50%;flex-shrink:0;animation:bnBlink 2s infinite"></span><span data-cp-rot="" style="position:relative;display:block;white-space:nowrap"><sc-for list="{{ hero.rotWords }}" as="w"><span data-cp-rot-word="{{ w.i }}" style="display:block;opacity:0;transform:translateY(6px);transition:opacity .34s cubic-bezier(.2,0,0,1),transform .34s cubic-bezier(.2,0,0,1)">{{ w.t }}</span></sc-for></span></div>
+    <h1 data-cp-anim="2" style="font-size:clamp(32px,4.8vw,54px);font-weight:900;line-height:1.04;letter-spacing:-1.9px;color:#fff;margin-bottom:0;text-wrap:balance"><sc-if value="{{ hero.hasTitle }}">{{ hero.title }}<br></sc-if><span style="color:#FFFF00;text-shadow:0 0 44px rgba(255,255,0,.45)">{{ hero.accent }}</span></h1>
   </div>
 
   <!-- Card arc: full-bleed across the foot of the hero, so the fan reads as one
@@ -622,7 +622,7 @@
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:32px">
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=card-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Card Payments</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Business Ledger</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=pay-with-credit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Pay With Credit</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Business Ledger</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:160px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Funding Fit Check</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Contact Us</a><a href="#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="careers.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
@@ -655,6 +655,8 @@
 <script type="text/x-dc" data-dc-script data-props="{}">
 const HOME = 'index.html';
 const PROD = slug => 'product.html?p=' + slug;
+// old slug -> current slug, for links already out in the world
+const SLUG_ALIASES = { 'card-payments': 'pay-with-credit' };
 
 // ── the rich product-page schema ───────────────────────────────────────────
 // A product with `rich: true` renders the full product experience (blue hero,
@@ -674,10 +676,10 @@ const PROD = slug => 'product.html?p=' + slug;
 // scroll position onto { s: step index, l: layers visible } so one step can
 // hold two beats of the story without becoming two steps.
 const PRODUCTS = [
-  { slug: 'card-payments', name: 'Card Payments', art: 'prod-card', rich: true,
-    headline: 'Pay any supplier, card machine or not',
+  { slug: 'pay-with-credit', name: 'Pay With Credit', art: 'prod-card', rich: true,
+    headline: 'Pay any supplier, on credit',
     description: 'Pay on the card you already hold, even suppliers who have never accepted a card. They receive a normal bank transfer into their existing account. Full invoice amount, usually within 24 hours.',
-    metaDescription: 'Pay any supplier with your business credit card, card machine or not. They receive a normal bank transfer, you get up to 50 credit days. BharatNXT Card Payments.',
+    metaDescription: 'Pay any supplier by credit. They receive a normal bank transfer, you get up to 50 days of credit. BharatNXT Pay With Credit.',
     benefits: [
       { title: 'Up to 50 credit days', text: 'Your supplier is paid today. You settle your bank at the end of your card cycle.' },
       { title: 'No supplier onboarding', text: 'He needs no machine, no app and no new bank account. He just sees a bank credit.' },
@@ -688,11 +690,16 @@ const PRODUCTS = [
       { title: 'He gets a bank transfer', text: 'Full amount into his existing account, usually within 24 hours.' } ],
 
     hero: {
-      eyebrow: 'Card Payments',
-      title: 'Pay any supplier,',
-      accent: 'card machine or not.',
-      sub: 'Pay on the card you already hold. Your supplier gets a normal bank transfer, while you get up to',
-      subAccent: '50 credit days.',
+      // The eyebrow cycles rather than sitting still. Order is the reading
+      // order of the pill, and the list is the single source for both the
+      // rendered words and the width measurement.
+      eyebrowRotate: ['Business Payments', 'Supplier Payments', 'Bill Payments', 'GST Payments'],
+      // `title` is the white first line and `accent` the yellow second. This
+      // headline is one line, so title is empty and the heading drops its break.
+      title: '',
+      accent: 'Ab Credit Par',
+      sub: 'Pay by credit. Your supplier gets a normal bank transfer, while you get up to',
+      subAccent: '50 days of credit.',
       // The hero's only call to action now sits inside the arc; Install Now
       // lives in the closing CTA band.
       cta: { label: 'See how it works', href: '#how' },
@@ -1076,6 +1083,10 @@ class Component extends DCLogic {
   get product() {
     let slug = '';
     try { slug = new URLSearchParams(location.search).get('p') || ''; } catch (e) {}
+    // Links to a renamed product keep working. Without this the fallback below
+    // happens to catch ?p=card-payments only because that product is first in
+    // PRODUCTS - which would break silently the day the array is reordered.
+    slug = SLUG_ALIASES[slug] || slug;
     return PRODUCTS.find(p => p.slug === slug) || PRODUCTS[0];
   }
 
@@ -1318,6 +1329,77 @@ class Component extends DCLogic {
     }
 
     // Trust counters, same cubic ease-out the homepage uses.
+    // ---- Hero eyebrow: the word cycles.
+    // Same shape as the how-it-works captions below: every word is rendered and
+    // stacked absolutely inside one relative box, and only opacity/transform
+    // move. Nothing reflows, so the pill cannot twitch as the word changes.
+    const rotBox = root.querySelector('[data-cp-rot]');
+    const rotWords = Array.from(root.querySelectorAll('[data-cp-rot-word]'));
+    if (rotBox && rotWords.length) {
+      // The words sit on top of each other, so the box has to be told how wide
+      // and tall to be. Measured behind document.fonts.ready because the pill is
+      // Figtree 800 uppercase with letter-spacing - measuring the fallback face
+      // would bake in a width that is wrong once the real font swaps in.
+      const sizeRot = () => {
+        let w = 0, h = 0;
+        rotWords.forEach(el => {
+          const prev = el.style.cssText;
+          el.style.position = 'static';
+          el.style.opacity = '0';
+          w = Math.max(w, el.offsetWidth);
+          h = Math.max(h, el.offsetHeight);
+          el.style.cssText = prev;
+        });
+        if (w) rotBox.style.minWidth = Math.ceil(w) + 'px';
+        if (h) rotBox.style.minHeight = Math.ceil(h) + 'px';
+      };
+      rotWords.forEach((el, i) => {
+        // all but the first are parked below, ready to rise
+        el.style.position = i === 0 ? 'relative' : 'absolute';
+        if (i > 0) { el.style.left = '0'; el.style.top = '0'; el.style.right = '0'; }
+        el.style.opacity = i === 0 ? '1' : '0';
+        el.style.transform = i === 0 ? 'none' : 'translateY(6px)';
+      });
+      const measure = () => sizeRot();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure).catch(measure);
+      else measure();
+      const onRotResize = () => measure();
+      window.addEventListener('resize', onRotResize);
+      this.cleanups.push(() => window.removeEventListener('resize', onRotResize));
+
+      // Under reduced motion the first word simply stays. The blanket CSS rule
+      // kills the transition but not this timer, so the gate has to be here or
+      // the word would hard-cut every few seconds.
+      if (!REDUCED && rotWords.length > 1) {
+        const HOLD = 2600;
+        let rotAt = 0, rotT = null;
+        const step = () => {
+          const prev = rotWords[rotAt];
+          rotAt = (rotAt + 1) % rotWords.length;
+          const next = rotWords[rotAt];
+          prev.style.opacity = '0';
+          prev.style.transform = 'translateY(-6px)';   // leaves upward
+          next.style.opacity = '1';
+          next.style.transform = 'none';
+          // the one leaving must be parked again so it cannot hold the box open
+          rotWords.forEach((el, i) => {
+            if (i === rotAt) return;
+            if (el.style.opacity === '0' && el !== prev) el.style.transform = 'translateY(6px)';
+          });
+          rotT = setTimeout(step, HOLD);
+        };
+        const startRot = () => { if (rotT) return; rotT = setTimeout(step, HOLD); };
+        const stopRot = () => { if (rotT) { clearTimeout(rotT); rotT = null; } };
+        const onRotVis = () => { if (document.hidden) stopRot(); else startRot(); };
+        document.addEventListener('visibilitychange', onRotVis);
+        startRot();
+        this.cleanups.push(() => {
+          stopRot();
+          document.removeEventListener('visibilitychange', onRotVis);
+        });
+      }
+    }
+
     const statEls = Array.from(root.querySelectorAll('[data-cp-stat]'));
     if (statEls.length) {
       const defs = (p0.trust && p0.trust.stats) || [];
@@ -1721,7 +1803,13 @@ class Component extends DCLogic {
     vals.faq = window.BNXT_FAQ || [];
     if (!rich) return vals;
 
-    vals.hero = p.hero;
+    vals.hero = Object.assign({}, p.hero, {
+      // an empty first line would otherwise leave a stray break in the heading
+      hasTitle: !!p.hero.title,
+      // every word is rendered and stacked; only opacity and transform change,
+      // so the pill never reflows as they cycle
+      rotWords: (p.hero.eyebrowRotate || [p.hero.eyebrow || '']).map((t, i) => ({ t: t, i: String(i) }))
+    });
     vals.value = p.value;
     vals.how = p.how;
     vals.trust = p.trust;

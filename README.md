@@ -41,5 +41,5 @@ python3 -m http.server 8000     # then open http://localhost:8000
 
 - Page content lives inline in each `.html` file — edit the markup/text directly.
 - Shared logos live in `assets/images/`; swap a file (keep the name) to rebrand.
-- Internal links use clean relative names (`product.html?p=card-payments`, etc.).
+- Internal links use clean relative names (`product.html?p=pay-with-credit`, etc.).
 - External links (e.g. AchievHer) open in a new tab.
