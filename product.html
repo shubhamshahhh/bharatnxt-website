@@ -66,11 +66,19 @@
   <div data-cp-hero-copy="" style="position:relative;z-index:3;flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;max-width:980px;margin:0 auto;padding:clamp(14px,2.2vw,30px) 20px clamp(6px,1.2vw,14px)">
     <div data-cp-anim="1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.92);font-size:11.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;padding:7px 15px;border-radius:100px;margin-bottom:clamp(8px,1vw,12px);backdrop-filter:blur(8px)"><span aria-hidden="true" style="width:6px;height:6px;background:#FFFF00;border-radius:50%;flex-shrink:0;animation:bnBlink 2s infinite"></span><span data-cp-rot="" style="position:relative;display:block;white-space:nowrap"><sc-for list="{{ hero.rotWords }}" as="w"><span data-cp-rot-word="{{ w.i }}" style="display:block;opacity:0;transform:translateY(6px);transition:opacity .34s cubic-bezier(.2,0,0,1),transform .34s cubic-bezier(.2,0,0,1)">{{ w.t }}</span></sc-for></span></div>
     <h1 data-cp-anim="2" style="font-size:clamp(32px,4.8vw,54px);font-weight:900;line-height:1.04;letter-spacing:-1.9px;color:#fff;margin-bottom:0;text-wrap:balance"><sc-if value="{{ hero.hasTitle }}">{{ hero.title }}<br></sc-if><span style="color:#FFFF00;text-shadow:0 0 44px rgba(255,255,0,.45)">{{ hero.accent }}</span></h1>
+    <sc-if value="{{ heroScene }}">
+      <p data-cp-anim="3" style="font-size:clamp(14px,1.5vw,17.5px);line-height:1.55;font-weight:500;color:rgba(255,255,255,.88);max-width:46ch;margin:clamp(10px,1.6vw,16px) auto 0;text-wrap:pretty">{{ hero.sub }} <strong style="color:#FFFF00;font-weight:800">{{ hero.subAccent }}</strong></p>
+      <a data-cp-anim="4" href="{{ hero.cta.href }}" style="background:#FFFF00;color:#050A1F;font-size:clamp(13px,1.35vw,15px);font-weight:800;padding:clamp(11px,1.2vw,14px) clamp(20px,2.2vw,28px);border-radius:100px;display:inline-flex;align-items:center;gap:8px;margin-top:clamp(12px,1.6vw,18px);min-height:44px" style-hover="background:#fff;color:#050A1F">{{ hero.cta.label }} &darr;</a>
+      <div data-cp-anim="5" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;font-size:clamp(11.5px,1.15vw,13px);font-weight:600;color:rgba(255,255,255,.76);margin-top:clamp(10px,1.3vw,14px)"><span style="color:#FFFF00;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>{{ hero.stats }}</span><span data-cp-stats-more="">{{ hero.statsMore }}</span></div>
+    </sc-if>
   </div>
 
   <!-- Card arc: full-bleed across the foot of the hero, so the fan reads as one
        wide sweep under the headline rather than a panel beside it. Every
-       dimension is computed by the ResizeObserver in the logic below. -->
+       dimension is computed by the ResizeObserver in the logic below.
+       Gated: the fan is hardcoded to the credit-card aspect ratio, so a product
+       whose hero is not made of cards takes the scene branch below instead. -->
+  <sc-if value="{{ heroArc }}">
   <div data-cp-arc-wrap="" style="position:relative;z-index:2;flex:0 0 auto;width:100%">
   <div data-cp-anim="6" data-cp-arc="" aria-hidden="true" style="--cw:210px;--r:700px;position:relative;width:100%;height:320px;overflow:hidden">
     <div style="position:absolute;left:50%;bottom:-10%;width:min(1180px,94%);height:150%;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 100%,rgba(255,255,0,.15) 0%,transparent 62%);filter:blur(20px)"></div>
@@ -91,6 +99,54 @@
     <div data-cp-anim="5" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;font-size:clamp(11.5px,1.15vw,13px);font-weight:700;line-height:1.5;color:rgba(255,255,255,.86);text-wrap:balance"><span aria-hidden="true" style="color:#FFFF00;letter-spacing:1px;white-space:nowrap">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>{{ hero.stats }}<span data-cp-stats-more="">{{ hero.statsMore }}</span></span></div>
   </div>
   </div>
+  </sc-if>
+
+  <!-- ══ SCENE HERO ══ the podium alternative to the card fan.
+       The phone is DOM, so it stays sharp at any size; the goods around it are
+       image-slots because nothing in the repo is big enough to fill them (the
+       appliance photos are 200px, cut for in-phone tiles). Each prop's resting
+       offset lives in --x/--y/--s and the float keyframe only adds to it, so
+       reduced motion leaves the scene standing instead of collapsing every
+       object onto the centre. -->
+  <sc-if value="{{ heroScene }}">
+  <div data-cp-scene-wrap="" style="position:relative;z-index:2;flex:1 1 auto;width:100%;display:flex;align-items:stretch;justify-content:center;min-height:0">
+    <div data-cp-scene="" aria-hidden="true" style="--ph:360px;--spread:1;position:relative;width:100%;max-width:1200px;margin:0 auto;min-height:260px">
+      <div data-cp-podium="" style="position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(820px,92%);height:130px;border-radius:50% / 46%;background:radial-gradient(ellipse at 50% 38%,rgba(255,255,255,.18) 0%,rgba(255,255,255,.05) 48%,rgba(255,255,255,0) 72%);pointer-events:none"></div>
+      <sc-for list="{{ sceneProps }}" as="o">
+        <div data-cp-prop="{{ o.i }}" style="--x:{{ o.x }};--s:{{ o.s }};--d:{{ o.d }};position:absolute;left:50%;bottom:calc(14px + var(--ph) * {{ o.lift }});width:calc(var(--ph) * {{ o.w }});aspect-ratio:1/1;transform:translateX(-50%) translateX(calc(var(--ph) * var(--x) * var(--spread,1))) scale(var(--s));animation:bnPropFloat 7.5s ease-in-out infinite var(--d);will-change:transform">
+          <image-slot id="{{ o.slot }}" shape="rect" fit="contain" placeholder="{{ o.shot }}"></image-slot>
+        </div>
+      </sc-for>
+      <div data-cp-scene-phone="" style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);height:var(--ph);aspect-ratio:9/19;border:6px solid #05060F;border-radius:38px;overflow:hidden;background:#05060F;box-shadow:0 34px 70px rgba(2,6,24,.55),0 4px 14px rgba(2,6,24,.4);z-index:20">
+        <div data-cp-scene-glass="" style="position:relative;width:100%;height:100%;border-radius:32px;overflow:hidden;background:#F4F6FC">
+          <div data-cp-scene-vp="" style="position:absolute;top:0;left:0;width:300px;height:633px;transform-origin:0 0">
+            <div style="position:absolute;top:0;left:0;right:0;height:34px;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-size:10.5px;font-weight:800;color:#111A3D"><span>9:41</span><span style="letter-spacing:1px">▪▪▪</span></div>
+            <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:78px;height:22px;border-radius:13px;background:#0B0E1A;z-index:45"></div>
+            <div style="position:absolute;inset:0;padding:42px 14px 14px;display:flex;flex-direction:column;gap:9px">
+              <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E4E7F2;border-radius:12px;padding:10px 12px;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9092A3" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg><span data-cp-scene-q="" style="font-size:11px;color:#111A3D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s ease"></span></div>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;flex-shrink:0">
+                <sc-for list="{{ sceneChips }}" as="ch">
+                  <span data-cp-scene-chip="{{ ch.i }}" style="display:block;text-align:center;font-size:8px;font-weight:700;color:#4B5580;background:#fff;border:1px solid #E7EBF5;border-radius:7px;padding:7px 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .3s ease,border-color .3s ease,color .3s ease">{{ ch.t }}</span>
+                </sc-for>
+              </div>
+              <div style="font-size:8.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#9092A3;flex-shrink:0;padding-top:2px">Verified sellers</div>
+              <sc-for list="{{ sceneSellers }}" as="sl">
+                <div data-cp-scene-row="{{ sl.i }}" style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E4E7F2;border-radius:11px;padding:9px 10px;flex-shrink:0;opacity:0;transform:translateY(7px);transition:opacity .4s ease,transform .4s ease">
+                  <span style="width:26px;height:26px;flex-shrink:0;border-radius:8px;background:#EEF3FF;border:1px solid #D7E2FF;color:#0029FF;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center">{{ sl.initial }}</span>
+                  <span style="flex:1;min-width:0">
+                    <span style="display:block;font-size:10px;font-weight:800;color:#111A3D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ sl.name }}</span>
+                    <span style="display:block;font-size:8.5px;color:#8B93B8"><span style="color:#E8A400;font-weight:800">★ {{ sl.rating }}</span> · {{ sl.meta }}</span>
+                  </span>
+                  <span style="flex-shrink:0;font-size:8.5px;font-weight:800;color:#0029FF;background:#EEF3FF;border-radius:100px;padding:4px 9px">View</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
 </section>
 
 <!-- ══ TICKER ══ -->
@@ -373,6 +429,30 @@
   </div>
 </section>
 
+<!-- ══ SELLING, NOT BUYING ══ the supplier proposition, carried over from the
+     product this page replaced so it does not vanish with the rename -->
+<sc-if value="{{ hasSeller }}">
+<section data-screen-label="For sellers" style="padding:clamp(30px,4.4vw,64px) 20px 0;background:linear-gradient(180deg,#FFFFFF 0%,#F7F9FF 100%)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div data-sell-grid="" style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3vw,56px);align-items:center;background:#EEF3FF;border:1px solid #D7E2FF;border-radius:24px;padding:clamp(24px,3.2vw,46px)">
+      <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease">
+        <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:12px"><span aria-hidden="true" style="width:26px;height:3px;border-radius:2px;background:#0029FF"></span><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0029FF">{{ seller.eyebrow }}</span></div>
+        <h2 style="font-size:clamp(24px,3.4vw,36px);font-weight:900;letter-spacing:-1.3px;line-height:1.1;color:#111A3D;margin-bottom:12px;text-wrap:pretty">{{ seller.title }}</h2>
+        <p style="font-size:15px;line-height:1.65;color:#4B5580;max-width:46ch;text-wrap:pretty">{{ seller.sub }}</p>
+      </div>
+      <div data-sell-items="" style="display:grid;gap:10px">
+        <sc-for list="{{ seller.items }}" as="si">
+          <div data-rv="1" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;background:#fff;border:1px solid #D7E2FF;border-radius:16px;padding:clamp(14px,1.8vw,20px)">
+            <span style="display:block;font-size:15px;font-weight:800;letter-spacing:-.3px;color:#111A3D;margin-bottom:4px;text-wrap:pretty">{{ si.title }}</span>
+            <span style="display:block;font-size:13.5px;line-height:1.55;color:#4B5580;text-wrap:pretty">{{ si.text }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
 <!-- ══ TRUST ══ -->
 <section data-screen-label="Trust" style="position:relative;overflow:hidden;padding:clamp(36px,4.6vw,66px) 20px clamp(28px,3.4vw,48px);background:linear-gradient(180deg,#F7F9FF 0%,#FFFFFF 70%)">
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
@@ -550,7 +630,7 @@
       <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(7px,1.2vw,12px);margin-bottom:9px"><span style="font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow calc(3.4s / var(--flow)) ease-in-out infinite">Kuch Bada Karte Hai.</span></div>
       <span style="display:block;font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</span>
       <a data-mob-only="" href="#" style="display:none;align-items:center;justify-content:center;gap:9px;background:#FFFF00;color:#111A3D;font-size:16px;font-weight:900;padding:13px 24px;border-radius:13px;min-height:50px;margin-bottom:12px" style-hover="color:#111A3D">Install the app →</a>
-      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 1L+ installs · 38 MB · No joining fee</div>
+      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 41L+ installs · 38 MB · No joining fee</div>
       <div data-store-row="" style="display:flex;flex-wrap:wrap;gap:9px">
         
         
@@ -585,7 +665,7 @@
       <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(7px,1.2vw,12px);margin-bottom:9px"><span style="font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow calc(3.4s / var(--flow)) ease-in-out infinite">Kuch Bada Karte Hai.</span></div>
       <span style="display:block;font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</span>
       <a data-mob-only="" href="#" style="display:none;align-items:center;justify-content:center;gap:9px;background:#FFFF00;color:#111A3D;font-size:16px;font-weight:900;padding:13px 24px;border-radius:13px;min-height:50px;margin-bottom:12px" style-hover="color:#111A3D">Install the app →</a>
-      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 1L+ installs · 38 MB · No joining fee</div>
+      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 41L+ installs · 38 MB · No joining fee</div>
       <div data-store-row="" style="display:flex;flex-wrap:wrap;gap:9px">
         
         
@@ -622,7 +702,7 @@
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:32px">
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=pay-with-credit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Pay With Credit</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=marketplace" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Marketplace</a><a href="product.html?p=collections" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Business Ledger</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=pay-with-credit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Pay With Credit</a><a href="product.html?p=invoice-payments" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Invoice Payments</a><a href="product.html?p=seller-hub" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Seller Hub</a><a href="product.html?p=collections" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Collections</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a><a href="product.html?p=business-ledger" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Business Ledger</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:160px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Funding Fit Check</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Contact Us</a><a href="#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="careers.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
@@ -656,7 +736,7 @@
 const HOME = 'index.html';
 const PROD = slug => 'product.html?p=' + slug;
 // old slug -> current slug, for links already out in the world
-const SLUG_ALIASES = { 'card-payments': 'pay-with-credit' };
+const SLUG_ALIASES = { 'card-payments': 'pay-with-credit', 'marketplace': 'seller-hub' };
 
 // ── the rich product-page schema ───────────────────────────────────────────
 // A product with `rich: true` renders the full product experience (blue hero,
@@ -753,7 +833,7 @@ const PRODUCTS = [
         { n: '01', title: 'Find the right seller',
           text: 'Browse GST-verified sellers by category and city, and pick the business you want to pay.',
           screen: {
-            chrome: { title: 'Marketplace', right: 'My quotes' },
+            chrome: { title: 'Seller Hub', right: 'My quotes' },
             rows: [
               { kind: 'search', text: 'Search by seller name' },
               { kind: 'tabs', items: ['Electronics', 'Mobile', 'Hardware', 'Services'], active: 0 },
@@ -898,17 +978,204 @@ const PRODUCTS = [
       { title: 'Connect your sources', text: 'Gmail, GST account and NPCI Bharat Connect, one-time.' },
       { title: 'Invoices arrive on their own', text: 'Each invoice lands in your queue with amount and due date read for you.' },
       { title: 'Review, approve, pay', text: 'Pay on card or bank, on the date you choose.' } ] },
-  { slug: 'marketplace', name: 'Marketplace', art: 'prod-market',
-    headline: 'Let buyers find you',
-    description: 'Businesses across 400+ cities search by category and city. Be the supplier they find, and get paid inside the app without sending a single reminder.',
+  // ── Seller Hub ─────────────────────────────────────────────────────────
+  // The site's second rich product. Buyer-first: the mock's journey is a buyer
+  // finding and transacting with a seller, while the old Marketplace copy spoke
+  // to suppliers - that proposition survives in the "selling?" section further
+  // down rather than in the hero.
+  //
+  // Every figure here is one the site already publishes (10,000 GST-verified
+  // sellers, 400+ cities, Rs 488 Cr settled, 41L+ installs). The marketing mock
+  // claimed 2L+ verified sellers and 20L+ registered businesses; that is 20x the
+  // published number, so it is deliberately not used.
+  { slug: 'seller-hub', name: 'Seller Hub', art: 'prod-market', rich: true,
+    // `scene` picks the podium hero. The other rich product uses 'arc', whose
+    // card fan is hardcoded to the credit-card aspect ratio and cannot be reused.
+    heroKind: 'scene',
+    headline: 'Find a verified seller for anything you buy',
+    description: 'Search 10,000 GST-verified sellers by category and city, compare them, agree a price in the app, and pay however suits you. No listing fee, no phone tag.',
+    metaDescription: 'Discover, connect, negotiate and transact with 10,000 GST-verified sellers across 400+ cities. BharatNXT Seller Hub.',
+    // compact-branch fields. They never render on a rich page, but renderVals
+    // maps over them unguarded, so leaving them out throws.
     benefits: [
-      { title: 'New buyers, no listing fee', text: 'Your profile is searchable by category and city from day one.' },
-      { title: 'Verified counterparties', text: 'GST-verified businesses on both sides of every order.' },
-      { title: 'Payment built in', text: 'Orders settle inside the app, so the sale and the payment stay together.' } ],
+      { title: 'Every seller GST-verified', text: 'Verification happens before a seller is listed, not after something goes wrong.' },
+      { title: 'Agree the price in the app', text: 'Send a quote, take their counter, approve it. The whole negotiation is written down.' },
+      { title: 'Pay the way that suits you', text: 'Pay by credit and settle on your card cycle, or pay now. The order and the payment stay together.' } ],
     steps: [
-      { title: 'Create your profile', text: 'Category, city and what you supply. GST details verify you.' },
-      { title: 'Buyers search and find you', text: 'Businesses across 400+ cities browse by category and city.' },
-      { title: 'Get paid in the app', text: 'The order and its payment stay in one place. No reminders.' } ] },
+      { title: 'Search by category and city', text: 'Electronics, machinery, packaging, raw materials and more.' },
+      { title: 'Quote and agree', text: 'Propose your price, they counter, you approve.' },
+      { title: 'Pay and track', text: 'Pay in the app. The order and its payment stay in one place.' } ],
+
+    hero: {
+      // the mock's own four verbs, and close enough in length that the pill
+      // barely resizes as they cycle
+      eyebrowRotate: ['Discover', 'Connect', 'Negotiate', 'Transact'],
+      title: 'Your search',
+      accent: 'ends here.',
+      sub: "India's businesses discover, negotiate and transact with",
+      subAccent: '10,000 GST-verified sellers.',
+      cta: { label: 'See how it works', href: '#how' },
+      stats: '4.6 · 41L+ installs',
+      statsMore: ' · ₹488 Cr settled · 10,000 GST-verified sellers · 400+ cities',
+      ticker: ['Electronics', 'Machinery', 'Packaging', 'Raw materials', 'Electricals', 'Office supplies', 'GST-verified sellers', '₹0 listing fee'],
+      // The hero screen is hand-built rather than composed from the row DSL:
+      // the DSL's markup lives inside the how-it-works section and duplicating
+      // it here would be ~150 lines for one static screen.
+      screen: {
+        queries: ['24 inch LED TV', 'industrial water pump', 'corrugated boxes', 'HDMI cables'],
+        chips: ['Electronics', 'Machinery', 'Packaging', 'Raw materials', 'Electricals', 'Office supplies'],
+        sellers: [
+          { initial: 'S', name: 'Shree Balaji Electronics', rating: '4.6', meta: 'Mumbai' },
+          { initial: 'M', name: 'Metro Gadgets Store', rating: '4.4', meta: 'Delhi' },
+          { initial: 'P', name: 'Precision Components', rating: '4.5', meta: 'Bengaluru' },
+          { initial: 'A', name: 'Apex Manufacturing', rating: '4.7', meta: 'Pune' },
+          { initial: 'K', name: 'Kiran Distributors', rating: '4.3', meta: 'Ahmedabad' } ]
+      },
+      // Objects on the podium. x/y are offsets from centre-bottom, s is scale,
+      // d is a negative animation-delay so each one floats out of phase. The
+      // resting transform is inline and the keyframe only adds to it, so
+      // reduced motion leaves the scene standing rather than collapsing it.
+      // x is a horizontal offset from centre in multiples of the phone height,
+      // w a width in the same unit, lift how far off the podium floor it sits.
+      // Everything is relative so the arrangement holds its proportions from
+      // 360px to 1920px without a breakpoint.
+      scene: [
+        { slot: 'sh-prop-tv',     shot: 'LED television, cut out',  x: '-0.72', lift: '.10', s: '1',    d: '-0.4s', w: '.52' },
+        { slot: 'sh-prop-washer', shot: 'Washing machine, cut out', x: '-0.42', lift: '.02', s: '.95',  d: '-2.1s', w: '.40' },
+        { slot: 'sh-prop-fridge', shot: 'Refrigerator, cut out',    x: '0.66',  lift: '.09', s: '1',    d: '-1.2s', w: '.50' },
+        { slot: 'sh-prop-boxes',  shot: 'Stacked cartons, cut out', x: '0.40',  lift: '.01', s: '.95',  d: '-3.4s', w: '.38' },
+        { slot: 'sh-prop-pump',   shot: 'Water pump, cut out',      x: '-1.02', lift: '.00', s: '.85',  d: '-5.0s', w: '.30' },
+        { slot: 'sh-prop-helmet', shot: 'Safety helmet, cut out',   x: '0.98',  lift: '.00', s: '.85',  d: '-6.2s', w: '.28' } ]
+    },
+
+    value: {
+      title: 'Buying from a stranger,',
+      accent: 'without the risk.',
+      sub: 'Three things that change when the whole deal happens in one place.',
+      items: [
+        // slot ids are namespaced: all six products share one image-slot sidecar,
+        // so cp-value-* would collide with the credit product's cards
+        { n: '01', slot: 'sh-value-1', shot: 'Verified seller profile with GST badge',
+          title: 'Every seller is GST-verified', text: 'Verification happens before a seller is listed. You are not the one doing the diligence.' },
+        { n: '02', slot: 'sh-value-2', shot: 'Quote and counter-offer in the app',
+          title: 'Agree the price before you commit', text: 'Send your price, take their counter, approve it. The whole negotiation is written down.' },
+        { n: '03', slot: 'sh-value-3', shot: 'Payment options at checkout',
+          title: 'Pay the way that suits you', text: 'Pay by credit and settle on your card cycle, or pay now. The order and the payment stay together.' } ]
+    },
+
+    how: {
+      eyebrow: 'How it works',
+      title: 'From search to settled.',
+      sub: 'Five steps, all of them inside the app. Nothing moves to WhatsApp halfway through.',
+      // Eight frames over five steps. Track height is a constant 560vh / 440vh
+      // regardless of frame count, so eight keeps the scroll pacing matching the
+      // other rich product.
+      frames: [ { s: 0, l: 1 }, { s: 0, l: 2 }, { s: 1, l: 1 }, { s: 1, l: 2 },
+                { s: 2, l: 2 }, { s: 3, l: 2 }, { s: 4, l: 1 }, { s: 4, l: 2 } ],
+      steps: [
+        { n: '01', title: 'Find the right seller', text: 'Search by product or browse by category. Every seller listed is GST-verified.',
+          screen: {
+            chrome: { title: 'Seller Hub', right: 'My quotes' },
+            rows: [
+              { kind: 'search', text: 'Search by product, category…' },
+              { kind: 'tabs', items: ['Electronics', 'Machinery', 'Packaging', 'More'] },
+              { kind: 'label', text: 'Verified sellers' },
+              { kind: 'seller', name: 'Shree Balaji Electronics', rating: '4.6', meta: 'Mumbai, Maharashtra', cta: 'View', tags: ['Washing Machine', 'AC / cooler', 'T.V'] },
+              { kind: 'seller', name: 'Metro Gadgets Store', rating: '4.4', meta: 'Delhi', cta: 'View', tags: ['Refrigerator', 'Air Conditioner'] },
+              { kind: 'seller', name: 'Precision Components', rating: '4.5', meta: 'Bengaluru', cta: 'View', tags: ['Microwave Oven', 'Smart TV'] } ],
+            sheet: { title: 'Shree Balaji Electronics', subtitle: '★ 4.6 · Mumbai, Maharashtra', right: 'GST verified',
+              rows: [
+                { kind: 'products', title: 'TV & accessories', link: 'View all', items: [
+                  { art: 'tv', label: '24" LED TV' }, { art: 'settop', label: 'Set-top box' },
+                  { art: 'mount', label: 'Wall mount' }, { art: 'cable', label: 'HDMI cable' } ] },
+                { kind: 'note', tone: 'info', text: 'GST details verified. Trading on BharatNXT since 2024.' } ],
+              action: { label: 'Request a quote' } }
+          } },
+        { n: '02', title: 'Send your quote', text: 'Say what you need and the price you want to pay. The seller sees it straight away.',
+          screen: {
+            chrome: { title: 'Request a quote', right: 'Step 1 of 2' },
+            rows: [
+              { kind: 'label', text: 'Product' },
+              { kind: 'kv', k: 'Category', v: 'TV & Accessories' },
+              { kind: 'kv', k: 'Product', v: '24 inch LED TV', strong: true },
+              { kind: 'kv', k: 'Quantity', v: '12' },
+              { kind: 'kv', k: 'Starting from price', v: '₹20,000' },
+              { kind: 'label', text: 'Proposed price' },
+              { kind: 'field', label: 'Your price', value: '₹18,000' } ],
+            sheet: { title: 'Send to Shree Balaji Electronics',
+              rows: [
+                { kind: 'kv', k: 'Quantity', v: '12' },
+                { kind: 'kv', k: 'Your price', v: '₹18,000', strong: true },
+                { kind: 'kv', k: 'Order value', v: '₹2,16,000', strong: true } ],
+              action: { label: 'Send quote' } }
+          } },
+        { n: '03', title: 'Agree the price', text: 'They accept, or they counter. You approve it or you walk away — all of it written down.',
+          screen: {
+            chrome: { title: 'My quotes', right: '1 open' },
+            rows: [
+              { kind: 'label', text: 'Awaiting your approval' },
+              { kind: 'kv', k: 'Shree Balaji Electronics', v: '24 inch LED TV', sub: 'Quote sent 2 days ago' },
+              { kind: 'note', tone: 'info', text: 'The seller has countered your price.' } ],
+            popup: { title: 'Offer from Shree Balaji Electronics',
+              rows: [
+                { kind: 'kv', k: 'Product', v: '24 inch LED TV' },
+                { kind: 'kv', k: 'Quantity', v: '12' },
+                { kind: 'kv', k: 'Your price', v: '₹18,000' },
+                { kind: 'kv', k: 'Their price', v: '₹18,600', strong: true } ],
+              action: { label: 'Approve' }, dismiss: 'Reject' }
+          } },
+        { n: '04', title: 'Pay how it suits you', text: 'Pay by credit and settle on your card cycle, or pay now. Either way the seller gets a bank transfer.',
+          screen: {
+            chrome: { title: 'Payment', right: '₹2,23,200' },
+            rows: [
+              { kind: 'payto', name: 'Shree Balaji Electronics', meta: 'HDFC Bank •••• 4412' },
+              { kind: 'label', text: 'Choose how to pay' } ],
+            sheet: { title: 'Pay with',
+              rows: [
+                { kind: 'tiles', cols: 1, items: [
+                  { title: 'Pay with credit', sub: 'Settle on your card cycle, up to 50 days', mark: 'C', tone: 'blue', badge: 'Popular', active: true },
+                  { title: 'Pay now', sub: 'Straight from your bank account', mark: 'B', tone: 'navy' } ] } ],
+              action: { label: 'Confirm payment', meta: 'HDFC Credit Card' } }
+          } },
+        { n: '05', title: 'Seller gets a bank transfer', text: 'The money lands in their existing account. No machine, no new app, nothing for them to sign up to.',
+          screen: {
+            chrome: { title: 'Payment', right: '₹2,23,200' },
+            rows: [
+              { kind: 'payto', name: 'Shree Balaji Electronics', meta: 'HDFC Bank •••• 4412' },
+              { kind: 'status', tone: 'pending', title: 'Sending payment' } ],
+            sheet: { bare: true, rows: [ { kind: 'status', tone: 'success', title: 'Payment done', sub: '₹2,23,200 sent to Shree Balaji Electronics' } ] }
+          } } ]
+    },
+
+    trust: {
+      eyebrow: 'Trusted by businesses nationwide',
+      title: "India's businesses are buying on",
+      accent: 'BharatNXT',
+      sub: 'The same network, the same verification, whichever side of the order you are on.',
+      stats: [
+        { count: 10000, suffix: '', label: 'GST-verified sellers' },
+        { count: 400, suffix: '+', label: 'Cities across India' },
+        { count: 488, prefix: '₹', suffix: ' Cr', label: 'Settled to sellers' },
+        { value: '4.6 ★', label: 'Average app rating' } ],
+      foot: '41L+ installs · 37K+ reviews · ₹0 joining fee'
+    },
+
+    // carried over from the old Marketplace entry so the supplier proposition
+    // survives the rename
+    seller: {
+      eyebrow: 'Selling, not buying?',
+      title: 'Let buyers find you.',
+      sub: 'Businesses across 400+ cities search by category and city. Be the supplier they find, and get paid inside the app without sending a single reminder.',
+      items: [
+        { title: 'New buyers, no listing fee', text: 'Your profile is searchable by category and city from day one.' },
+        { title: 'Verified counterparties', text: 'GST-verified businesses on both sides of every order.' },
+        { title: 'Payment built in', text: 'Orders settle inside the app, so the sale and the payment stay together.' } ]
+    },
+
+    // without this the "More from BharatNXT" grid renders five tiles and an
+    // orphan row instead of a clean 3x2
+    comingSoon: { badge: 'Coming soon', name: 'Next product', headline: 'Something new is on the way' } },
+
   { slug: 'collections', name: 'Collections', art: 'prod-collect',
     headline: 'Get paid in 24 hours without giving credit',
     description: 'Send an invoice or a payment link, whatever you have. Automated follow-ups. You are settled in 24 hours while your buyer still takes his full credit period, and none of the risk sits with you.',
@@ -1400,6 +1667,109 @@ class Component extends DCLogic {
       }
     }
 
+    // ---- Hero scene: the phone works, the goods float.
+    // Sizing follows the same shape as sizeArc(): write custom properties, let
+    // the keyframes read them, and pair a ResizeObserver with a window resize
+    // listener because the observer never fires on a height-only change.
+    const scene = root.querySelector('[data-cp-scene]');
+    if (scene) {
+      // The hero is a column flex and the copy block is authored flex:1 1 auto
+      // so it can centre itself above the card fan. With a scene below it the
+      // two then split the slack evenly and the phone ends up tiny, so hand the
+      // slack to the scene and let the copy take only what it needs.
+      const heroCopyEl = root.querySelector('[data-cp-hero-copy]');
+      if (heroCopyEl) heroCopyEl.style.flex = '0 0 auto';
+      const sceneGlass = root.querySelector('[data-cp-scene-glass]');
+      const sceneVp = root.querySelector('[data-cp-scene-vp]');
+      const SCENE_DESIGN_W = 300;
+      const sizeScene = () => {
+        // Measure the wrap, not the scene: the scene's own height comes from
+        // height:100% of the wrap, so reading it back would just return the
+        // min-height floor and the phone would never grow past it.
+        const wrap = scene.parentElement;
+        const box = { width: scene.getBoundingClientRect().width,
+                      height: (wrap ? wrap.getBoundingClientRect().height : 0) };
+        if (!box.width || !box.height) return;
+        // Height drives the phone and width only caps it - the same rule the
+        // card arc uses. Letting width drive it outright made the phone taller
+        // than the hero could spare, so it climbed over the copy above.
+        const ph = Math.max(210, Math.min(box.height - 28, Math.min(470, box.width * 0.34)));
+        scene.style.setProperty('--ph', ph.toFixed(1) + 'px');
+        // Props are placed in multiples of the phone height, so the whole
+        // arrangement scales together; --spread narrows it on small viewports
+        // where the props would otherwise run off the sides.
+        const spread = Math.max(0.40, Math.min(1, (box.width - 200) / 980));
+        scene.style.setProperty('--spread', spread.toFixed(3));
+        if (!sceneGlass || !sceneVp) return;
+        const g = sceneGlass.getBoundingClientRect();
+        if (!g.width) return;
+        const k = g.width / SCENE_DESIGN_W;
+        sceneVp.style.height = (g.height / k).toFixed(1) + 'px';
+        sceneVp.style.transform = 'scale(' + k.toFixed(4) + ')';
+      };
+      sizeScene();
+      if ('ResizeObserver' in window) {
+        const ro3 = new ResizeObserver(sizeScene);
+        ro3.observe(scene);
+        this.cleanups.push(() => ro3.disconnect());
+      }
+      let sTick = false;
+      const onSceneResize = () => {
+        if (sTick) return;
+        sTick = true;
+        requestAnimationFrame(() => { sTick = false; sizeScene(); });
+      };
+      window.addEventListener('resize', onSceneResize);
+      this.cleanups.push(() => window.removeEventListener('resize', onSceneResize));
+
+      // the phone's search loop: query types in, a category lights, results land
+      const qEl = root.querySelector('[data-cp-scene-q]');
+      const chipEls = Array.from(root.querySelectorAll('[data-cp-scene-chip]'));
+      const rowEls = Array.from(root.querySelectorAll('[data-cp-scene-row]'));
+      const QUERIES = ((p0.hero && p0.hero.screen && p0.hero.screen.queries) || []);
+      const showRows = on => rowEls.forEach((el, i) => {
+        el.style.transitionDelay = on ? (i * 90) + 'ms' : '0ms';
+        el.style.opacity = on ? '1' : '0';
+        el.style.transform = on ? 'none' : 'translateY(7px)';
+      });
+      const paintChip = at => chipEls.forEach((el, i) => {
+        const on = i === at;
+        el.style.background = on ? '#0029FF' : '#fff';
+        el.style.borderColor = on ? '#0029FF' : '#E7EBF5';
+        el.style.color = on ? '#fff' : '#4B5580';
+      });
+      if (qEl && QUERIES.length) qEl.textContent = QUERIES[0];
+      paintChip(0);
+      showRows(true);
+
+      // Reduced motion keeps the first query, the first chip and the results
+      // on screen - the loop simply never starts. The blanket CSS rule kills
+      // the transitions but not this timer, so the gate has to be here.
+      if (!REDUCED && QUERIES.length > 1) {
+        let qAt = 0, sceneT = null;
+        const stepScene = () => {
+          showRows(false);
+          if (qEl) qEl.style.opacity = '0';
+          sceneT = setTimeout(() => {
+            qAt = (qAt + 1) % QUERIES.length;
+            if (qEl) { qEl.textContent = QUERIES[qAt]; qEl.style.opacity = '1'; }
+            if (chipEls.length) paintChip(qAt % chipEls.length);
+            showRows(true);
+            sceneT = setTimeout(stepScene, 3200);
+          }, 420);
+        };
+        const startScene = () => { if (!sceneT) sceneT = setTimeout(stepScene, 3200); };
+        const stopScene = () => { if (sceneT) { clearTimeout(sceneT); sceneT = null; } };
+        const onSceneVis = () => { if (document.hidden) stopScene(); else startScene(); };
+        document.addEventListener('visibilitychange', onSceneVis);
+        startScene();
+        this.cleanups.push(() => {
+          stopScene();
+          document.removeEventListener('visibilitychange', onSceneVis);
+        });
+      }
+    }
+
     const statEls = Array.from(root.querySelectorAll('[data-cp-stat]'));
     if (statEls.length) {
       const defs = (p0.trust && p0.trust.stats) || [];
@@ -1692,6 +2062,7 @@ class Component extends DCLogic {
           ? { maxWidth: '40ch', marginTop: 'clamp(12px,3vw,18px)', marginBottom: '0' }
           : { maxWidth: '38ch', marginTop: '0', marginBottom: '0' });
       }
+      set('[data-sell-grid]', { gridTemplateColumns: t ? 'minmax(0,1fr)' : 'minmax(0,.9fr) minmax(0,1.1fr)' });
       if (track) track.style.height = REDUCED ? 'auto' : narrow ? '440vh' : '560vh';
       // The panel carries 88px of top padding so its first row clears the
       // sticky header once pinned. On the way in it is not pinned yet, so that
@@ -1817,6 +2188,18 @@ class Component extends DCLogic {
     // the marquee translates -50%, so the list has to be present exactly twice
     vals.tickerLoop = p.hero.ticker.concat(p.hero.ticker);
     vals.heroCards = vmCards(p.hero.cards || [], ARC_SECONDS);
+    // Which hero this product gets. 'arc' is the credit-card fan; anything else
+    // takes the podium scene. Two sc-ifs rather than one with an else, because
+    // the runtime has no sc-else.
+    const kind = p.heroKind || 'arc';
+    vals.heroArc = kind === 'arc';
+    vals.seller = p.seller || null;
+    vals.hasSeller = !!p.seller;
+    vals.heroScene = kind === 'scene';
+    const sc = p.hero.screen || {};
+    vals.sceneProps = (p.hero.scene || []).map((o, i) => ({ ...o, i: String(i) }));
+    vals.sceneChips = (sc.chips || []).map((t, i) => ({ t: t, i: String(i) }));
+    vals.sceneSellers = (sc.sellers || []).map((o, i) => ({ ...o, i: String(i) }));
     vals.ctaStores = vmStores(p.cta && p.cta.stores);
     // alternating card grounds, matching the homepage's product stack
     const V_BG = ['linear-gradient(120deg,#EEF3FF 0%,#FFFBF2 100%)',

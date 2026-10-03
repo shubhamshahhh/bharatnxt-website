@@ -39,6 +39,17 @@ body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
 /* image-slot only sets data-filled for an image dropped in the editor, so an
    author-supplied src leaves the dashed drop ring painted over real artwork */
 [data-cp-value-art] image-slot::part(ring){display:none}
+/* Hero scene props: a slow float, each one offset by a negative delay baked
+   into the markup. The resting offset lives in --x/--y/--s on the element and
+   the keyframe only adds to it, so killing the animation under reduced motion
+   leaves the scene standing rather than stacking every object on the centre.
+   --spread is written by the sizing pass so the whole arrangement narrows with
+   the viewport instead of running off it. */
+@keyframes bnPropFloat{
+  0%,100%{transform:translateX(-50%) translateX(calc(var(--ph) * var(--x) * var(--spread,1))) scale(var(--s))}
+  50%{transform:translateX(-50%) translateX(calc(var(--ph) * var(--x) * var(--spread,1))) translateY(-9px) scale(var(--s))}
+}
+[data-cp-prop]{transform:translateX(-50%) translateX(calc(var(--ph) * var(--x) * var(--spread,1))) scale(var(--s))}
 /* install band headline pulse, shared with index.html */
 @keyframes bnGlow{0%,100%{text-shadow:0 0 22px rgba(255,255,0,.4)}50%{text-shadow:0 0 46px rgba(255,255,0,.8)}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}
