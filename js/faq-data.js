@@ -48,15 +48,15 @@ window.BNXT_FAQ = [
       { q: "Is there interest on the 50 days?",
         a: "None, as long as you clear your card bill by its due date." }
     ] },
-  { title: "Collections",
+  { title: "Smart BIZ Hub",
     svg: "<path d=\"M3.5 13.5h4l1.4 2.4h6.2l1.4-2.4h4\"></path><path d=\"M5.8 5.6h12.4l2.3 7.9v3.3a1.7 1.7 0 0 1-1.7 1.7H5.2a1.7 1.7 0 0 1-1.7-1.7v-3.3Z\"></path><circle cx=\"12\" cy=\"9.3\" r=\"1.7\" fill=\"#FFDE00\" stroke=\"none\"></circle>",
     items: [
-      { q: "I mostly sell. What is in it for me?",
-        a: "Send payment links, let reminders go out automatically, track outstanding by dealer and get settled in 24 hours, while your dealer still pays on credit." },
-      { q: "Do reminders go out automatically?",
-        a: "Yes. WhatsApp reminders follow your schedule, so your staff makes no recovery calls." },
-      { q: "How fast do I get settled?",
-        a: "Within 24 hours of your dealer paying, straight into your existing bank account." }
+      { q: "What is Smart BIZ Hub?",
+        a: "One place for the invoices you raise, the payments you make and the money you collect. Pay with Invoice is live in the app today. Generate Invoice, Collections, Payment Reminders and Reconciliation are coming soon." },
+      { q: "Where do my invoices come from?",
+        a: "Connect Gmail, your GST portal account and NPCI Bharat Connect once. Invoices you owe then arrive in the app on their own, ready to review and pay." },
+      { q: "I mostly sell. What is coming for me?",
+        a: "Your own account so buyers can pay you directly, payment reminders sent through BharatNXT with an option for your buyer to pay on credit, rewards for you when reminders get paid, and reconciliation that matches every payment to its invoice." }
     ] },
   { title: "Security & support",
     svg: "<path d=\"M12 3.5 19 6v6c0 4-3 7-7 8.5C8 19 5 16 5 12V6l7-2.5Z\"></path><path d=\"m9.2 12 2 2 3.6-3.8\" stroke=\"#FFDE00\" stroke-width=\"2.1\"></path>",

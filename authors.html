@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- title lives here, not in <helmet>: the helmet manager re-syncs its own
+     title from the raw template on every render -->
+<title>Our authors | BharatNXT Resources</title>
+<script src="js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Meet the people who write BharatNXT’s guides on business finance, payments, credit and GST for Indian businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<script src="js/image-slot.js"></script>
+<script src="js/faq-data.js"></script>
+<script src="js/authors-data.js"></script>
+<script src="js/install-band.js"></script>
+<script src="js/analytics.js"></script>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/author.css">
+</helmet>
+
+<div ref="{{ root }}" style="width:100%;background:#F7F8FA">
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs><filter id="bn-liquid" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="7" result="noise"></feTurbulence><feGaussianBlur in="noise" stdDeviation="1.2" result="soft"></feGaussianBlur><feDisplacementMap in="SourceGraphic" in2="soft" scale="18" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter></defs></svg>
+<div style="position:sticky;top:0;z-index:200;padding:12px 16px">
+  <div data-glass-pill="" style="position:relative;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid #E0E0E0;border-radius:26px;padding:10px 14px;min-height:60px;background:rgba(255,238,0,.42);backdrop-filter:blur(18px) saturate(200%);-webkit-backdrop-filter:blur(18px) saturate(200%);box-shadow:0 8px 34px rgba(17,26,61,.16),inset 0 1px 1px rgba(255,255,255,.6),inset 0 -1px 2px rgba(140,120,0,.3)">
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;backdrop-filter:url(#bn-liquid);-webkit-backdrop-filter:url(#bn-liquid);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:22px;box-sizing:border-box"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(155deg,rgba(255,246,90,.34) 0%,rgba(255,232,0,.16) 52%,rgba(255,255,255,.1) 100%)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,.12) 26%,rgba(255,255,255,0) 46%,rgba(255,255,255,.14) 82%,rgba(255,255,255,.5) 100%);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:1.5px;box-sizing:border-box"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;border-radius:26px;pointer-events:none;background:radial-gradient(240px circle at var(--mouse-x,50%) var(--mouse-y,38%),rgba(255,255,255,.5) 0%,rgba(255,255,255,.14) 38%,rgba(255,255,255,0) 62%);transition:opacity .3s ease;opacity:0" data-glass-gloss=""></div>
+    <a href="index.html#top" style="display:inline-flex;align-items:center;height:28px;flex-shrink:0"><img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:22px;width:auto;display:block"></a>
+      <div data-desktop-nav="" style="display:flex;align-items:center;gap:4px;flex:1;justify-content:flex-end">
+      <div data-nav-dd="products" style="position:relative;display:flex;align-items:center">
+        <button type="button" data-dd-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">Products<svg data-dd-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-dd-panel="" role="menu" style="position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px">
+          <div style="display:grid;grid-template-columns:repeat(1,max-content);gap:4px 22px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Products</div>
+            <a href="product.html?p=pay-with-credit" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Pay With Credit</a>
+            <a href="product.html?p=smart-biz-hub" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Smart BIZ Hub</a>
+            <a href="product.html?p=seller-hub" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Seller Hub</a>
+            
+            <a href="product.html?p=working-capital" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Working Capital</a>
+            
+          </div>
+          </div>
+        </div>
+      </div>
+      <div data-nav-dd="resources" style="position:relative;display:flex;align-items:center">
+        <button type="button" data-dd-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">Resources<svg data-dd-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-dd-panel="" role="menu" style="position:absolute;top:calc(100% + 12px);right:0;max-width:calc(100vw - 32px);box-sizing:border-box;z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px">
+          <div style="display:grid;grid-template-columns:repeat(2,max-content);gap:16px 22px">
+          <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Tools &amp; Calculators</div>
+            <a href="tool.html?t=working-capital" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Working Capital Calculator</a>
+            <a href="tool.html?t=cash-flow" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Cash Flow Calculator</a>
+            <a href="tool.html?t=emi" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">EMI Calculator</a>
+            <a href="tool.html?t=funding-fit" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Funding Fit Check</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:180px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">User Stories</div>
+            <a href="index.html#stories" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Testimonials</a>
+            <a href="index.html#stories" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Social Reviews</a>
+          </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:170px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Help Centre</div>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Contact Us</a>
+            <a href="index.html#faq" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">FAQs</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">More</div>
+            <a href="resources.html" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Blogs</a>
+            <a href="authors.html" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Authors</a>
+            <a href="https://achievher.bharatnxt.in/" target="_blank" rel="noopener" data-dd-link="" style="display:flex;align-items:center;min-height:40px;padding:6px 10px;border-radius:10px;border:1px solid #EEEEEE;background:#FAFAFB" style-hover="background:#F7F8FA;border-color:#E4E7F2"><img src="assets/images/achievher-logo-mark.png" alt="AchievHer, a BharatNXT series" style="height:20px;width:auto;max-width:100%;display:block"></a>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div data-nav-dd="about" style="position:relative;display:flex;align-items:center">
+        <button type="button" data-dd-btn="" aria-expanded="false" aria-haspopup="true" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:600;color:#3E4874;white-space:nowrap;padding:11px 14px;border:0;background:transparent;border-radius:100px;min-height:44px;cursor:pointer;transition:background .2s,color .2s">Company<svg data-dd-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-dd-panel="" role="menu" style="position:absolute;top:calc(100% + 12px);right:0;z-index:80;display:none;background:#fff;border:1px solid #EEEEEE;border-radius:18px;box-shadow:0 18px 48px rgba(164,172,178,.28);padding:16px 10px 10px">
+          <div style="display:grid;grid-template-columns:repeat(1,max-content);gap:4px 22px">
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:190px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9092A3;padding:0 10px 8px">Company</div>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Vision</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Brand, Values &amp; Culture</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Our Story</a>
+            <a href="index.html#trust" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Risk &amp; Compliance</a>
+            <a href="careers.html" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Careers</a>
+            <a href="index.html#company" data-dd-link="" style="display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#314259;white-space:nowrap" style-hover="background:#F7F8FA;color:#0029FF">Media &amp; PR</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button type="button" data-burger="" aria-label="Menu" aria-expanded="false" style="display:none;flex-direction:column;justify-content:space-between;align-items:center;width:26px;height:18px;padding:0;border:0;background:transparent;cursor:pointer;flex-shrink:0;margin-left:auto"><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span><span data-bar="" style="display:block;width:100%;height:2.5px;border-radius:2px;background:#314259;transition:transform .28s cubic-bezier(.22,1,.32,1),opacity .18s ease"></span></button>
+      <div data-mobile-nav="" style="position:absolute;top:calc(100% + 12px);left:0;right:0;z-index:70;display:none;background:#fff;border:1px solid #E0E0E0;border-radius:22px;box-shadow:0 30px 60px rgba(164,172,178,.28);padding:6px 20px 20px;max-height:calc(100vh - 120px);overflow-y:auto;-webkit-overflow-scrolling:touch">
+      <div data-m-group="" style="border-bottom:1px solid #EEEEEE">
+        <button type="button" data-m-acc="products" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">Products<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-m-panel="products" style="display:none;padding:0 0 12px">
+          <a href="product.html?p=pay-with-credit" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Pay With Credit</a>
+          <a href="product.html?p=smart-biz-hub" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Smart BIZ Hub</a>
+          <a href="product.html?p=seller-hub" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Seller Hub</a>
+          
+          <a href="product.html?p=working-capital" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Working Capital</a>
+          
+        </div>
+      </div>
+      <div data-m-group="" style="border-bottom:1px solid #EEEEEE">
+        <button type="button" data-m-acc="resources" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">Resources<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-m-panel="resources" style="display:none;padding:0 0 12px">
+          <div>
+            <button type="button" data-m-acc="res-tools" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:500;color:#314259;cursor:pointer">Tools &amp; Calculators<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-tools" style="display:none;padding:0 0 6px">
+              <a href="tool.html?t=working-capital" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Working Capital Calculator</a>
+              <a href="tool.html?t=cash-flow" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Cash Flow Calculator</a>
+              <a href="tool.html?t=emi" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">EMI Calculator</a>
+              <a href="tool.html?t=funding-fit" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Funding Fit Check</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" data-m-acc="res-stories" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:500;color:#314259;cursor:pointer">User Stories<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-stories" style="display:none;padding:0 0 6px">
+              <a href="index.html#stories" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Testimonials</a>
+              <a href="index.html#stories" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Social Reviews</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" data-m-acc="res-help" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:500;color:#314259;cursor:pointer">Help Centre<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-help" style="display:none;padding:0 0 6px">
+              <a href="index.html#company" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Contact Us</a>
+              <a href="index.html#faq" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">FAQs</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" data-m-acc="res-more" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 4px 12px 14px;border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:500;color:#314259;cursor:pointer">More<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            <div data-m-panel="res-more" style="display:none;padding:0 0 6px">
+              <a href="resources.html" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Blogs</a>
+              <a href="authors.html" data-m-link="" style="display:block;padding:10px 4px 10px 28px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Authors</a>
+              <a href="https://achievher.bharatnxt.in/" target="_blank" rel="noopener" data-m-link="" style="display:flex;align-items:center;min-height:38px;margin:2px 4px 2px 28px;padding:6px 10px;border-radius:10px;border:1px solid #EEEEEE;background:#FAFAFB" style-hover="background:#F7F8FA;border-color:#E4E7F2"><img src="assets/images/achievher-logo-mark.png" alt="AchievHer, a BharatNXT series" style="height:20px;width:auto;max-width:100%;display:block"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-m-group="">
+        <button type="button" data-m-acc="about" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 4px;border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#314259;cursor:pointer">Company<svg data-m-caret="" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div data-m-panel="about" style="display:none;padding:0 0 20px">
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Vision</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Brand, Values &amp; Culture</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Our Story</a>
+          <a href="index.html#trust" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Risk &amp; Compliance</a>
+          <a href="careers.html" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Careers</a>
+          <a href="index.html#company" data-m-link="" style="display:block;padding:11px 4px 11px 14px;font-size:14px;font-weight:500;color:#314259" style-hover="color:#0029FF">Media &amp; PR</a>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<header data-screen-label="Authors" style="padding:clamp(20px,2.6vw,30px) 20px 0">
+  <div style="max-width:1180px;margin:0 auto">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(20px,3vw,32px);font-size:12.5px;color:#9092A3">
+      <a href="resources.html" style="color:#686D77;font-weight:600" style-hover="color:#0029FF">Resources</a>
+      <span aria-hidden="true">›</span>
+      <span>Authors</span>
+    </nav>
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0029FF;margin-bottom:10px">Authors</div>
+    <h1 style="font-size:clamp(26px,3.6vw,40px);font-weight:800;letter-spacing:-1.2px;line-height:1.1;color:#314259;margin-bottom:10px">The people behind our guides</h1>
+    <p style="font-size:16px;line-height:1.65;color:#4B5580;max-width:640px;text-wrap:pretty">Every BharatNXT guide is written for the business owner who does his own banking. Here is who writes them, what they cover, and everything they have published.</p>
+  </div>
+</header>
+
+<section style="padding:clamp(24px,3.4vw,40px) 20px 0">
+  <div style="max-width:1180px;margin:0 auto">
+    <div data-authors-grid="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(14px,1.8vw,20px)">
+      <sc-for list="{{ authors }}" as="w" hint-placeholder-count="3">
+        <article style="display:flex;flex-direction:column;background:#fff;border:1px solid #EEEEEE;border-radius:22px;box-shadow:0 10px 30px rgba(30,50,90,.04);padding:clamp(18px,2.2vw,24px)">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+            <a href="{{ w.href }}" aria-hidden="true" tabindex="-1" style="width:64px;height:64px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#0029FF;color:#FFFF00;font-size:20px;font-weight:900;{{ w.photoStyle }}">{{ w.initials }}</a>
+            <div style="min-width:0">
+              <h2 style="font-size:18px;font-weight:800;letter-spacing:-.3px;line-height:1.25;color:#314259"><a href="{{ w.href }}" style="color:inherit" style-hover="color:#0029FF">{{ w.name }}</a></h2>
+              <div style="font-size:13px;font-weight:700;color:#0029FF;margin-top:3px">{{ w.count }} articles</div>
+            </div>
+          </div>
+          <div style="font-size:14px;font-weight:600;color:#5E6790;margin-bottom:8px">{{ w.role }}</div>
+          <p style="font-size:14.5px;line-height:1.65;color:#4B5580;margin-bottom:14px;text-wrap:pretty">{{ w.short }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+            <sc-for list="{{ w.expertise }}" as="x" hint-placeholder-count="3">
+              <span style="font-size:12px;font-weight:700;color:#0029FF;background:#F0F4FF;border:1px solid #DCE4FF;border-radius:100px;padding:3px 10px">{{ x }}</span>
+            </sc-for>
+          </div>
+          <div style="margin-top:auto;display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;padding-top:14px;border-top:1px solid #EEF1F8">
+            <a href="{{ w.href }}" style="font-size:14px;font-weight:700">View profile and articles →</a>
+            <sc-if value="{{ w.linkedin }}"><a href="{{ w.linkedin }}" target="_blank" rel="noopener" style="font-size:14px;font-weight:700">LinkedIn ↗</a></sc-if>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(28px,4vw,52px) 20px clamp(28px,4vw,48px)">
+  <div style="max-width:1180px;margin:0 auto;background:linear-gradient(160deg,#F7F8FA,#FAFAFA);border:1px solid #EEEEEE;border-radius:18px;padding:clamp(20px,2.6vw,28px)">
+    <div style="font-size:17.5px;font-weight:800;letter-spacing:-.5px;color:#314259;margin-bottom:8px">Looking for something specific?</div>
+    <p style="font-size:15px;line-height:1.6;color:#686D77;margin-bottom:18px;max-width:460px;text-wrap:pretty">Search the full library, or start from the problem you are trying to solve.</p>
+    <a href="resources.html" style="display:inline-flex;align-items:center;justify-content:center;background:#0029FF;color:#fff;font-size:14.5px;font-weight:800;padding:14px 22px;border-radius:12px;min-height:48px" style-hover="background:#0018AA;color:#fff">Explore resources</a>
+  </div>
+</section>
+
+<!-- ══ FAQS ══ same section as index.html; content, icons and the accordion
+     all live in js/faq-data.js so there is one copy for the whole site -->
+<section id="faq" data-screen-label="FAQs" data-faq-sec="" style="padding:clamp(34px,4.4vw,64px) 20px;background:#EDF2FF">
+  <div data-faq-grid="" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(18px,2.2vw,32px);align-items:start">
+    <div data-rv="1" data-faq-head-col="" style="opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;position:sticky;top:104px;z-index:6;background:#EDF2FF">
+      <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:14px"><span aria-hidden="true" style="width:26px;height:3px;border-radius:2px;background:#0029FF"></span><span style="font-size:12px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;color:#0029FF">FAQs</span></div>
+      <h2 style="font-size:clamp(26px,4.4vw,42px);font-weight:900;letter-spacing:-1.6px;line-height:1.06;color:#111A3D;margin-bottom:14px;text-wrap:pretty">Got questions?<br>We have <span style="color:#0029FF">got them answered.</span></h2>
+      <p style="font-size:15.5px;line-height:1.6;color:#6B7398;max-width:38ch;text-wrap:pretty">Six things businesses ask us before they sign up. Open a topic to see the answers.</p>
+    </div>
+    <div data-faq-cols="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start">
+      <sc-for list="{{ faq }}" as="g">
+        <div data-faq-group="" style="background:#fff;border:1px solid #E4E7F2;border-radius:26px;padding:8px;box-shadow:0 4px 18px rgba(17,26,61,.05);align-self:start">
+          <button type="button" data-faq-head="" style="display:flex;align-items:center;gap:14px;width:100%;text-align:left;font-family:inherit;background:transparent;border:0;padding:14px;min-height:60px;cursor:pointer">
+            <span aria-hidden="true" style="width:46px;height:46px;flex-shrink:0;border-radius:14px;background:#EDF2FF;border:1px solid #DCE4FF;display:flex;align-items:center;justify-content:center"><svg data-faq-icon="" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#0029FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></svg></span>
+            <span style="flex:1;min-width:0;font-size:16.5px;font-weight:900;letter-spacing:-.4px;color:#111A3D">{{ g.title }}</span>
+            <span aria-hidden="true" style="position:relative;flex-shrink:0;width:22px;height:22px;display:block">
+              <span style="position:absolute;top:10px;left:0;width:22px;height:2.5px;border-radius:2px;background:#0029FF;display:block"></span>
+              <span data-faq-bar="" style="position:absolute;top:10px;left:0;width:22px;height:2.5px;border-radius:2px;background:#0029FF;display:block;transform:rotate(90deg);transition:transform .28s cubic-bezier(.2,0,0,1)"></span>
+            </span>
+          </button>
+          <div data-faq-body="" style="display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s cubic-bezier(.2,0,0,1)">
+            <div style="overflow:hidden">
+              <div style="display:flex;flex-direction:column;gap:9px;padding:4px 8px 10px">
+                <sc-for list="{{ g.items }}" as="q">
+                  <div data-faq-q="" style="background:#fff;border:1px solid #E4E7F2;border-radius:18px;overflow:hidden;transition:border-color .25s cubic-bezier(.2,0,0,1)">
+                    <button type="button" data-faq-qbtn="" style="display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;font-family:inherit;font-size:14.5px;font-weight:600;line-height:1.45;color:#111A3D;background:transparent;border:0;padding:15px 18px;min-height:52px;cursor:pointer">
+                      <span style="flex:1;min-width:0">{{ q.q }}</span>
+                      <span aria-hidden="true" style="position:relative;flex-shrink:0;width:20px;height:20px;display:block">
+                        <span style="position:absolute;top:9px;left:0;width:20px;height:2px;border-radius:2px;background:#0029FF;display:block"></span>
+                        <span data-faq-qbar="" style="position:absolute;top:9px;left:0;width:20px;height:2px;border-radius:2px;background:#0029FF;display:block;transform:rotate(90deg);transition:transform .25s cubic-bezier(.2,0,0,1)"></span>
+                      </span>
+                    </button>
+                    <div data-faq-qbody="" style="display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s cubic-bezier(.2,0,0,1)">
+                      <div style="overflow:hidden"><p style="font-size:14px;line-height:1.65;color:#4B5580;padding:0 18px 16px;max-width:62ch">{{ q.a }}</p></div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSTALL ══ the homepage's band, on every page that has a footer -->
+<section id="install" data-screen-label="Install" style="position:relative;overflow:hidden;background:#0029FF;padding:clamp(24px,2.8vw,40px) 20px">
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 15%,transparent 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(18px,2.4vw,34px);align-items:center">
+    
+
+    <div>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(7px,1.2vw,12px);margin-bottom:9px"><span style="font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#FFFF00;text-shadow:0 0 34px rgba(255,255,0,.55);animation:bnGlow calc(3.4s / var(--flow)) ease-in-out infinite">Kuch Bada Karte Hai.</span></div>
+      <span style="display:block;font-size:clamp(22px,3.8vw,35px);font-weight:900;letter-spacing:-1.3px;line-height:1.14;color:#fff;margin-bottom:14px">Buy. Sell. Pay. Collect.</span>
+      <a data-mob-only="" href="#" style="display:none;align-items:center;justify-content:center;gap:9px;background:#FFFF00;color:#111A3D;font-size:16px;font-weight:900;padding:13px 24px;border-radius:13px;min-height:50px;margin-bottom:12px" style-hover="color:#111A3D">Install the app →</a>
+      <p style="font-size:clamp(14.5px,1.5vw,16.5px);font-weight:700;letter-spacing:-.3px;line-height:1.4;color:rgba(255,255,255,.9);margin-bottom:14px;max-width:34ch;text-wrap:pretty">One platform for every business payment.</p><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)"><span style="color:#FFFF00;letter-spacing:1px">★★★★★</span>4.6 · 1L+ installs · 38 MB · No joining fee</div>
+      <div data-store-row="" style="display:flex;flex-wrap:wrap;gap:9px">
+        
+        
+      </div>
+    </div><div data-install-card="" style="width:100%;max-width:360px;justify-self:end;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px;backdrop-filter:blur(14px)">
+      <div data-desk-only="" data-qr-row="" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.18)">
+        <span style="flex:1;min-width:0">
+          <span style="display:block;font-size:14.5px;font-weight:900;letter-spacing:-.4px;color:#fff;margin-bottom:2px">Scan to install</span>
+          <span style="display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.7)">Point your phone camera at the code.</span>
+        </span>
+        <span style="width:72px;height:72px;flex-shrink:0;display:block;position:relative;background:#fff;border-radius:11px;overflow:hidden"><image-slot id="v5-qr-author-page" shape="rect" fit="contain" placeholder="QR code"></image-slot></span>
+      </div>
+      <div style="font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px">Or get the link on your phone</div>
+      <form data-sms-form="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px">
+        <input data-sms-input="" type="tel" inputmode="numeric" pattern="[0-9 ]*" maxlength="13" autocomplete="tel" placeholder="00000 00000" aria-label="Mobile number" style="min-width:0;min-height:44px;font-family:inherit;font-size:14.5px;font-weight:600;color:#111A3D;background:#fff;border:0;border-radius:11px;padding:11px 13px">
+        <button type="submit" style="min-height:44px;white-space:nowrap;font-family:inherit;font-size:14px;font-weight:800;color:#0029FF;background:#FFFF00;border:0;border-radius:11px;padding:11px 16px;cursor:pointer;transition:transform .08s ease" style-active="transform:scale(.98)">Send link</button>
+      </form>
+      <div data-sms-note="" style="font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.66);margin-top:7px">One text with the install link. No spam.</div>
+    </div>
+  </div>
+</section>
+
+<footer id="company" style="background:#EDF2FF;padding:28px 20px 22px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start">
+    <div style="min-width:230px;max-width:300px">
+      <img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:24px;width:auto;display:block;margin-bottom:12px">
+      <p style="font-size:13.5px;line-height:1.6;color:#4B5580;margin-bottom:14px">India's largest B2B payment network. Pay your suppliers, collect from your buyers.</p>
+      <a href="tel:1800 000 0000" style="display:block;font-size:15px;font-weight:800;color:#111A3D;margin-bottom:4px" style-hover="color:#0029FF">1800 000 0000</a>
+      <a href="mailto:support@bharatnxt.in" style="display:block;font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">support@bharatnxt.in</a>
+      <div style="display:flex;gap:10px;margin-top:16px">
+        <a href="index.html#install" style="width:140px;height:42px;display:block;position:relative;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #DFE4F2"><image-slot id="v5-badge-play-auth" shape="rect" fit="contain" placeholder="Play badge"></image-slot></a>
+        <a href="index.html#install" style="width:140px;height:42px;display:block;position:relative;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #DFE4F2"><image-slot id="v5-badge-appstore-auth" shape="rect" fit="contain" placeholder="App Store badge"></image-slot></a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Products</h5><a href="product.html?p=pay-with-credit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Pay With Credit</a><a href="product.html?p=smart-biz-hub" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Smart BIZ Hub</a><a href="product.html?p=seller-hub" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Seller Hub</a><a href="product.html?p=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:160px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Tools &amp; Calculators</h5><a href="tool.html?t=working-capital" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Working Capital Calculator</a><a href="tool.html?t=cash-flow" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Cash Flow Calculator</a><a href="tool.html?t=emi" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">EMI Calculator</a><a href="tool.html?t=funding-fit" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Funding Fit Check</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Resources</h5><a href="resources.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Blogs</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Testimonials</a><a href="index.html#stories" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Social Reviews</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Contact Us</a><a href="index.html#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:150px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Company</h5><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Vision</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Brand, Values &amp; Culture</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Our Story</a><a href="index.html#trust" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Risk &amp; Compliance</a><a href="careers.html" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Careers</a><a href="index.html#company" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Media &amp; PR</a></div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:140px"><h5 style="font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#111A3D;margin-bottom:2px">Legal</h5><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Terms of Service</a><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Privacy Policy</a><a href="#" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">Grievance Officer</a><a href="index.html#faq" style="font-size:13.5px;color:#4B5580" style-hover="color:#0029FF">FAQs</a></div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:20px auto 0;padding-top:14px;border-top:1px solid #DFE4F2;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:12.5px;line-height:1.6;color:#8B93B8">
+    <div style="max-width:640px">Registered entity name &middot; CIN &middot; Registered address<br>Grievance Officer: Name &middot; email</div>
+    <div>© 2026 BharatNXT</div>
+  </div>
+</footer>
+
+<!-- Floating install bar, ported from index.html:1712. Mobile only: the toggle
+     lives in componentDidMount because index.html gates this inside applyDesk,
+     which does not exist here. The #install anchor is on the homepage, so this
+     copy links across to it. -->
+<div data-sticky-bar="" style="position:fixed;left:50%;bottom:11px;z-index:300;display:none;align-items:center;gap:14px;width:min-content;height:min-content;padding:8px 14px;background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.65);border-radius:999px;box-shadow:0 1px 1px rgba(255,255,255,.8) inset,0 -1px 2px rgba(17,26,61,.08) inset,0 .6px .6px -1.25px rgba(17,26,61,.18),0 2.3px 2.3px -2.5px rgba(17,26,61,.16),0 14px 26px -6px rgba(17,26,61,.18);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);transform:translateX(-50%)">
+  <div aria-hidden="true" style="position:absolute;inset:0;border-radius:999px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,.1) 30%,rgba(255,255,255,0) 55%,rgba(255,255,255,.14) 85%,rgba(255,255,255,.5) 100%);mask-image:linear-gradient(#000,#000),linear-gradient(#000,#000);mask-composite:exclude;-webkit-mask-composite:xor;mask-clip:border-box,padding-box;padding:1.3px;box-sizing:border-box"></div>
+  <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative;z-index:1">
+    <img src="assets/images/logo-bnxt.png" alt="BharatNXT" style="height:18px;width:auto;display:block;flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+      <span style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(17,26,61,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0"><img src="assets/apple%20appstore%20small.png" alt="App Store" style="width:15px;height:15px;object-fit:contain;display:block"></span>
+      <span style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(17,26,61,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0"><img src="assets/google%20playstore%20small.png" alt="Google Play" style="width:15px;height:15px;object-fit:contain;display:block"></span>
+    </div>
+  </div>
+  <a href="index.html#install" style="position:relative;z-index:1;background:#0029FF;color:#fff;font-size:13.5px;font-weight:800;padding:0 18px;border-radius:100px;white-space:nowrap;height:44px;min-height:44px;display:inline-flex;align-items:center;flex-shrink:0" style-hover="background:#0018AA;color:#fff">Download Now</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+// The listing of every author, from js/authors-data.js (shared with the
+// article page and each author's profile).
+class Component extends DCLogic {
+  componentDidMount() {
+    this.cleanups = [];
+    const root = this.root;
+    if (!root) return;
+
+    if (window.BNXT_FAQ_INIT) window.BNXT_FAQ_INIT(root, this.cleanups);
+    if (window.BNXT_INSTALL_INIT) window.BNXT_INSTALL_INIT(root, this.cleanups);
+    // structured data: the list of author profiles
+    {
+      const base = location.origin + location.pathname.replace(/[^/]*$/, '');
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'BharatNXT authors',
+        itemListElement: window.BNXT_AUTHORS.map((w, i) => ({ '@type': 'ListItem', position: i + 1, name: w.name, url: base + 'author.html?au=' + w.slug })) });
+      document.head.appendChild(ld);
+      this.cleanups.push(() => ld.remove());
+    }
+    // Scroll reveal. The FAQ heading ships at opacity:0 with data-rv="1" and had
+    // no driver on this page, so it never faded in - it was simply invisible.
+    // Same shape as product.html: observer where we can, straight to visible
+    // under reduced motion, and a timer that shows everything regardless so a
+    // missed callback can never leave content hidden.
+    const rvs = Array.from(root.querySelectorAll('[data-rv]'));
+    const showRv = el => { el.style.opacity = '1'; el.style.transform = 'none'; };
+    if (rvs.length) {
+      const reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      if ('IntersectionObserver' in window && !reduced) {
+        const rvIo = new IntersectionObserver(es => es.forEach(e => {
+          if (e.isIntersecting) { rvIo.unobserve(e.target); showRv(e.target); }
+        }), { rootMargin: '0px 0px -6% 0px', threshold: .04 });
+        rvs.forEach(el => rvIo.observe(el));
+        this.cleanups.push(() => rvIo.disconnect());
+      } else rvs.forEach(showRv);
+      const rvT = setTimeout(() => rvs.forEach(showRv), 2500);
+      this.cleanups.push(() => clearTimeout(rvT));
+    }
+
+    // Floating install bar: mobile only, matching index.html's 760px rule. The
+    // homepage buries this toggle inside applyDesk; none of this page's own
+    // breakpoints is 760, so it gets its own media query rather than reusing one.
+    const bar = root.querySelector('[data-sticky-bar]');
+    if (bar) {
+      const mqBar = window.matchMedia('(max-width: 759.98px)');
+      const paintBar = () => {
+        bar.style.display = mqBar.matches ? 'flex' : 'none';
+        // the bar floats over the foot of the page; keep it off the last footer row
+        root.style.paddingBottom = mqBar.matches ? '76px' : '';
+      };
+      paintBar();
+      if (mqBar.addEventListener) {
+        mqBar.addEventListener('change', paintBar);
+        this.cleanups.push(() => mqBar.removeEventListener('change', paintBar));
+      }
+    }
+    const set = (sel, styles) => root.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
+    const mqM = window.matchMedia('(max-width: 700px)');
+    const apply = () => {
+      const m = mqM.matches;
+      set('[data-grid]', { gridTemplateColumns: m ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))' });
+      set('[data-author-head]', { flexDirection: m ? 'column' : 'row' });
+    };
+    apply();
+    if (mqM.addEventListener) { mqM.addEventListener('change', apply); this.cleanups.push(() => mqM.removeEventListener('change', apply)); }
+
+    // dropdown groups (Products / Resources / About Us), one wiring for all
+    const ddClosers = []; // opening one group instantly closes its siblings,
+    // so the grace timer can't leave two panels overlapping mid-hover
+    root.querySelectorAll('[data-nav-dd]').forEach(dd => {
+      const btn = dd.querySelector('[data-dd-btn]'), pnl = dd.querySelector('[data-dd-panel]'), car = dd.querySelector('[data-dd-caret]');
+      if (!btn || !pnl) return;
+      let open = false;
+      const setDD = v => { open = v; pnl.style.display = v ? 'block' : 'none'; btn.setAttribute('aria-expanded', String(v)); if (car) car.style.transform = v ? 'rotate(180deg)' : 'none'; btn.style.background = v ? '#F2F7FF' : 'transparent'; btn.style.color = v ? '#0029FF' : '#3E4874'; };
+      // the panel floats 12px below the button; a grace timer bridges that gap
+      // so crossing it doesn't close the menu before it can be clicked
+      let closeT = null;
+      ddClosers.push(() => { clearTimeout(closeT); setDD(false); });
+      const me = ddClosers.length - 1;
+      const enter = () => { ddClosers.forEach((c, i) => { if (i !== me) c(); }); clearTimeout(closeT); setDD(true); };
+      const leave = () => { clearTimeout(closeT); closeT = setTimeout(() => setDD(false), 300); };
+      dd.addEventListener('mouseenter', enter); dd.addEventListener('mouseleave', leave);
+      pnl.addEventListener('mouseenter', enter); pnl.addEventListener('mouseleave', leave);
+      const onBtn = e => { e.preventDefault(); e.stopPropagation(); setDD(!open); };
+      btn.addEventListener('click', onBtn);
+      const onDoc = () => { if (open) setDD(false); };
+      const onEsc = e => { if (e.key === 'Escape' && open) { setDD(false); btn.focus(); } };
+      document.addEventListener('click', onDoc); document.addEventListener('keydown', onEsc);
+      this.cleanups.push(() => { clearTimeout(closeT); dd.removeEventListener('mouseenter', enter); dd.removeEventListener('mouseleave', leave); btn.removeEventListener('click', onBtn); document.removeEventListener('click', onDoc); document.removeEventListener('keydown', onEsc); });
+    });
+    // mobile accordion sections
+    root.querySelectorAll('[data-m-acc]').forEach(btn => {
+      const pnl = root.querySelector('[data-m-panel="' + btn.getAttribute('data-m-acc') + '"]');
+      const car = btn.querySelector('[data-m-caret]');
+      if (!pnl) return;
+      const onTap = () => {
+        const open = pnl.style.display !== 'none';
+        pnl.style.display = open ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!open));
+        if (car) car.style.transform = open ? 'none' : 'rotate(180deg)';
+      };
+      btn.addEventListener('click', onTap);
+      this.cleanups.push(() => btn.removeEventListener('click', onTap));
+    });
+    // liquid-glass pill: gloss highlight follows the cursor (iOS-style)
+    const pill = root.querySelector('[data-glass-pill]');
+    if (pill) {
+      const gloss = pill.querySelector('[data-glass-gloss]');
+      const onMove = e => {
+        const r = pill.getBoundingClientRect();
+        pill.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+        pill.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+        if (gloss) gloss.style.opacity = '1';
+      };
+      const onLeave = () => {
+        if (gloss) gloss.style.opacity = '0';
+        pill.style.setProperty('--mouse-x', '50%');
+        pill.style.setProperty('--mouse-y', '38%');
+      };
+      pill.addEventListener('mousemove', onMove);
+      pill.addEventListener('mouseleave', onLeave);
+      this.cleanups.push(() => { pill.removeEventListener('mousemove', onMove); pill.removeEventListener('mouseleave', onLeave); });
+    }
+    // ---- mobile hamburger (identical to the homepage header)
+    const burger = root.querySelector('[data-burger]');
+    const sheet = root.querySelector('[data-mobile-nav]');
+    const desktopNav = root.querySelector('[data-desktop-nav]');
+    if (burger && sheet && desktopNav) {
+      const bars = Array.from(burger.querySelectorAll('[data-bar]'));
+      let sheetOpen = false;
+      const paintBurger = () => {
+        if (!bars.length) return;
+        bars[0].style.transform = sheetOpen ? 'translateY(7.75px) rotate(45deg)' : 'none';
+        bars[1].style.opacity = sheetOpen ? '0' : '1';
+        bars[2].style.transform = sheetOpen ? 'translateY(-7.75px) rotate(-45deg)' : 'none';
+      };
+      const setSheet = on => {
+        sheetOpen = on;
+        sheet.style.display = on ? 'block' : 'none';
+        burger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        paintBurger();
+      };
+      const mq = window.matchMedia('(max-width: 880px)');
+      const applyMode = () => {
+        const mobile = mq.matches;
+        desktopNav.style.display = mobile ? 'none' : 'flex';
+        burger.style.display = mobile ? 'flex' : 'none';
+        if (!mobile) setSheet(false);
+      };
+      applyMode();
+      if (mq.addEventListener) { mq.addEventListener('change', applyMode); this.cleanups.push(() => mq.removeEventListener('change', applyMode)); }
+      const onBurger = e => { e.preventDefault(); e.stopPropagation(); setSheet(!sheetOpen); };
+      burger.addEventListener('click', onBurger);
+      this.cleanups.push(() => burger.removeEventListener('click', onBurger));
+      sheet.querySelectorAll('[data-m-link]').forEach(a => a.addEventListener('click', () => setSheet(false)));
+      const onOutside = e => { if (sheetOpen && !sheet.contains(e.target) && e.target !== burger && !burger.contains(e.target)) setSheet(false); };
+      document.addEventListener('click', onOutside);
+      this.cleanups.push(() => document.removeEventListener('click', onOutside));
+    }
+  }
+
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => fn()); }
+
+  renderVals() {
+    const faq = window.BNXT_FAQ || [];
+    return {
+      faq: faq,
+      root: el => { this.root = el; },
+      authors: window.BNXT_AUTHORS.map(w => Object.assign({}, w, {
+        href: 'author.html?au=' + w.slug,
+        count: String(window.BNXT_POSTS_BY(w.slug).length),
+        photoStyle: w.photo ? 'background:url("' + w.photo + '") center/cover;color:transparent' : '' }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -5,3 +5,35 @@ html{scroll-behavior:smooth}
 a{color:#0029FF;text-decoration:none}
 a:hover{color:#0018AA}
 @media (prefers-reduced-transparency: reduce){[data-glass-pill]{background:#FFFF00 !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important}[data-glass-pill] > [aria-hidden="true"]{display:none !important}}
+
+/* Design tokens. Every value is one the site already uses; naming them here
+   is what lets new work stay consistent. They are only variables: nothing on
+   a page changes until a rule reads them. Component classes that use them
+   (.bn-*) live in the page stylesheets. */
+:root{
+  /* brand */
+  --bn-blue:#0029FF; --bn-blue-deep:#0018AA; --bn-blue-night:#000E7A;
+  --bn-yellow:#FFFF00; --bn-on-yellow:#050A1F;
+  /* text, on white. --bn-muted is the lightest grey that still passes 4.5:1 */
+  --bn-ink:#111A3D; --bn-body:#4B5580; --bn-muted:#5E6790;
+  /* surfaces and lines */
+  --bn-white:#FFFFFF; --bn-surface:#F7F8FA; --bn-surface-blue:#EDF2FF; --bn-line:#E4E7F2;
+  /* status: live in the app, coming soon, waitlist, error */
+  --bn-live-fg:#0E7A43; --bn-live-bg:#E6F8EE;
+  --bn-soon-fg:#7A6400; --bn-soon-bg:#FFF6CC;
+  --bn-error:#C7362B;
+  /* type: Figtree at 500 / 700 / 900; nothing meaningful below 12px */
+  --bn-font:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --bn-fs-h1:clamp(32px,4.4vw,52px); --bn-fs-h2:clamp(28px,3.6vw,42px); --bn-fs-h3:clamp(18px,1.6vw,21px);
+  --bn-fs-lead:clamp(16px,1.4vw,18px); --bn-fs-body:16px; --bn-fs-small:14px; --bn-fs-xs:12px;
+  /* space, on a 4px grid */
+  --bn-s1:4px; --bn-s2:8px; --bn-s3:12px; --bn-s4:16px; --bn-s5:20px; --bn-s6:24px; --bn-s8:32px; --bn-s10:40px; --bn-s12:48px;
+  --bn-section-y:clamp(56px,7vw,104px); --bn-gutter:20px; --bn-max:1200px;
+  /* shape and depth */
+  --bn-r-sm:12px; --bn-r-md:16px; --bn-r-lg:24px; --bn-r-xl:30px;
+  --bn-shadow-1:0 1px 2px rgba(17,26,61,.05),0 8px 24px rgba(17,26,61,.06);
+  --bn-shadow-2:0 18px 44px rgba(17,26,61,.12);
+  /* motion: short, eased out, opacity and transform only */
+  --bn-ease:cubic-bezier(.2,0,0,1); --bn-dur-1:150ms; --bn-dur-2:250ms; --bn-dur-3:400ms;
+  --bn-focus:0 0 0 3px rgba(0,41,255,.4);
+}
